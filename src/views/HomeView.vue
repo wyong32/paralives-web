@@ -415,6 +415,12 @@ onUnmounted(() => {
   heroVideoRef.value?.pause()
 })
 
+// TODO: 添加一个倒计时组件，倒计时到5月25日
+const countdown = ref(0)
+onMounted(() => {
+  countdown.value = new Date('2026-05-25').getTime() - new Date().getTime()
+})
+
 const quickLinks = [
   {
     title: 'Start Here',
