@@ -1,0 +1,474 @@
+/* Paralives Simulator — game-style UI shell */
+
+.sim-page {
+  --sim-accent: var(--color-sage);
+  --sim-accent-deep: var(--color-sage-dark);
+  --sim-surface: color-mix(in srgb, var(--color-cream) 45%, var(--color-white));
+  min-height: 60vh;
+}
+
+.sim-page--live {
+  --sim-accent: var(--color-sage);
+  --sim-accent-deep: var(--color-sage-dark);
+}
+
+.sim-page--build {
+  --sim-accent: var(--color-sky-deep);
+  --sim-accent-deep: #3a8fb8;
+}
+
+.sim-page--paramaker {
+  --sim-accent: var(--color-lavender-deep);
+  --sim-accent-deep: #7c5fd4;
+}
+
+.sim-page--filter {
+  --sim-accent: var(--color-coral);
+  --sim-accent-deep: var(--color-coral-deep);
+}
+
+.sim-page--traits {
+  --sim-accent: var(--color-peach-deep);
+  --sim-accent-deep: var(--color-coral-deep);
+}
+
+.sim-page--palette {
+  --sim-accent: var(--color-mint-deep);
+  --sim-accent-deep: var(--color-sage-dark);
+}
+
+.sim-page--roll {
+  --sim-accent: var(--color-lemon);
+  --sim-accent-deep: #c9a82a;
+}
+
+.sim-hero {
+  position: relative;
+  padding: 3.25rem 0 2.75rem;
+  overflow: hidden;
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--sim-accent) 35%, var(--color-cream)) 0%,
+    var(--color-white) 55%,
+    color-mix(in srgb, var(--sim-accent) 18%, var(--color-white)) 100%
+  );
+  border-bottom: 4px solid color-mix(in srgb, var(--sim-accent) 50%, transparent);
+}
+
+.sim-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 20% 30%,
+    color-mix(in srgb, var(--sim-accent) 25%, transparent) 0%,
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.sim-hero-inner {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .sim-hero-inner {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}
+
+.sim-hero-badge {
+  display: inline-block;
+  font-family: var(--font-cartoon);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--sim-accent);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  box-shadow: var(--shadow-card);
+  width: fit-content;
+}
+
+.sim-hero h1 {
+  font-family: var(--font-cartoon);
+  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  line-height: 1.15;
+}
+
+.sim-hero-lead {
+  max-width: 38rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+}
+
+.sim-body {
+  padding: 2rem 0 4rem;
+}
+
+.sim-layout {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .sim-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.sim-nav-panel {
+  position: sticky;
+  top: 5.25rem;
+  padding: 1.1rem;
+  border-radius: var(--radius-lg);
+  background: var(--sim-surface);
+  border: 3px solid color-mix(in srgb, var(--sim-accent) 35%, transparent);
+  box-shadow: var(--shadow-card);
+}
+
+.sim-nav-title {
+  font-family: var(--font-cartoon);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sim-accent-deep);
+  margin-bottom: 0.75rem;
+}
+
+.sim-nav-list {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.sim-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.sim-nav-link:hover {
+  background: color-mix(in srgb, var(--sim-accent) 15%, var(--color-white));
+  color: var(--color-ink);
+}
+
+.sim-nav-link.is-active {
+  background: color-mix(in srgb, var(--sim-accent) 28%, var(--color-white));
+  color: var(--color-ink);
+  box-shadow: inset 3px 0 0 var(--sim-accent);
+}
+
+.sim-nav-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  background: var(--color-white);
+  border: 2px solid color-mix(in srgb, var(--sim-accent) 40%, transparent);
+  flex-shrink: 0;
+}
+
+.sim-console {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 3px solid color-mix(in srgb, var(--sim-accent) 40%, transparent);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.sim-console-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: color-mix(in srgb, var(--sim-accent) 12%, var(--color-white));
+  border-bottom: 2px dashed color-mix(in srgb, var(--sim-accent) 30%, transparent);
+}
+
+.sim-console-head h2 {
+  font-family: var(--font-cartoon);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.sim-console-head p {
+  font-size: 0.88rem;
+  color: var(--color-ink-muted);
+  margin: 0.25rem 0 0;
+  max-width: 36rem;
+}
+
+.sim-console-body {
+  padding: 1.25rem 1.35rem 1.5rem;
+}
+
+.sim-console-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin: 1.25rem 0 0.65rem;
+}
+
+.sim-console-body h3:first-child {
+  margin-top: 0;
+}
+
+.sim-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.sim-btn {
+  font-family: var(--font-cartoon);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  border: 2px solid color-mix(in srgb, var(--sim-accent) 45%, transparent);
+  background: var(--color-white);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    background 0.12s ease;
+}
+
+.sim-btn:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--sim-accent) 12%, var(--color-white));
+}
+
+.sim-btn--primary {
+  background: var(--sim-accent);
+  border-color: var(--sim-accent-deep);
+  color: var(--color-white);
+}
+
+.sim-btn--primary:hover {
+  background: var(--sim-accent-deep);
+}
+
+.sim-output {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--sim-accent) 8%, var(--color-cream));
+  border: 2px solid color-mix(in srgb, var(--sim-accent) 25%, transparent);
+}
+
+.sim-output pre {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  margin: 0.5rem 0 0;
+  padding: 0.75rem;
+  background: var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.sim-note {
+  font-size: 0.85rem;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+  margin-top: 1rem;
+}
+
+.sim-note a {
+  color: var(--sim-accent-deep);
+  font-weight: 600;
+}
+
+/* Hub cards */
+.sim-hub-grid {
+  display: grid;
+  gap: 1.15rem;
+}
+
+@media (min-width: 768px) {
+  .sim-hub-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sim-hub-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-white);
+  border: 3px solid transparent;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+  min-height: 11rem;
+}
+
+.sim-hub-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+}
+
+.sim-hub-card--filter {
+  border-color: color-mix(in srgb, var(--color-coral) 50%, transparent);
+}
+.sim-hub-card--traits {
+  border-color: color-mix(in srgb, var(--color-peach-deep) 55%, transparent);
+}
+.sim-hub-card--palette {
+  border-color: color-mix(in srgb, var(--color-sage) 55%, transparent);
+}
+.sim-hub-card--roll {
+  border-color: color-mix(in srgb, var(--color-sky-deep) 50%, transparent);
+}
+
+.sim-hub-card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sim-hub-card h2 {
+  font-family: var(--font-cartoon);
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+.sim-hub-card p {
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.sim-hub-card-cta {
+  margin-top: 0.85rem;
+  font-family: var(--font-cartoon);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.sim-hub-card--filter .sim-hub-card-cta {
+  color: var(--color-coral-deep);
+}
+
+.sim-hub-card--traits .sim-hub-card-cta {
+  color: var(--color-peach-deep);
+}
+
+.sim-hub-card--palette .sim-hub-card-cta {
+  color: var(--color-sage-dark);
+}
+
+.sim-hub-card--roll .sim-hub-card-cta {
+  color: var(--color-sky-deep);
+}
+
+.page-hero-section--simulator {
+  background: linear-gradient(
+    135deg,
+    var(--color-lavender) 0%,
+    var(--color-mint) 40%,
+    var(--color-peach) 100%
+  );
+}
+
+.page-hero-section--simulator .page-hero-content p,
+.page-hero-section--simulator .title-gradient {
+  color: var(--color-ink);
+}
+
+/* SEO / guide copy below tools */
+.sim-seo {
+  margin-top: 2rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  border: 2px solid color-mix(in srgb, var(--sim-accent) 22%, transparent);
+  box-shadow: var(--shadow-card);
+}
+
+.sim-seo h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.85rem;
+  color: var(--color-ink);
+}
+
+.sim-seo h3 {
+  font-size: 1.05rem;
+  margin: 1.35rem 0 0.5rem;
+  color: var(--color-ink);
+}
+
+.sim-seo p,
+.sim-seo li,
+.sim-seo dd {
+  font-size: 0.95rem;
+  color: var(--color-ink-muted);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.sim-seo ul,
+.sim-seo ol {
+  padding-left: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.sim-seo li {
+  margin-bottom: 0.45rem;
+}
+
+.sim-seo a {
+  color: var(--sim-accent-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sim-seo code {
+  font-size: 0.88em;
+  padding: 0.1em 0.35em;
+  background: color-mix(in srgb, var(--sim-accent) 12%, var(--color-cream));
+  border-radius: 4px;
+}
+
+.sim-seo-faq {
+  margin-top: 0.5rem;
+}
+
+.sim-seo-faq dt {
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.sim-seo-faq dd {
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+}
