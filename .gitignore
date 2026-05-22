@@ -34,6 +34,12 @@ coverage
 
 # Vitest
 __screenshots__/
+__pycache__/
+
+# Local tooling
+.cursor/
 
 # Vite
 *.timestamp-*-*.mjs
+
+.vercel
