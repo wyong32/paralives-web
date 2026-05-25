@@ -21,6 +21,7 @@ import AppFooter from './components/AppFooter.vue'
   min-height: 100vh;
 }
 
+
 #main-content {
   flex: 1;
   /* 路由 chunk 加载前预留主区高度，避免页脚从上方被整体顶下去（CLS） */
