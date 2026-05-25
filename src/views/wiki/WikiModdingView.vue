@@ -1,55 +1,78 @@
 <template>
   <WikiCategoryShell
     title="Paralives Modding"
-    lead="Day-one mod tools, Steam Workshop, and free updates instead of paid DLC — how players extend Paralives."
+    lead="Built-in tools, Steam Workshop, and free game updates — how players extend Paralives without waiting on DLC."
   >
     <div class="wiki-prose">
-      <h2>Official mod support</h2>
+      <h2>Mods are part of the plan</h2>
       <p>
-        Paralives ships with tools to add and edit content inside the game client — listed on the official
-        day-one Live Mode feature sheet. Exact workflows will mature during Early Access, but the intent is a
-        mod-friendly sim similar to other community-driven life games.
+        Paralives ships with in-game mod tools on the day-one Live Mode list. Early Access will still be figuring out
+        workflows, but the direction is clear: community content through Steam Workshop, not paid DLC packs for core
+        features. Expect furniture drops, personality packs, animations, and gameplay tweaks as creators learn the
+        pipeline.
       </p>
 
-      <h2>Steam Workshop</h2>
+      <h2>Workshop in practice</h2>
       <p>
-        Workshop browsing is targeted for Early Access. Expect furniture packs, trait tweaks, animations, build
-        objects, and personality additions. Our <RouterLink to="/mods">mods hub</RouterLink> collects community
-        listings when creators share links — always read compatibility notes after patches.
+        Subscribe like any Steam game — objects, traits, build pieces, sometimes full Parafolk with genetics embedded.
+        Our <RouterLink to="/mods">mods hub</RouterLink> collects community write-ups when authors share them; still
+        read patch notes before you load a year-old save.
       </p>
 
-      <h2>What modders can change</h2>
-      <p>Public developer chats confirm moddable gameplay layers including:</p>
-      <ul>
-        <li>Vibes, talents, and social perks</li>
-        <li>Emotions, needs, and skills (skills must fit an existing Knowledge type)</li>
-        <li>Genetics rules — hairstyles can declare hair texture for inheritance</li>
-        <li>New accessories can introduce genetic traits (custom ears, etc.)</li>
-        <li>Build objects and partial lot sharing</li>
-      </ul>
+      <h2>What modders can touch</h2>
+      <table class="wiki-data-table">
+        <thead>
+          <tr>
+            <th scope="col">System</th>
+            <th scope="col">Typical mods</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="row in modSystems" :key="row.system">
+            <th scope="row">{{ row.system }}</th>
+            <td>{{ row.notes }}</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h2>Custom traits and saves</h2>
+      <h2>Saves and broken traits</h2>
       <p>
-        Trait packs, animation overrides, and UI tweaks are popular categories. After each official update, verify
-        mod versions before loading long saves — broken traits can stall wants or careers until removed.
+        Trait packs and UI mods are popular — also the first things to break on a new patch. If wants stop refreshing
+        or careers freeze, disable recent personality mods and test a backup save. One broken custom emotion can color
+        every social roll wrong until you remove it.
       </p>
 
       <h2>Sharing Parafolks</h2>
       <p>
-        Workshop exports embed genetics data. Downloaded characters bring inheritable visuals — useful for legacy
-        challenges and storytelling collabs. Personality picks still belong to the player when you adopt a premade
-        Para into your household.
+        Workshop exports carry genetics. Downloaded Parafolks bring inheritable looks; you still choose personality when
+        they join your household. Hairstyle mods can flag hair texture (straight, wavy, curly, coily) so kids inherit
+        correctly. Accessory mods can add genetic bits like custom ears. Ambitious creators have talked about whole
+        new “species” with their own rules — vampires, fairies, etc. — using modded genetics and needs.
       </p>
 
-      <h2>No paid DLC model</h2>
+      <h2>Build sharing limits</h2>
       <p>
-        The studio has communicated a no paid DLC approach for major content — growth is meant to come through free
-        updates across the ~two-year Early Access path to 1.0, plus community mods.
+        Individual build objects are easy Workshop fodder. You can export buildings, but
+        <strong>whole lots are not fully exportable yet</strong> — expect that to improve during EA.
+      </p>
+
+      <h2>Relationship mods</h2>
+      <p>
+        You can add custom <RouterLink to="/wiki/relationships">relationship labels</RouterLink>, but you cannot rip out
+        and replace the core categories (family, romance, enemies, and the rest). Plan modded labels as additions, not
+        a full rewrite of social structure.
+      </p>
+
+      <h2>Money model for players</h2>
+      <p>
+        The studio has said major content is meant to arrive through free updates across roughly two years of Early
+        Access to 1.0, with mods filling gaps in between. That does not mean every mod is safe or maintained — treat
+        Workshop like any community folder: backups, load order discipline, read comments.
       </p>
 
       <div class="wiki-callout">
-        Pair mod plans with the <RouterLink to="/updates">Early Access roadmap</RouterLink> so you know which
-        vanilla systems exist before you depend on a custom replacement.
+        Before you mod-replace a vanilla system, check our <RouterLink to="/updates">roadmap</RouterLink> so you are not
+        duplicating a feature the base game is about to ship.
       </div>
     </div>
   </WikiCategoryShell>
@@ -58,4 +81,14 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
+
+const modSystems = [
+  { system: 'Vibes, talents, social perks', notes: 'New personality picks and perks.' },
+  { system: 'Emotions & needs', notes: 'Custom moods and need bars.' },
+  { system: 'Skills', notes: 'Extra skills, but they must slot into an existing Knowledge family.' },
+  { system: 'Careers', notes: 'Custom jobs, postings, and workplaces.' },
+  { system: 'Relationship labels', notes: 'New labels; core categories stay vanilla.' },
+  { system: 'Genetics', notes: 'Different inheritance, occult bodies, hairstyle texture flags.' },
+  { system: 'Build objects', notes: 'Furniture and decor; partial building sharing today.' },
+]
 </script>

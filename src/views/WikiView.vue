@@ -48,7 +48,7 @@ const wikiCategories = [
   {
     slug: 'talents',
     title: 'Talents',
-    description: 'Pick one specialty at creation to level matching skills faster.',
+    description: 'One specialty at creation, faster matching skills, upgrades if you keep earning personality points.',
     hubTag: 'Paramaker',
     imageUrl: 'https://placehold.co/480x260/d4c4f5/6B9B7B?text=Talents',
     imageAlt: 'Paralives talents guide',
@@ -56,7 +56,7 @@ const wikiCategories = [
   {
     slug: 'vibes',
     title: 'Vibes',
-    description: 'Your Parafolk’s outlook — emotions, social play, and skill speed.',
+    description: 'Temperament that steers moods and social cards — five at launch, more after.',
     hubTag: 'Personality',
     imageUrl: 'https://placehold.co/480x260/ffb89a/6B9B7B?text=Vibes',
     imageAlt: 'Paralives vibes guide',
@@ -64,7 +64,7 @@ const wikiCategories = [
   {
     slug: 'skills',
     title: 'Skills',
-    description: 'Practice activities in Live Mode — up to level 20.',
+    description: 'Hobbies and chores up to level 20, Knowledge families, jobs, kid limits.',
     hubTag: 'Live Mode',
     imageUrl: 'https://placehold.co/480x260/b8e8d4/6B9B7B?text=Skills',
     imageAlt: 'Paralives skills guide',
@@ -120,7 +120,7 @@ const wikiCategories = [
   {
     slug: 'relationships',
     title: 'Relationships & Social',
-    description: 'Social perks, Together Cards, and group play.',
+    description: 'Stacked labels per person, Together Cards, combo perks, six social perks.',
     hubTag: 'Social',
     imageUrl: 'https://placehold.co/480x260/ff7b6b/6B9B7B?text=Social',
     imageAlt: 'Paralives relationships guide',
@@ -141,7 +141,6 @@ const wikiCategories = [
   margin-top: 0.75rem;
   font-size: 0.92rem;
   opacity: 0.9;
-  max-width: 40rem;
 }
 
 .wiki-main-section {

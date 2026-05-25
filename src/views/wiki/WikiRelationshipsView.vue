@@ -1,50 +1,68 @@
 <template>
   <WikiCategoryShell
     title="Paralives Relationships & Social"
-    lead="Social perks, Together Cards, multiselect groups, and how friendships and romance grow in Live Mode."
+    lead="Multiple relationship labels per pair, Together Cards every ~20 minutes of social time, and perks when bonds level up."
   >
     <div class="wiki-prose">
-      <h2>Relationship development</h2>
+      <h2>More than one bar per person</h2>
       <p>
-        Relationships deepen through repeated social play with labeled ties — friends, romance, family, and more.
-        The system is a core day-one Live Mode feature. Your Paramaker social perk biases which interactions feel
-        natural and which rewards you earn.
+        Two Parafolks are rarely just “friends.” They might be <strong>friends lvl6</strong>,
+        <strong>coworkers lvl3</strong>, and <strong>family</strong> at the same time — separate
+        <strong>relationship labels</strong> you unlock by playing, not one slider.
+      </p>
+      <p>
+        Labels can be <strong>one-sided</strong>. Your Para might have Crush lvl8 while the other person does not
+        feel it — you can still get special interactions like anonymous love letters. Keep playing
+        Together Cards together and labels level; high levels unlock
+        perks (Cooking Buddies lvl20 cooking faster together is the classic example).
+      </p>
+      <p>
+        Dating does not erase friendship — you stack labels. If two labels are both high, you might unlock a
+        <strong>combo label</strong> like Productive Duo from Coworker + Creative Buddy with beefier perks.
+      </p>
+      <p>
+        Family, friends, romance, work ties, enemies, and hobby partners are different buckets. Family tree UI is not
+        at launch, so labels also mark who is related until that menu arrives.
       </p>
 
-      <h2>Together Cards</h2>
+      <h2>Together Cards — story forks</h2>
       <p>
-        After enough progress in a social interaction (roughly twenty minutes on the Together bar in previews), an
-        icon appears on the active Para’s portrait. Click it to choose one of three Together Cards — story forks,
-        not line-by-line chat options.
+        Social interactions fill a Together bar. After roughly <strong>twenty minutes</strong> of progress, an icon
+        appears on the <strong>active</strong> Para’s portrait. Click it, choose one of three cards. These are not
+        chat lines — they are branches (“compliment sincerely” vs “compliment sarcastically”) with consequences.
       </p>
       <p>
-        Cards are context-sensitive: location, mood, recent memories, nearby objects, and who is involved all
-        filter the list. Some cards show success odds, relationship perks, or vibe icons so you can plan outcomes.
-      </p>
-
-      <h3>Emotional variants</h3>
-      <p>
-        Many cards offer color-coded variants — neutral white, friendship green, romance pink, skill/hobby blue,
-        mean red, discomfort dark red. The same root action can shift tone: a sincere compliment vs an ironic one
-        changes relationship impact. Strong current
-        <RouterLink to="/wiki/emotions">emotions</RouterLink> make variants more likely.
+        The game weighs location, mood, recent memories, objects nearby, and who is involved. Many cards show success
+        odds, vibe icons, or which label might level if you pick them.
       </p>
 
-      <h3>Initiative cards</h3>
+      <h3>Colored variants</h3>
+      <ul>
+        <li><strong>White</strong> — neutral tone</li>
+        <li><strong>Green</strong> — friendship</li>
+        <li><strong>Pink</strong> — romance</li>
+        <li><strong>Dark blue</strong> — skills and hobbies</li>
+        <li><strong>Red</strong> — mean</li>
+        <li><strong>Dark red</strong> — discomfort</li>
+      </ul>
       <p>
-        Sometimes the other Para proposes the card — job offers, romantic gestures, surprises. The prompt still
-        appears on your active Para so you can accept or steer the moment.
+        Strong <RouterLink to="/wiki/emotions">emotions</RouterLink> make emotional variants more likely — angry Paras
+        see more red-tinged options.
       </p>
 
-      <h2>Multiselect group play</h2>
+      <h3>When the other person starts it</h3>
       <p>
-        Select multiple household members for one group command — cook together, travel as a group, or socialize.
-        Pairs well with need and mood management when you run a busy household.
+        Sometimes the NPC proposes the card — job offer out of nowhere, a romantic gesture, a surprise. The prompt still
+        lands on your active Para so you can accept or shut it down.
+      </p>
+
+      <h2>Social perks at creation</h2>
+      <p>
+        Pick one perk in Paramaker; earn more later with personality points. Perks bias which cards appear and how
+        often they succeed — “good at romantic relationships” really does make flirty routes easier.
       </p>
     </div>
 
-    <h2 class="wiki-section-heading">Social perks (Paramaker)</h2>
-    <p class="wiki-table-note">Pick one at creation; more can unlock with personality points.</p>
     <ul class="wiki-ref-grid">
       <li v-for="p in socialPerks" :key="p.name" class="wiki-ref-card wiki-ref-card--icon">
         <img
@@ -60,56 +78,64 @@
       </li>
     </ul>
 
-    <div class="wiki-phase-grid">
-      <section class="wiki-phase-card wiki-phase-card--ea">
-        <h2><span class="wiki-badge wiki-badge--ea">During EA</span> Social features later</h2>
-        <ul>
-          <li>Organized parties and weddings</li>
-          <li>Phone calls to invite Parafolks over</li>
-          <li>Online chat between Parafolks</li>
-        </ul>
-        <p class="wiki-phase-lead">
-          Until then, meet townies on the <RouterLink to="/map">town map</RouterLink>, host at home, and use
-          Together Cards at restaurants.
-        </p>
-      </section>
+    <div class="wiki-prose">
+      <h2>Group commands</h2>
+      <p>
+        Multiselect lets several household members cook, travel, or hang out under one order — great when you are
+        juggling multiple need bars.
+      </p>
+
+      <h2>What launch is missing</h2>
+      <p>
+        Town NPCs will not grow relationships on their own at EA launch — not with you, not with each other. That
+        autonomy is planned later. Parties, weddings, phone invites, and Para-to-Para online chat are also later-list
+        features. For now, meet people on the <RouterLink to="/map">map</RouterLink>, invite them home, and play cards
+        at restaurants.
+      </p>
+
+      <h2>Mods</h2>
+      <p>
+        You can add custom relationship labels through mods, but the big categories (family, romance, enemies, etc.)
+        stay fixed. See <RouterLink to="/wiki/modding">modding</RouterLink>.
+      </p>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const socialPerks = [
   {
     name: 'Good at being alone',
     icon: 'SocialPerk-GoodAtBeingAlone.png',
-    desc: 'Solo-focused saves; me-time needs and independent hobbies shine.',
+    desc: 'Solo saves feel natural — me time and quiet hobbies are easier to satisfy.',
   },
   {
     name: 'Good at cooperation',
     icon: 'SocialPerk-GoodAtCooperation.png',
-    desc: 'Group chores, duo skills, and multiselect outings — great for team households.',
+    desc: 'Group chores and duo activities — strong with multiselect households.',
   },
   {
     name: 'Good at making friends',
     icon: 'SocialPerk-GoodAtMakingFriends.png',
-    desc: 'Faster friendship growth and broader social card variety.',
+    desc: 'Friend labels climb faster; more friendly card variety.',
   },
   {
     name: 'Good at romantic relationships',
     icon: 'SocialPerk-GoodAtRomanticRelationships.png',
-    desc: 'Romance arcs and flirty Together Cards are easier to sustain.',
+    desc: 'Romance labels and pink cards are easier to land and maintain.',
   },
   {
     name: 'Good at taking care of others',
     icon: 'SocialPerk-GoodAtTakingCareOfOthers.png',
-    desc: 'Caregiving, soup when sick, and supportive family dynamics.',
+    desc: 'Caregiving, soup when sick, supportive family play.',
   },
   {
     name: 'Good with family',
     icon: 'SocialPerk-GoodWithFamily.png',
-    desc: 'Multi-generation legacies and relative-focused wants.',
+    desc: 'Multi-generation saves — family-flavored wants and interactions.',
   },
 ]
 </script>

@@ -1,94 +1,116 @@
 <template>
   <WikiCategoryShell
     title="Paralives Parafolks & Genetics"
-    lead="Create in Paramaker, play in Live Mode, pass looks to children — personality stays player-driven."
-    container-class="container--wide"
+    lead="Make them in Paramaker, live with them in Melino, pass looks to kids — personality stays yours to choose."
   >
     <div class="wiki-prose">
-      <h2>Who Parafolks are</h2>
+      <h2>Who you are playing</h2>
       <p>
-        Parafolks (often called Paras) are the characters you customize and control. You shape them in
-        Paramaker, then manage their home, relationships, skills, and story in Live Mode. They are born, age,
-        and eventually die — there is no afterlife system.
+        <strong>Parafolks</strong> (Paras) are the people you customize and steer. Fans voted the name “Parafolk”
+        years ago on Patreon. You build them in <strong>Paramaker</strong> — often shortened to PAM — then run
+        households in Live Mode. They age through eight stages, can have kids, and eventually die. There is no
+        afterlife gameplay.
       </p>
 
-      <h2>Paramaker customization</h2>
+      <h2>What you can still change later</h2>
       <p>
-        Height, body and face sliders, tattoos, layered clothing, asymmetry, multiple outfit slots, and the color
-        wheel on skin, hair regions, and clothes are day-one Paramaker features. Many looks can change later, but
-        genetics set at creation stay fixed for inheritance.
+        Day one Paramaker includes sliders, color wheels, tattoos, layered clothes, asymmetry, and multiple outfit
+        slots. A lot of style can change in Live Mode — hair at a salon like Headlines, outfits, some details.
+        <strong>Body sliders lock</strong> once you leave creation, so bone structure is set.
       </p>
       <p>
-        After leaving creation, full body sliders lock — haircuts and similar services happen in Live Mode at
-        venues such as salons on the town map.
-      </p>
-
-      <h2>Personality is not genetic</h2>
-      <p>
-        Stats, vibe, talent, social perk, and lifestyles are chosen by the player. They can grow through
-        personality points in Live Mode but do not pass to children. See
-        <RouterLink to="/wiki/traits">stats &amp; personality</RouterLink> for the full bundle.
+        Names, gender, life stage, and voice look fixed after you enter the world — plan identity in PAM. Genetics
+        for looks are also fixed even if you recolor hair later.
       </p>
 
-      <h2>Genetics at launch</h2>
+      <h2>Personality is yours, not DNA</h2>
       <p>
-        The genetics system is day one. In Paramaker you can generate children, siblings, or parents from
-        existing household members. Advanced genetics editing is planned during Early Access, not at launch. A
-        family tree UI is also planned later — genetics and family play work before that menu arrives.
+        Stats, vibe, talent, social perk, and lifestyles come from your choices and play — not from parents. Kids
+        inherit faces, not Dad’s vibe. Full breakdown on
+        <RouterLink to="/wiki/traits">stats &amp; personality</RouterLink>.
       </p>
 
-      <h3>What passes down</h3>
-      <ul>
-        <li>
-          <strong>Slider sets</strong> — each facial feature inherits a full set from one parent (nose from mom,
-          cheeks from dad) to avoid mismatched extremes.
-        </li>
-        <li>
-          <strong>Height</strong> — picks a parent’s short/medium/tall range, then randomizes inside it so
-          siblings vary.
-        </li>
-        <li>
-          <strong>Colors</strong> — eye and hair base colors use dominant/recessive style rules; skin brightness
-          can shift within a parent’s range.
-        </li>
-        <li>
-          <strong>Hair texture</strong> — straight, wavy, curly, coily with coily most dominant; hairstyles
-          randomize from textures the child can wear.
-        </li>
-      </ul>
+      <h2>Genetics on launch day</h2>
+      <p>
+        Genetics are in on Early Access launch. From existing household members you can roll children, siblings, or
+        parents in Paramaker. A proper <strong>family tree screen</strong> and deeper gene editing are planned later
+        in EA — you can play legacies before the tree UI exists.
+      </p>
+
+      <h3>Faces and height</h3>
+      <p>
+        Each facial feature inherits a <strong>whole slider set</strong> from one parent — mom’s nose or dad’s cheeks,
+        not a mashed mix that breaks proportions. Height picks a parent’s short/medium/tall band, then randomizes
+        inside it so siblings are not clones. Gender nudges the height roll.
+      </p>
+
+      <h3>Colors and hair</h3>
+      <p>
+        Eyes, skin, and hair base color use dominant/recessive style rules — a grandparent’s blue eyes can skip a
+        generation. Only the <strong>base</strong> hair color counts for DNA, not highlights or roots. Neon green
+        hair is fun in PAM but the game stores a hidden natural color for kids.
+      </p>
+      <p>
+        Skin brightness can land anywhere in a parent’s range; exact hue might differ between swatches. Heterochromia
+        is not inherited yet — one eye color is picked for genetics.
+      </p>
+
+      <h3>Hair texture</h3>
+      <p>
+        Straight, wavy, curly, coily — coily wins ties most often, straight is most recessive. Random child hairstyles
+        only pull from textures the kid can actually wear.
+      </p>
 
       <div class="wiki-callout wiki-callout--warn">
-        Genetics are permanent. Recoloring hair later does not change what children inherit. Neon cosmetic colors
-        map to a hidden natural gene for inheritance. NPC presets also keep fixed genetics.
+        Dye jobs do not rewrite DNA. NPC townies carry preset genetics you cannot edit. There is still no in-game
+        screen to peek at hidden recessive genes before having kids — that may arrive in a later EA patch.
       </div>
 
-      <h2>Life stages</h2>
+      <h2>Life stages in order</h2>
       <p>
-        Eight stages appear in public materials: Baby, Toddler, Child, Preteen, Teenager, Young Adult, Adult, and
-        Elder. Babies and toddlers may hide sliders until age-up even though genetics exist underneath. Having
-        children, aging, and death are day-one Live Mode features.
+        Baby → Toddler → Child → Preteen → Teenager → Young Adult → Adult → Elder. Babies and toddlers may hide
+        sliders until they age up even though genes are already set. Pregnancy and birth are simplified at EA launch
+        (no hospital minigame required). Twins and triplets happen but stay rare.
       </p>
 
-      <h2>Health and illness</h2>
+      <h2>Getting sick and dying</h2>
       <p>
-        Parafolks can catch minor illnesses — for example a virus from work or school, or spoiled food. It can
-        spread in the household; care perks and soup help recovery. More serious disabilities were not planned
-        for the May 2026 launch, though decorative medical items exist for builds.
+        Everyone starts able-bodied. Colds can spread from work or school; soup and caring perks help. Serious
+        disability gameplay was not targeted for the first EA month, though medical clutter exists for builders.
+      </p>
+      <p>
+        At least <strong>four death types</strong> have been discussed, including old age. You cannot click “die” —
+        autonomy fires death when conditions are met, same as other high-stakes actions.
       </p>
 
-      <h2>Thoughts: emotions, needs, wants, goals</h2>
+      <h2>Thoughts, memories, and panels</h2>
       <p>
-        The thought panel bundles mood and objectives. Short-term “memories” track recent need levels and events
-        for context (not long autobiographical history yet). Together Cards and wants use that context — see
-        <RouterLink to="/wiki/emotions">emotions</RouterLink> and
+        The character panel holds personality, identity, inventory, relationships, jobs, skills, and thoughts.
+        “Memories” right now are short-term context — more like “hunger was 8/10 at 8am” than “we met twenty years
+        ago.” That data still feeds Together Cards and want suggestions. Tie-in pages:
+        <RouterLink to="/wiki/emotions">emotions</RouterLink>,
         <RouterLink to="/wiki/needs-wants">needs &amp; wants</RouterLink>.
       </p>
 
-      <h2>During Early Access</h2>
+      <h2>Parli</h2>
+      <p>
+        Spoken language is gibberish <strong>Parli</strong>. Written text defaults to English; mod tools can change
+        that if you care about UI flavor.
+      </p>
+
+      <h2>Random townies</h2>
+      <p>
+        When the game needs a new face — moving someone in, filling the town — it pulls from premade Parafolks,
+        including supporter-made characters from development. They are not story NPCs, but their genetics are real in
+        the pool.
+      </p>
+
+      <h2>Still coming in EA</h2>
       <ul>
-        <li>Family tree interface — planned after launch.</li>
-        <li>Pets in Paramaker and Live Mode pets — on during-EA lists.</li>
-        <li>Workshop exports include genetics data for shared characters.</li>
+        <li>Family tree menu after launch.</li>
+        <li>Pets in Paramaker and Live Mode pets on the during-EA list.</li>
+        <li>Workshop exports that keep genetics for shared characters.</li>
+        <li>Modded species with their own inheritance rules if creators go that far.</li>
       </ul>
     </div>
   </WikiCategoryShell>

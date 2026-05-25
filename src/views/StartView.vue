@@ -6,7 +6,7 @@
         <div class="page-hero-content">
           <h1 id="start-title" class="title-gradient">Paralives Start Guide</h1>
           <p>
-            Learn the three modes, create your first Parafolks, build a home, and know what to do in
+            Learn the three modes, create your first Parafolks, build a home, find work, and know what to do in
             town. Game info and PC specs are at the end.
           </p>
           <p class="start-hero-meta">
@@ -58,15 +58,6 @@
               Paralives revolves around three modes. You switch between them often; each has a clear
               job in your save.
             </p>
-            <figure class="start-figure start-figure--wide">
-              <img
-                src="/images/start-01.webp"
-                alt="Placeholder — Paramaker, Build Mode, and Live Mode overview"
-                width="800"
-                height="360"
-                loading="lazy"
-              />
-            </figure>
             <div class="start-mode-cards">
               <article class="start-mode-card start-mode-card--paramaker">
                 <h3>Paramaker</h3>
@@ -124,11 +115,12 @@
               </div>
               <figure class="start-figure">
                 <img
-                  src="/images/start-02.webp"
-                  alt="Placeholder — town map and lot selection"
+                  src="/images/start-01.webp"
+                  alt="Melino town map and choosing a lot"
                   width="480"
                   height="320"
                   loading="lazy"
+                  @error="onImgFallback($event, '/images/start-02.webp')"
                 />
               </figure>
             </div>
@@ -144,10 +136,11 @@
             <figure class="start-figure start-figure--wide">
               <img
                 src="/images/start-03.webp"
-                alt="Placeholder — character creation in Paramaker"
+                alt="Creating a Parafolk in Paramaker"
                 width="800"
                 height="360"
                 loading="lazy"
+                @error="onImgFallback($event, '/images/start-03.webp')"
               />
             </figure>
 
@@ -186,10 +179,11 @@
               <figure class="start-figure">
                 <img
                   src="/images/start-04.webp"
-                  alt="Placeholder — building a home in Build Mode"
+                  alt="Building a starter home in Build Mode"
                   width="480"
                   height="320"
                   loading="lazy"
+                  @error="onImgFallback($event, '/images/start-04.webp')"
                 />
               </figure>
               <div class="start-split-text">
@@ -229,17 +223,20 @@
             <figure class="start-figure start-figure--wide">
               <img
                 src="/images/start-05.webp"
-                alt="Placeholder — Live Mode in the open-world town"
+                alt="Live Mode in the open-world town"
                 width="800"
                 height="360"
                 loading="lazy"
+                @error="onImgFallback($event, '/images/start-05.webp')"
               />
             </figure>
             <ul class="start-checklist">
               <li><strong>Watch needs</strong> — hunger, energy, and related meters</li>
               <li><strong>Complete a want</strong> — learn the mood and reward loop</li>
-              <li><strong>Take a job</strong> — work uses rabbit holes at Early Access</li>
-              <li><strong>Level a career</strong> — try one progression path</li>
+              <li>
+                <strong>Find work</strong> — see
+                <a href="#careers">Jobs &amp; careers</a> below for how hiring and upgrades work
+              </li>
               <li><strong>Socialize once</strong> — start one relationship chain</li>
               <li><strong>Visit a venue</strong> — shop, restaurant, or museum</li>
               <li><strong>Use multiselect</strong> — direct a group when needed</li>
@@ -253,6 +250,126 @@
           </section>
 
           <!-- 6 -->
+          <section id="careers" class="start-section" aria-labelledby="careers-heading">
+            <h2 id="careers-heading">Jobs &amp; careers</h2>
+            <p>
+              Work is a big slice of a first save. Alex Massé outlined the career loop in a November 2023
+              developer post (now public): find a job in town, pick a perk after each shift, then apply
+              elsewhere when you want a bigger jump — not a single straight ladder.
+            </p>
+
+            <h3 class="start-subhead">Find work</h3>
+            <ul class="start-checklist start-checklist--compact">
+              <li>
+                <strong>Town ads</strong> — job boards in front of workplaces on the
+                <RouterLink to="/map">Melino map</RouterLink>
+              </li>
+              <li><strong>Online listings</strong> — browse postings from your Para’s phone or computer</li>
+              <li>
+                <strong>Domains</strong> — postings group by industry (Food, Healthcare, Software, and more);
+                see <RouterLink to="/wiki/careers">Careers &amp; economy</RouterLink> for the full list
+              </li>
+            </ul>
+
+            <div class="start-career-pair">
+              <figure class="start-figure">
+                <img
+                  src="/images/start-06.webp"
+                  alt="Career panel after enrolling in a new job"
+                  width="480"
+                  height="320"
+                  loading="lazy"
+                />
+                <figcaption class="start-figcaption">Day one on a new job</figcaption>
+              </figure>
+              <figure class="start-figure">
+                <img
+                  src="/images/start-07.webp"
+                  alt="Same job after several days of daily upgrades"
+                  width="480"
+                  height="320"
+                  loading="lazy"
+                />
+                <figcaption class="start-figcaption">Same role after many upgrade picks</figcaption>
+              </figure>
+            </div>
+
+            <h3 class="start-subhead">After each work day — pick one of three</h3>
+            <p>
+              When a shift ends, open the career panel and choose one upgrade. You are not forced to pick every
+              day, but most players will often — it is how pay and perks grow.
+            </p>
+            <ul class="start-upgrade-legend" aria-label="Daily job upgrade types">
+              <li class="start-upgrade-legend__item start-upgrade-legend__item--green">
+                <span class="start-upgrade-legend__dot" aria-hidden="true"></span>
+                <strong>Rank</strong> — higher salary and job tier at this employer
+              </li>
+              <li class="start-upgrade-legend__item start-upgrade-legend__item--blue">
+                <span class="start-upgrade-legend__dot" aria-hidden="true"></span>
+                <strong>Expertise</strong> — resume bullets that follow you to the next job; often boosts pay too
+              </li>
+              <li class="start-upgrade-legend__item start-upgrade-legend__item--red">
+                <span class="start-upgrade-legend__dot" aria-hidden="true"></span>
+                <strong>Extras</strong> — perks beyond money (socialize on the party committee, garden skill from
+                watering office plants, and similar)
+              </li>
+            </ul>
+            <figure class="start-figure start-figure--wide">
+              <img
+                src="/images/start-08.webp"
+                alt="Choosing one of three daily job upgrade cards"
+                width="800"
+                height="360"
+                loading="lazy"
+              />
+              <figcaption class="start-figcaption">
+                Purple money highlights mean the perk combos with your Para’s stats (for example high Mind)
+              </figcaption>
+            </figure>
+
+            <h3 class="start-subhead">Progress by changing employers</h3>
+            <p>
+              A starter café might cap out on salary. Apply at other lots in the same field — or move up inside
+              your current company when a posting opens. Hiring checks expertises you already unlocked, relevant
+              <RouterLink to="/wiki/skills">skills</RouterLink>, ties with people at that workplace, and
+              application points — not a perfect max-level chart for every line.
+            </p>
+            <p>
+              Careers are deliberately <strong>non-linear</strong>: upgrading as a nurse does not auto-promote you
+              to doctor. You grow as a stronger nurse, then qualify for a doctor posting when the board lists one.
+            </p>
+            <figure class="start-figure start-figure--wide">
+              <img
+                src="/images/start-09.webp"
+                alt="Job opportunities at other workplaces in the same field"
+                width="800"
+                height="360"
+                loading="lazy"
+              />
+            </figure>
+
+            <h3 class="start-subhead">Rabbit holes, side jobs, and EA reality</h3>
+            <ul class="start-checklist start-checklist--compact">
+              <li>
+                <strong>Rabbit holes</strong> — at Early Access your Para leaves the lot for work; you stay with
+                the household. Active on-site jobs may come later.
+              </li>
+              <li>
+                <strong>Multiple jobs</strong> — allowed when schedules do not clash; students can take part-time
+                work
+              </li>
+              <li>
+                <strong>Performance</strong> — rough streaks can mean strikes and firing; good runs feed more upgrade
+                picks — details on <RouterLink to="/wiki/careers">Careers &amp; economy</RouterLink>
+              </li>
+            </ul>
+            <p class="start-aside">
+              Screenshots above are from pre-release UI; salaries and labels were still being tuned when the post
+              was written.
+            </p>
+          </section>
+
+          <!-- 7 -->
           <section id="playstyles" class="start-section" aria-labelledby="playstyles-heading">
             <h2 id="playstyles-heading">Recommended ways to play</h2>
             <p>Pick a pace that fits you — you need a home before Live Mode, but how deep you go is up to you.</p>
@@ -276,7 +393,7 @@
             </div>
           </section>
 
-          <!-- 7 -->
+          <!-- 8 -->
           <section id="caution" class="start-section" aria-labelledby="caution-heading">
             <h2 id="caution-heading">Things to watch out for</h2>
             <ul class="start-warnings">
@@ -299,7 +416,7 @@
             </ul>
           </section>
 
-          <!-- 8 -->
+          <!-- 9 -->
           <section id="about" class="start-section start-section--ref" aria-labelledby="about-heading">
             <h2 id="about-heading">About Paralives</h2>
             <div class="start-split">
@@ -343,17 +460,18 @@
               </div>
               <figure class="start-figure">
                 <img
-                  src="/images/start-06.webp"
-                  alt="Placeholder — Paralives town and Parafolks"
+                  src="/images/start-02.webp"
+                  alt="Parafolks in the open town of Melino"
                   width="480"
                   height="320"
                   loading="lazy"
+                  @error="onImgFallback($event, '/images/start-06.webp')"
                 />
               </figure>
             </div>
           </section>
 
-          <!-- 9 -->
+          <!-- 10 -->
           <section id="specs" class="start-section start-section--ref" aria-labelledby="specs-heading">
             <h2 id="specs-heading">System requirements</h2>
             <p>
@@ -413,10 +531,11 @@ const toc = [
   { id: 'paramaker', num: 3, label: 'Create Parafolks' },
   { id: 'build', num: 4, label: 'Build Mode' },
   { id: 'live', num: 5, label: 'Live Mode first steps' },
-  { id: 'playstyles', num: 6, label: 'Ways to play' },
-  { id: 'caution', num: 7, label: 'Watch outs' },
-  { id: 'about', num: 8, label: 'About the game' },
-  { id: 'specs', num: 9, label: 'System requirements' },
+  { id: 'careers', num: 6, label: 'Jobs & careers' },
+  { id: 'playstyles', num: 7, label: 'Ways to play' },
+  { id: 'caution', num: 8, label: 'Watch outs' },
+  { id: 'about', num: 9, label: 'About the game' },
+  { id: 'specs', num: 10, label: 'System requirements' },
 ]
 
 const activeId = ref(toc[0].id)
@@ -424,6 +543,14 @@ let observer = null
 
 function onTocClick() {
   /* allow native hash scroll; observer updates active state */
+}
+
+/** Prefer new /images/start/* assets; fall back to legacy start-0N.webp once */
+function onImgFallback(event, legacySrc) {
+  const img = event.target
+  if (!img || img.dataset.fallbackDone) return
+  img.dataset.fallbackDone = '1'
+  img.src = legacySrc
 }
 
 onMounted(() => {
@@ -1009,6 +1136,103 @@ onUnmounted(() => {
   color: var(--color-ink-muted);
   margin-top: 1rem;
   max-width: 40rem;
+}
+
+.start-subhead {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.05rem;
+  color: var(--color-ink);
+}
+
+.start-checklist--compact {
+  margin-top: 0.5rem;
+}
+
+.start-checklist--compact li {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.start-figcaption {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: var(--color-ink-muted);
+  text-align: center;
+}
+
+.start-career-pair {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .start-career-pair {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.start-upgrade-legend {
+  margin: 0.75rem 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .start-upgrade-legend {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.start-upgrade-legend__item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 0.65rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+  border: 2px solid color-mix(in srgb, var(--color-sage) 20%, transparent);
+  background: var(--color-white);
+}
+
+.start-upgrade-legend__item strong {
+  color: var(--color-ink);
+}
+
+.start-upgrade-legend__dot {
+  flex-shrink: 0;
+  width: 0.65rem;
+  height: 0.65rem;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+}
+
+.start-upgrade-legend__item--green .start-upgrade-legend__dot {
+  background: #3d9b5c;
+}
+
+.start-upgrade-legend__item--blue .start-upgrade-legend__dot {
+  background: #4a7fd4;
+}
+
+.start-upgrade-legend__item--red .start-upgrade-legend__dot {
+  background: #d4564a;
+}
+
+.start-upgrade-legend__item--green {
+  border-color: color-mix(in srgb, #3d9b5c 35%, transparent);
+}
+
+.start-upgrade-legend__item--blue {
+  border-color: color-mix(in srgb, #4a7fd4 35%, transparent);
+}
+
+.start-upgrade-legend__item--red {
+  border-color: color-mix(in srgb, #d4564a 35%, transparent);
 }
 
 .start-section a {
