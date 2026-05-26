@@ -4,7 +4,7 @@
     title-id="wiki-careers-econ-title"
     lead="Paradimes, weekly bills, Build Mode meter costs, daycare, museum rewards, Community Center bundles, and emergency costs — framed for Early Access, same spirit as our careers overview."
     :breadcrumb-parent="{ title: 'Careers & Economy', href: '/wiki/careers' }"
-    hero-image="/images/reviews/paralives-early-access/paralives-open-world-town.webp"
+    hero-image="/images/wiki-paralives.webp"
   >
     <aside class="wiki-callout wiki-callout--snapshot" aria-label="Early Access snapshot note">
       <p class="wiki-callout__title">Early Access snapshot</p>
@@ -18,7 +18,7 @@
     <div class="wiki-prose">
       <div class="wiki-econ-stats" aria-label="Economy data summary">
         <div class="wiki-econ-stat">
-          <strong>$78,000</strong>
+          <strong>$30,000</strong>
           <span>New game starting funds</span>
         </div>
         <div class="wiki-econ-stat">
