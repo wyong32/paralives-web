@@ -14,8 +14,8 @@
       </p>
       <p>
         None of that is frozen on day one. Finish
-        <RouterLink to="/wiki/needs-wants">wants</RouterLink> and
-        <RouterLink to="/wiki/needs-wants">goals</RouterLink> and you bank personality points to evolve vibes,
+        <a href="/wiki/needs-wants">wants</a> and
+        <a href="/wiki/needs-wants">goals</a> and you bank personality points to evolve vibes,
         upgrade talents, or pick up extra social perks mid-save.
       </p>
 
@@ -84,20 +84,19 @@
       <h2>Not passed to kids</h2>
       <p>
         Stats, vibes, talents, social perks, and lifestyles stay with the player’s choices. Genetics only handles
-        looks — see <RouterLink to="/wiki/parafolks">Parafolks &amp; genetics</RouterLink> for what actually
+        looks — see <a href="/wiki/parafolks">Parafolks &amp; genetics</a> for what actually
         carries to the next generation.
       </p>
 
       <div class="wiki-callout">
         More personality options are expected during Early Access. Trait mods land once Workshop tools are stable —
-        head to <RouterLink to="/wiki/modding">modding</RouterLink> before stacking custom packs on a legacy save.
+        head to <a href="/wiki/modding">modding</a> before stacking custom packs on a legacy save.
       </div>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const statRows = [

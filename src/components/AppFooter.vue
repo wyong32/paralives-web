@@ -12,33 +12,91 @@
             <span class="footer-brand-name">Paralives Wiki</span>
           </div>
           <p class="footer-brand-desc">
-            The Paralives Wiki — in-depth game reference, player guides, mods library, Steam launch
-            roadmap, town map, and Simulator tools to plan your next save.
+            The Paralives Wiki — in-depth game reference, player guides, mod notes, EA roadmap summaries,
+            town map utilities, and Simulator tools for planning saves while patches roll out.
           </p>
         </div>
 
         <nav class="footer-col" aria-labelledby="footer-nav-heading">
           <h2 id="footer-nav-heading" class="footer-col-title">Navigate</h2>
           <ul class="footer-col-list">
-            <li><RouterLink to="/">Home</RouterLink></li>
-            <li><RouterLink to="/wiki">Wiki / Database</RouterLink></li>
-            <li><RouterLink to="/start">Start Here</RouterLink></li>
-            <li><RouterLink to="/guides">Guides</RouterLink></li>
-            <li><RouterLink to="/mods">Mods</RouterLink></li>
-            <li><RouterLink to="/updates">Updates</RouterLink></li>
-            <li><RouterLink to="/simulator">Simulator</RouterLink></li>
-            <li><RouterLink to="/map">Town Map</RouterLink></li>
+            <li>
+              <a href="/" :class="{ 'router-link-active': footerLinkActive('/') }">Home</a>
+            </li>
+            <li>
+              <a href="/wiki" :class="{ 'router-link-active': footerLinkActive('/wiki') }">
+                Wiki / Database
+              </a>
+            </li>
+            <li>
+              <a href="/start" :class="{ 'router-link-active': footerLinkActive('/start') }">
+                Start Here
+              </a>
+            </li>
+            <li>
+              <a href="/guides" :class="{ 'router-link-active': footerLinkActive('/guides') }">
+                Guides
+              </a>
+            </li>
+            <li>
+              <a href="/mods" :class="{ 'router-link-active': footerLinkActive('/mods') }">Mods</a>
+            </li>
+            <li>
+              <a href="/updates" :class="{ 'router-link-active': footerLinkActive('/updates') }">
+                Updates
+              </a>
+            </li>
+            <li>
+              <a href="/simulator" :class="{ 'router-link-active': footerLinkActive('/simulator') }">
+                Simulator
+              </a>
+            </li>
+            <li>
+              <a href="/map" :class="{ 'router-link-active': footerLinkActive('/map') }">Town Map</a>
+            </li>
           </ul>
         </nav>
 
         <nav class="footer-col" aria-labelledby="footer-legal-heading">
           <h2 id="footer-legal-heading" class="footer-col-title">Legal</h2>
           <ul class="footer-col-list">
-            <li><RouterLink to="/legal/privacy-policy">Privacy Policy</RouterLink></li>
-            <li><RouterLink to="/legal/terms-of-service">Terms of Service</RouterLink></li>
-            <li><RouterLink to="/legal/copyright">Copyright</RouterLink></li>
-            <li><RouterLink to="/legal/about-us">About Us</RouterLink></li>
-            <li><RouterLink to="/legal/contact-us">Contact Us</RouterLink></li>
+            <li>
+              <a
+                href="/legal/privacy-policy"
+                :class="{ 'router-link-active': footerLinkActive('/legal/privacy-policy') }"
+              >
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a
+                href="/legal/terms-of-service"
+                :class="{ 'router-link-active': footerLinkActive('/legal/terms-of-service') }"
+              >
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a
+                href="/legal/copyright"
+                :class="{ 'router-link-active': footerLinkActive('/legal/copyright') }"
+              >
+                Copyright
+              </a>
+            </li>
+            <li>
+              <a href="/legal/about-us" :class="{ 'router-link-active': footerLinkActive('/legal/about-us') }">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="/legal/contact-us"
+                :class="{ 'router-link-active': footerLinkActive('/legal/contact-us') }"
+              >
+                Contact Us
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -57,9 +115,15 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const year = new Date().getFullYear()
+
+function footerLinkActive(path) {
+  if (path === '/') return route.path === '/'
+  return route.path === path || route.path.startsWith(`${path}/`)
+}
 </script>
 
 <style scoped>

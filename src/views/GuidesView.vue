@@ -19,7 +19,7 @@
         <div class="guides-list-content">
           <ul v-if="guides.length" class="guides-page-grid">
             <li v-for="guide in guides" :key="guide.id">
-              <RouterLink :to="`/guides/${guide.addressBar}`" class="guide-card-link">
+              <a :href="`/guides/${guide.addressBar}`" class="guide-card-link">
                 <article class="guide-card-stack">
                   <div class="guide-card-media">
                     <img
@@ -40,7 +40,7 @@
                     </p>
                   </div>
                 </article>
-              </RouterLink>
+              </a>
             </li>
           </ul>
 
@@ -54,10 +54,10 @@
             </p>
             <p class="list-empty-hint">While you wait, try these pages:</p>
             <ul class="list-empty-links">
-              <li><RouterLink to="/start">Paralives Start Guide</RouterLink></li>
-              <li><RouterLink to="/wiki">Paralives Wiki</RouterLink></li>
-              <li><RouterLink to="/updates">Roadmap &amp; Updates</RouterLink></li>
-              <li><RouterLink to="/simulator">Paralives Simulator</RouterLink></li>
+              <li><a href="/start">Paralives Start Guide</a></li>
+              <li><a href="/wiki">Paralives Wiki</a></li>
+              <li><a href="/updates">Roadmap &amp; Updates</a></li>
+              <li><a href="/simulator">Paralives Simulator</a></li>
             </ul>
           </div>
         </div>
@@ -67,7 +67,6 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import guides from '@/data/guides.js'
 
 function formatDate(iso) {

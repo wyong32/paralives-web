@@ -7,7 +7,7 @@
       </div>
       <div class="container guide-detail-hero-inner">
         <nav class="guide-breadcrumb" aria-label="Breadcrumb">
-          <RouterLink to="/guides">Guides</RouterLink>
+          <a href="/guides">Guides</a>
           <span aria-hidden="true">/</span>
           <span>{{ guide.tags?.[0] || 'Article' }}</span>
         </nav>
@@ -51,20 +51,20 @@
             <div class="guide-aside-card guide-aside-card--links">
               <h2>Explore more</h2>
               <ul class="guide-aside-links">
-                <li><RouterLink to="/guides">All guides</RouterLink></li>
-                <li><RouterLink to="/wiki">Wiki</RouterLink></li>
-                <li><RouterLink to="/mods">Mods</RouterLink></li>
-                <li><RouterLink to="/updates">Updates</RouterLink></li>
-                <li><RouterLink to="/map">Town map</RouterLink></li>
+                <li><a href="/guides">All guides</a></li>
+                <li><a href="/wiki">Wiki</a></li>
+                <li><a href="/mods">Mods</a></li>
+                <li><a href="/updates">Updates</a></li>
+                <li><a href="/map">Town map</a></li>
               </ul>
             </div>
 
             <ul v-if="otherGuides.length" class="guide-aside-more">
               <li v-for="item in otherGuides" :key="item.id">
-                <RouterLink :to="`/guides/${item.addressBar}`">
+                <a :href="`/guides/${item.addressBar}`">
                   <span v-if="item.tags?.[0]" class="guide-aside-more-tag">{{ item.tags[0] }}</span>
                   {{ item.title }}
-                </RouterLink>
+                </a>
               </li>
             </ul>
           </aside>
@@ -76,10 +76,10 @@
   <article v-else class="guide-detail-page guide-detail-page--missing">
     <div class="container">
       <div class="guide-not-found">
-        <img :src="imgSm" alt="" aria-hidden="true" />
+        <img src="/images/ico.webp" alt="" aria-hidden="true" />
         <h1>Guide not found</h1>
         <p>This walkthrough does not exist or was moved.</p>
-        <RouterLink to="/guides" class="btn btn-primary">Back to guides</RouterLink>
+        <a href="/guides" class="btn btn-primary">Back to guides</a>
       </div>
     </div>
   </article>
@@ -90,8 +90,9 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import guides from '@/data/guides.js'
 
+const imgSm = '/images/ico.webp'
+
 const route = useRoute()
-const imgSm = 'https://placehold.co/40x40/ffdac1/6B9B7B?text='
 
 const guide = computed(() => guides.find((g) => g.addressBar === route.params.slug))
 
@@ -190,8 +191,37 @@ function formatDate(iso) {
   font-size: clamp(1.65rem, 4vw, 2.35rem);
   line-height: 1.2;
   max-width: 20ch;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
   margin-bottom: 0.75rem;
+  /* 亮色背景照片上保持可读：白字 + 深色描边 */
+  color: #fff;
+  -webkit-text-stroke: 0.04em rgba(0, 0, 0, 0.55);
+  paint-order: stroke fill;
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.9),
+    1px -1px 0 rgba(0, 0, 0, 0.9),
+    -1px 1px 0 rgba(0, 0, 0, 0.9),
+    1px 1px 0 rgba(0, 0, 0, 0.9),
+    0 -1px 0 rgba(0, 0, 0, 0.85),
+    0 1px 0 rgba(0, 0, 0, 0.85),
+    -1px 0 0 rgba(0, 0, 0, 0.85),
+    1px 0 0 rgba(0, 0, 0, 0.85),
+    0 3px 18px rgba(0, 0, 0, 0.5);
+}
+
+@supports not (paint-order: stroke fill) {
+  .guide-detail-header h1 {
+    -webkit-text-stroke: unset;
+    text-shadow:
+      -2px -2px 0 rgba(0, 0, 0, 0.92),
+      2px -2px 0 rgba(0, 0, 0, 0.92),
+      -2px 2px 0 rgba(0, 0, 0, 0.92),
+      2px 2px 0 rgba(0, 0, 0, 0.92),
+      0 -2px 0 rgba(0, 0, 0, 0.85),
+      0 2px 0 rgba(0, 0, 0, 0.85),
+      -2px 0 0 rgba(0, 0, 0, 0.85),
+      2px 0 0 rgba(0, 0, 0, 0.85),
+      0 4px 20px rgba(0, 0, 0, 0.45);
+  }
 }
 
 .guide-detail-desc {

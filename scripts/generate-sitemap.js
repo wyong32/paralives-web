@@ -50,6 +50,15 @@ function getChangefreq(name) {
   return (seoConfig.changefreq && seoConfig.changefreq[name]) ?? 'monthly'
 }
 
+/** Sitemap expects YYYY-MM-DD; non-ISO strings (e.g. "May 24") fall back to build day */
+function coerceSitemapLastmod(raw, fallback) {
+  const s = raw == null ? '' : String(raw).trim()
+  if (/^\d{4}-\d{2}-\d{2}(?:T[\d:Z.+-]*)?$/.test(s)) return s.slice(0, 10)
+  const t = Date.parse(s)
+  if (!Number.isNaN(t)) return new Date(t).toISOString().slice(0, 10)
+  return fallback
+}
+
 function urlNode(loc, lastmod, changefreq, priority) {
   const p = String(Math.round((priority ?? 0.7) * 100) / 100)
   return `  <url>
@@ -76,7 +85,7 @@ function generate() {
     if (!g?.addressBar) continue
     const slug = String(g.addressBar).replace(/^\/+|\/+$/g, '')
     const guidePath = `/guides/${slug}`
-    const date = g.publishDate ? String(g.publishDate).split('T')[0] : lastmod
+    const date = coerceSitemapLastmod(g.publishDate, lastmod)
     xml += `\n${urlNode(guidePath, date, getChangefreq('guide-detail'), getPriority('guide-detail'))}`
   }
 
@@ -85,7 +94,7 @@ function generate() {
     if (!m?.addressBar) continue
     const slug = String(m.addressBar).replace(/^\/+|\/+$/g, '')
     const modPath = `/mods/${slug}`
-    const date = m.publishDate ? String(m.publishDate).split('T')[0] : lastmod
+    const date = coerceSitemapLastmod(m.publishDate, lastmod)
     xml += `\n${urlNode(modPath, date, getChangefreq('mod-detail'), getPriority('mod-detail'))}`
   }
 

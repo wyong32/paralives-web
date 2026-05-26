@@ -18,62 +18,79 @@
       <div class="container">
         <div class="mods-list-content" :class="{ 'mods-list-content--empty': !mods.length }">
           <template v-if="mods.length">
-            <ul class="mods-page-list">
-              <li v-for="mod in mods" :key="mod.id">
-                <RouterLink :to="`/mods/${mod.addressBar}`" class="mod-card-link">
-                  <article class="mod-card-row mod-card-row--list">
-                    <div class="mod-card-media">
-                      <img
-                        :src="mod.imageUrl"
-                        :alt="mod.imageAlt"
-                        width="480"
-                        height="260"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div class="mod-card-body">
-                      <span v-if="mod.tags?.[0]" class="mod-pill">{{ mod.tags[0] }}</span>
-                      <h2>{{ mod.title }}</h2>
-                      <p>{{ mod.description }}</p>
-                      <p class="mod-card-meta">
-                        <time v-if="mod.publishDate" :datetime="mod.publishDate">
-                          {{ formatDate(mod.publishDate) }}
-                        </time>
-                        <span class="mod-card-dl">View mod →</span>
-                      </p>
-                    </div>
-                  </article>
-                </RouterLink>
-              </li>
-            </ul>
+            <div class="mods-catalog">
+              <nav class="mods-cat-nav" aria-label="Filter by category">
+                <button
+                  v-for="tab in categoryTabs"
+                  :key="tab.key"
+                  type="button"
+                  class="mods-cat-tab"
+                  :class="{ 'mods-cat-tab--active': selectedCat === tab.key }"
+                  :aria-pressed="selectedCat === tab.key"
+                  @click="selectCategory(tab.key)"
+                >
+                  {{ tab.label }}
+                  <span class="mods-cat-count">{{ tab.count }}</span>
+                </button>
+              </nav>
+
+              <div class="mods-list-block">
+                <header class="mods-list-head">
+                  <h2 class="mods-list-title">{{ listHeading }}</h2>
+                  <p class="mods-list-sub">{{ filteredMods.length }} listing(s)</p>
+                </header>
+
+                <ul v-if="filteredMods.length" class="mods-page-list">
+                  <li v-for="mod in filteredMods" :key="mod.id">
+                    <a :href="`/mods/${mod.addressBar}`" class="mod-card-link">
+                      <article class="mod-card-row mod-card-row--list">
+                        <div class="mod-card-media">
+                          <img
+                            :src="mod.imageUrl"
+                            :alt="mod.imageAlt"
+                            width="480"
+                            height="260"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div class="mod-card-body">
+                          <span v-if="mod.tags?.[0]" class="mod-pill">{{ mod.tags[0] }}</span>
+                          <h2>{{ mod.title }}</h2>
+                          <p>{{ mod.description }}</p>
+                          <p class="mod-card-meta">
+                            <time v-if="mod.publishDate" :datetime="mod.publishDate">
+                              {{ formatDate(mod.publishDate) }}
+                            </time>
+                            <span class="mod-card-dl">View mod →</span>
+                          </p>
+                        </div>
+                      </article>
+                    </a>
+                  </li>
+                </ul>
+
+                <p v-else class="mods-list-empty" role="status">No mods in this category.</p>
+              </div>
+            </div>
           </template>
 
           <div v-else class="list-empty list-empty--mods" role="status">
             <p class="list-empty-label">Mods</p>
             <h2 class="list-empty-title">No mods listed yet</h2>
             <p>
-              Paralives plans in-game modding tools and Steam Workshop support for Early Access.
-              When community creators publish packs, we will list them here with descriptions,
-              install notes, and download links.
+              Paralives ships in-game modding tools and Steam Workshop support as part of Early
+              Access. When community creators publish packs, we will list them here with
+              descriptions, install notes, and version notes.
             </p>
             <p>
-              Until then, browse our modding overview and get ready for custom content after
-              <time datetime="2026-05-25">May 25, 2026</time>.
+              Browse our modding overview and use the in-game mod menu to subscribe from the Steam
+              Workshop when packs go live for your game version.
             </p>
-            <p class="list-empty-hint">Helpful links:</p>
+            <p class="list-empty-hint">On this wiki:</p>
             <ul class="list-empty-links">
-              <li><RouterLink to="/wiki/modding">Paralives Modding Wiki</RouterLink></li>
-              <li><RouterLink to="/updates">Roadmap &amp; Updates</RouterLink></li>
-              <li><RouterLink to="/wiki/build-tools">Build Mode Tools</RouterLink></li>
-              <li>
-                <a
-                  href="https://store.steampowered.com/app/1118520/Paralives/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Paralives on Steam
-                </a>
-              </li>
+              <li><a href="/wiki/modding">Paralives Modding Wiki</a></li>
+              <li><a href="/updates">Roadmap &amp; Updates</a></li>
+              <li><a href="/wiki/build-tools">Build Mode Tools</a></li>
             </ul>
           </div>
 
@@ -95,8 +112,86 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { computed } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import mods from '@/data/mods.js'
+
+/**
+ * 固定分类：`mods.js` 里 `classify` 与第一项 key 一致。
+ * 筛选通过地址栏 `?cat=key`；全部列表为 `All`（无 query）。
+ */
+const MOD_CATEGORIES = [
+  ['modpacks', 'Mod packs'],
+  ['the_goth_household', 'The Goth Household'],
+  ['split_level_house', 'Split Level House'],
+]
+
+const route = useRoute()
+const router = useRouter()
+
+function normClassify(c) {
+  if (c == null || String(c).trim() === '') return ''
+  return String(c).trim().toLowerCase()
+}
+
+function isKnownClassify(n) {
+  return MOD_CATEGORIES.some(([k]) => k === n)
+}
+
+function parseCatParam(q) {
+  const raw = typeof q === 'string' ? q.trim().toLowerCase() : ''
+  if (!raw || raw === 'all') return 'all'
+  if (raw === 'other') return 'other'
+  if (MOD_CATEGORIES.some(([k]) => k === raw)) return raw
+  return 'all'
+}
+
+const selectedCat = computed(() => parseCatParam(route.query.cat))
+
+function selectCategory(key) {
+  const next = { ...route.query }
+  if (key === 'all') {
+    delete next.cat
+  } else {
+    next.cat = key
+  }
+  router.replace({ query: next })
+}
+
+const categoryTabs = computed(() => {
+  const tabs = [{ key: 'all', label: 'All', count: mods.length }]
+  for (const [key, label] of MOD_CATEGORIES) {
+    tabs.push({
+      key,
+      label,
+      count: mods.filter((m) => normClassify(m.classify) === key).length,
+    })
+  }
+  const otherCount = mods.filter((m) => {
+    const n = normClassify(m.classify)
+    return !n || !isKnownClassify(n)
+  }).length
+  if (otherCount > 0) {
+    tabs.push({ key: 'other', label: 'Other', count: otherCount })
+  }
+  return tabs
+})
+
+function modInCategory(mod, catKey) {
+  const n = normClassify(mod.classify)
+  if (catKey === 'all') return true
+  if (catKey === 'other') return !n || !isKnownClassify(n)
+  return n === catKey
+}
+
+const filteredMods = computed(() => mods.filter((m) => modInCategory(m, selectedCat.value)))
+
+const listHeading = computed(() => {
+  if (selectedCat.value === 'all') return 'All mods'
+  if (selectedCat.value === 'other') return 'Other'
+  const hit = MOD_CATEGORIES.find(([k]) => k === selectedCat.value)
+  return hit ? hit[1] : 'Mods'
+})
 
 function formatDate(iso) {
   return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {
@@ -127,6 +222,97 @@ function formatDate(iso) {
 .mods-list-content--empty .mods-sidebar {
   max-width: 22rem;
   margin: 0 auto;
+}
+
+.mods-catalog {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mods-cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-lavender) 14%, var(--color-white));
+  border: 2px solid color-mix(in srgb, var(--color-lavender-deep) 22%, transparent);
+}
+
+.mods-cat-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  cursor: pointer;
+  background: var(--color-white);
+  border: 2px solid color-mix(in srgb, var(--color-lavender) 55%, transparent);
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.mods-cat-tab:hover {
+  border-color: var(--color-lavender-deep);
+  color: var(--color-lavender-deep);
+}
+
+.mods-cat-tab--active {
+  border-color: var(--color-lavender-deep);
+  color: var(--color-ink);
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--color-lavender-deep) 45%, transparent);
+}
+
+.mods-list-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.mods-list-head {
+  padding-bottom: 0.85rem;
+  border-bottom: 3px solid color-mix(in srgb, var(--color-lavender-deep) 25%, transparent);
+}
+
+.mods-list-title {
+  font-family: var(--font-cartoon);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  margin: 0 0 0.25rem;
+  color: var(--color-ink);
+}
+
+.mods-list-sub {
+  margin: 0;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.mods-list-empty {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-lavender) 12%, var(--color-cream));
+  color: var(--color-ink-muted);
+  font-size: 0.95rem;
+}
+
+.mods-cat-count {
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 0.1rem 0.38rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-lavender) 35%, var(--color-white));
+  color: var(--color-ink);
 }
 
 .mods-page-list {

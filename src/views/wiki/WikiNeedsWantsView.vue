@@ -9,7 +9,7 @@
         Needs, wants, and goals all show what a Para is thinking about, but they play differently.
         <strong>Needs</strong> are body-and-mind bars — skip them and performance tanks.
         <strong>Wants</strong> are short wishes you choose from
-        <RouterLink to="/wiki/emotions">emotion cards</RouterLink>; ignoring them is fine, completing them earns
+        <a href="/wiki/emotions">emotion cards</a>; ignoring them is fine, completing them earns
         personality points.
         <strong>Goals</strong> are longer arcs the game proposes (move towns, buy a washer, meet someone new) — you
         do not pick them from emotions.
@@ -91,9 +91,9 @@
 
       <h2>Personality tweaks timing</h2>
       <p>
-        <RouterLink to="/wiki/vibes">Jesters</RouterLink> feel boredom sooner, so fun needs pop more.
-        <RouterLink to="/wiki/traits">Night Owls</RouterLink> shift sleep and hunger timing. Let needs tank and
-        negative emotions spill into <RouterLink to="/wiki/relationships">Together Cards</RouterLink> — mean red
+        <a href="/wiki/vibes">Jesters</a> feel boredom sooner, so fun needs pop more.
+        <a href="/wiki/traits">Night Owls</a> shift sleep and hunger timing. Let needs tank and
+        negative emotions spill into <a href="/wiki/relationships">Together Cards</a> — mean red
         variants show up more when someone is already furious.
       </p>
 

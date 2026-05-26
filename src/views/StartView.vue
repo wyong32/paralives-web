@@ -10,7 +10,7 @@
             town. Game info and PC specs are at the end.
           </p>
           <p class="start-hero-meta">
-            Updated <time datetime="2026-05-19">May 19, 2026</time>
+            Updated <time datetime="2026-05-26">May 26, 2026</time>
           </p>
         </div>
       </div>
@@ -92,13 +92,14 @@
 
           <!-- 2 -->
           <section id="boot" class="start-section" aria-labelledby="boot-heading">
-            <h2 id="boot-heading">From launch to your household</h2>
+            <h2 id="boot-heading">From install to your household</h2>
             <div class="start-split">
               <div class="start-split-text">
                 <p>
-                  The game launches on Steam for <strong>PC and Mac</strong> (Early Access May 25,
-                  2026). It is <strong>single-player</strong> and does not need an internet connection.
-                  There is no open beta.
+                  Paralives is available on <strong>Steam</strong> for <strong>PC and Mac</strong> in
+                  <strong>Early Access</strong> (started May 25, 2026). It is
+                  <strong>single-player</strong> and can be played offline once installed. There was
+                  no separate public beta — Early Access is the first paid storefront release.
                 </p>
                 <p>Public dev logs suggest this order for a new save:</p>
                 <ol class="start-flow-steps">
@@ -209,7 +210,7 @@
             </div>
             <p class="start-aside">
               Pools, basements, and advanced roof tools are on the during-EA list. See
-              <RouterLink to="/updates">Updates</RouterLink> for the full official breakdown.
+              <a href="/updates">Updates</a> for the full official breakdown.
             </p>
           </section>
 
@@ -262,12 +263,12 @@
             <ul class="start-checklist start-checklist--compact">
               <li>
                 <strong>Town ads</strong> — job boards in front of workplaces on the
-                <RouterLink to="/map">Melino map</RouterLink>
+                <a href="/map">Melino map</a>
               </li>
               <li><strong>Online listings</strong> — browse postings from your Para’s phone or computer</li>
               <li>
                 <strong>Domains</strong> — postings group by industry (Food, Healthcare, Software, and more);
-                see <RouterLink to="/wiki/careers">Careers &amp; economy</RouterLink> for the full list
+                see <a href="/wiki/careers">Careers &amp; economy</a> for the full list
               </li>
             </ul>
 
@@ -331,7 +332,7 @@
             <p>
               A starter café might cap out on salary. Apply at other lots in the same field — or move up inside
               your current company when a posting opens. Hiring checks expertises you already unlocked, relevant
-              <RouterLink to="/wiki/skills">skills</RouterLink>, ties with people at that workplace, and
+              <a href="/wiki/skills">skills</a>, ties with people at that workplace, and
               application points — not a perfect max-level chart for every line.
             </p>
             <p>
@@ -360,7 +361,7 @@
               </li>
               <li>
                 <strong>Performance</strong> — rough streaks can mean strikes and firing; good runs feed more upgrade
-                picks — details on <RouterLink to="/wiki/careers">Careers &amp; economy</RouterLink>
+                picks — details on <a href="/wiki/careers">Careers &amp; economy</a>
               </li>
             </ul>
             <p class="start-aside">
@@ -404,7 +405,7 @@
               <li>
                 <strong>Not everything is day one.</strong> Weather, pets, cars, swimming, gardening, and
                 town editing are on the during-EA list —
-                <RouterLink to="/updates">see Updates</RouterLink> before you buy for one feature.
+                <a href="/updates">see Updates</a> before you buy for one feature.
               </li>
               <li>
                 <strong>Trailers ≠ launch scope.</strong> Use the official day-one vs during-EA lists as
@@ -412,7 +413,10 @@
               </li>
               <li><strong>Camera:</strong> free 3D only — no first- or third-person view.</li>
               <li><strong>Mods:</strong> Steam Workshop yes; script mods not planned; in-game mod tools at EA launch.</li>
-              <li><strong>This site is unofficial.</strong> Trust the game client and store page if anything conflicts.</li>
+              <li>
+                <strong>This wiki is unofficial.</strong> If anything here disagrees with your game
+                client or the developer’s latest post, trust those first.
+              </li>
             </ul>
           </section>
 
@@ -429,7 +433,7 @@
                 <dl class="start-facts">
                   <div>
                     <dt>Release</dt>
-                    <dd>Steam Early Access — May 25, 2026 (PC &amp; Mac)</dd>
+                    <dd>Steam Early Access — live since May 25, 2026 (PC &amp; Mac)</dd>
                   </div>
                   <div>
                     <dt>Price</dt>
@@ -453,9 +457,9 @@
                   </div>
                 </dl>
                 <p class="start-more">
-                  <RouterLink to="/updates">Roadmap</RouterLink> ·
-                  <RouterLink to="/guides/getting-started">Full guide</RouterLink> ·
-                  <RouterLink to="/wiki">Wiki</RouterLink>
+                  <a href="/updates">Roadmap</a> ·
+                  <a href="/guides/getting-started">Full guide</a> ·
+                  <a href="/wiki">Wiki</a>
                 </p>
               </div>
               <figure class="start-figure">
@@ -475,8 +479,9 @@
           <section id="specs" class="start-section start-section--ref" aria-labelledby="specs-heading">
             <h2 id="specs-heading">System requirements</h2>
             <p>
-              From the Steam store page (November 2025). Lower resolution and graphics settings if
-              performance is weak.
+              Hardware guidance published by the studio before Early Access (last major public update
+              around late 2025). Lower resolution and graphics settings if performance is weak — check
+              the store page you purchased from if your build lists newer requirements.
             </p>
             <div class="start-specs-grid">
               <div class="start-specs-card">
@@ -512,7 +517,8 @@
               </div>
             </div>
             <p class="start-footnote">
-              Paralives Hub is a fan site. Check Steam and in-game news for the latest specs after launch.
+              Paralives Wiki is a fan site. Compare these notes with the storefront listing and
+              in-game settings for the build you are running.
             </p>
           </section>
         </div>
@@ -523,11 +529,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { RouterLink } from 'vue-router'
-
 const toc = [
   { id: 'modes', num: 1, label: 'Three game modes' },
-  { id: 'boot', num: 2, label: 'Launch to household' },
+  { id: 'boot', num: 2, label: 'Install to household' },
   { id: 'paramaker', num: 3, label: 'Create Parafolks' },
   { id: 'build', num: 4, label: 'Build Mode' },
   { id: 'live', num: 5, label: 'Live Mode first steps' },

@@ -46,7 +46,7 @@
         <li><strong>Dark red</strong> — discomfort</li>
       </ul>
       <p>
-        Strong <RouterLink to="/wiki/emotions">emotions</RouterLink> make emotional variants more likely — angry Paras
+        Strong <a href="/wiki/emotions">emotions</a> make emotional variants more likely — angry Paras
         see more red-tinged options.
       </p>
 
@@ -89,21 +89,20 @@
       <p>
         Town NPCs will not grow relationships on their own at EA launch — not with you, not with each other. That
         autonomy is planned later. Parties, weddings, phone invites, and Para-to-Para online chat are also later-list
-        features. For now, meet people on the <RouterLink to="/map">map</RouterLink>, invite them home, and play cards
+        features. For now, meet people on the <a href="/map">map</a>, invite them home, and play cards
         at restaurants.
       </p>
 
       <h2>Mods</h2>
       <p>
         You can add custom relationship labels through mods, but the big categories (family, romance, enemies, etc.)
-        stay fixed. See <RouterLink to="/wiki/modding">modding</RouterLink>.
+        stay fixed. See <a href="/wiki/modding">modding</a>.
       </p>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const socialPerks = [

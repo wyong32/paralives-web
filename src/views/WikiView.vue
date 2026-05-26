@@ -8,8 +8,9 @@
           <h1 id="wiki-title" class="title-gradient">Paralives Wiki</h1>
           <p>
             Your Paralives game encyclopedia — talents, vibes, skills, stats, emotions, needs,
-            Parafolks, build tools, careers, relationships, and modding. Each article explains what
-            ships on Steam Early Access day one (May 25, 2026) and what arrives later in the roadmap.
+            Parafolks, build tools, careers, relationships, and modding. Each article cites the studio’s
+            official day-one Steam Early Access list (May 25, 2026) versus items marked for later in EA,
+            then asks you to double-check unfamiliar details in-game after patches.
           </p>
           <p class="wiki-hero-meta">
             {{ wikiCategories.length }} categories · unofficial fan reference · verify in-game after
@@ -23,7 +24,7 @@
       <div class="container">
         <ul class="wiki-hub-grid">
           <li v-for="cat in wikiCategories" :key="cat.slug">
-            <RouterLink :to="`/wiki/${cat.slug}`" class="wiki-hub-card">
+            <a :href="`/wiki/${cat.slug}`" class="wiki-hub-card">
               <div class="wiki-hub-card-media">
                 <img :src="cat.imageUrl" :alt="cat.imageAlt" loading="lazy" />
               </div>
@@ -32,7 +33,7 @@
                 <p>{{ cat.description }}</p>
                 <p v-if="cat.hubTag" class="wiki-hub-card-meta">{{ cat.hubTag }}</p>
               </div>
-            </RouterLink>
+            </a>
           </li>
         </ul>
       </div>
@@ -41,8 +42,6 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
-
 /** Wiki hub cards — content lives in src/views/wiki/*.vue */
 const wikiCategories = [
   {

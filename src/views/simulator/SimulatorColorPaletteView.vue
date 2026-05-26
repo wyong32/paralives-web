@@ -95,7 +95,7 @@
         Paramaker offers deep color control on outfits and body details. Planning a cohesive palette
         before you load the game saves time when you are making multiple Parafolks or matching a
         household theme. For genetics and body shape, see
-        <RouterLink to="/wiki/parafolks">Parafolks &amp; Genetics</RouterLink>.
+        <a href="/wiki/parafolks">Parafolks &amp; Genetics</a>.
       </p>
     </section>
   </SimulatorLayout>
@@ -103,7 +103,6 @@
 
 <script setup>
 import { computed, reactive, ref } from 'vue'
-import { RouterLink } from 'vue-router'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
 import ParaColorFigure from '../../components/simulator/ParaColorFigure.vue'
 import { useSimulatorCopy } from '../../composables/useSimulatorCopy.js'

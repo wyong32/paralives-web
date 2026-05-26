@@ -12,7 +12,7 @@
       </p>
       <p>
         Jobs care about skills through
-        <RouterLink to="/wiki/careers">application points</RouterLink>, but plenty of skills are just for home
+        <a href="/wiki/careers">application points</a>, but plenty of skills are just for home
         life and fun. Do not only grind what your boss lists.
       </p>
 
@@ -41,9 +41,9 @@
 
       <h2>What slows you down</h2>
       <p>
-        Paramaker <RouterLink to="/wiki/talents">talent</RouterLink> picks still matter — Food talent and Cooking
+        Paramaker <a href="/wiki/talents">talent</a> picks still matter — Food talent and Cooking
         go hand in hand. Bad moods from skipped
-        <RouterLink to="/wiki/needs-wants">needs</RouterLink> drag practice; fix hunger or sleep before a long
+        <a href="/wiki/needs-wants">needs</a> drag practice; fix hunger or sleep before a long
         painting session if the arrows look weak. Emotions tie in both ways — stress from work makes skill grind
         worse, and failing skills can feed stress.
       </p>
@@ -81,21 +81,20 @@
       <h2>Coming later in EA</h2>
       <p>
         Gardening and fishing sit on the during-EA Live Mode list, not day one. When they land, expect new outdoor
-        skills and objects to practice on. Our <RouterLink to="/updates">updates page</RouterLink> tracks the
+        skills and objects to practice on. Our <a href="/updates">updates page</a> tracks the
         official split if you are planning a farm save on launch week.
       </p>
 
       <h2>Mods</h2>
       <p>
         You can add skills through Workshop mods, but they must slot into an existing Knowledge family — you cannot
-        invent a brand-new Knowledge category without a deeper mod. See <RouterLink to="/wiki/modding">modding</RouterLink>.
+        invent a brand-new Knowledge category without a deeper mod. See <a href="/wiki/modding">modding</a>.
       </p>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const skillRows = [

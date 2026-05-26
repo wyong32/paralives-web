@@ -7,9 +7,9 @@
           <h1 :id="titleId">{{ title }}</h1>
           <p class="sim-hero-lead">{{ lead }}</p>
         </div>
-        <RouterLink v-if="showHubLink" to="/simulator" class="sim-btn sim-btn--primary">
+        <a v-if="showHubLink" href="/simulator" class="sim-btn sim-btn--primary">
           ← All tools
-        </RouterLink>
+        </a>
       </div>
     </header>
 
@@ -19,14 +19,14 @@
           <p class="sim-nav-title">Tools</p>
           <ul class="sim-nav-list">
             <li v-for="item in tools" :key="item.to">
-              <RouterLink
-                :to="item.to"
+              <a
+                :href="item.to"
                 class="sim-nav-link"
-                active-class="is-active"
+                :class="{ 'is-active': route.path === item.to }"
               >
                 <span class="sim-nav-icon" aria-hidden="true">{{ item.icon }}</span>
                 {{ item.label }}
-              </RouterLink>
+              </a>
             </li>
           </ul>
         </aside>
@@ -40,9 +40,12 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
+import { useRoute } from 'vue-router'
+
 import '../../assets/simulator.css'
 import '../../assets/simulator-tools.css'
+
+const route = useRoute()
 
 defineProps({
   title: { type: String, required: true },

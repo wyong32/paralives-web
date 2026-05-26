@@ -7,9 +7,9 @@
       <h2>Why vibes matter day to day</h2>
       <p>
         Think of a vibe as temperament, not a cosmetic tag. It nudges which
-        <RouterLink to="/wiki/emotions">emotions</RouterLink> show up, which
-        <RouterLink to="/wiki/relationships">Together Cards</RouterLink> the game offers, how fast some
-        <RouterLink to="/wiki/skills">skills</RouterLink> move, and how relationships develop. When nobody is
+        <a href="/wiki/emotions">emotions</a> show up, which
+        <a href="/wiki/relationships">Together Cards</a> the game offers, how fast some
+        <a href="/wiki/skills">skills</a> move, and how relationships develop. When nobody is
         giving orders, your Para’s idle animations still reflect how they feel — useful for reading a household at
         a glance.
       </p>
@@ -74,14 +74,13 @@
       <h2>Mods and saves</h2>
       <p>
         Custom vibes are Workshop-friendly. After updates, disable vibe mods if emotions or wants act strange. Our
-        <RouterLink to="/updates">roadmap page</RouterLink> tracks which social features land day one vs later EA.
+        <a href="/updates">roadmap page</a> tracks which social features land day one vs later EA.
       </p>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const vibeTable = [

@@ -1,18 +1,18 @@
 <template>
   <LegalPageLayout
     title="Copyright"
-    lead="Copyright notice for Paralives Hub content and respect for Paralives and third-party intellectual property."
+    lead="Copyright notice for Paralives Wiki content and respect for Paralives and third-party intellectual property."
     last-updated="2026-05-19"
   >
     <p>
-      This page describes how copyright applies to materials on Paralives Hub and how to request
+      This page describes how copyright applies to materials on Paralives Wiki and how to request
       corrections or takedowns.
     </p>
 
     <h2>Site Content</h2>
     <p>
       Unless otherwise noted, original articles, guides, layout, graphics created for this Site, and
-      compiled databases on Paralives Hub are owned by the Site operators and protected by copyright
+      compiled databases on Paralives Wiki are owned by the Site operators and protected by copyright
       and other intellectual property laws. You may:
     </p>
     <ul>
@@ -36,7 +36,7 @@
     <p>
       Mod pages may reference community creations and link to external downloads. Creators retain
       rights to their mods. If you are a mod author and want a listing updated or removed, contact
-      us through <RouterLink to="/legal/contact-us">Contact Us</RouterLink>.
+      us through <a href="/legal/contact-us">Contact Us</a>.
     </p>
     <p>
       Wiki-style icons sourced from public wikis or press materials remain subject to their original
@@ -45,7 +45,7 @@
 
     <h2>DMCA / Copyright Complaints</h2>
     <p>
-      If you believe content on Paralives Hub infringes your copyright, send a notice including:
+      If you believe content on Paralives Wiki infringes your copyright, send a notice including:
     </p>
     <ol>
       <li>Identification of the copyrighted work</li>
@@ -54,7 +54,7 @@
       <li>A statement that the information is accurate and you are authorized to act</li>
     </ol>
     <p>
-      Send notices via the email on our <RouterLink to="/legal/contact-us">Contact Us</RouterLink> page.
+      Send notices via the email on our <a href="/legal/contact-us">Contact Us</a> page.
       We may remove or disable access to disputed material while reviewing claims.
     </p>
 
@@ -67,6 +67,5 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import LegalPageLayout from '@/components/legal/LegalPageLayout.vue'
 </script>

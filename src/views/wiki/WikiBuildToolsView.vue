@@ -28,7 +28,7 @@
       </p>
       <p>
         If you obsess over palettes, test hex ideas in our
-        <RouterLink to="/simulator/color-palette">Color Studio</RouterLink> before spending paradimes on paint in-game.
+        <a href="/simulator/color-palette">Color Studio</a> before spending paradimes on paint in-game.
       </p>
 
       <h2>Grid-free walls and floors</h2>
@@ -80,13 +80,12 @@
 
     <div class="wiki-callout">
       Build objects are Workshop-friendly. After patches, verify furniture mods before loading old saves. Timing for
-      world tools lives on our <RouterLink to="/updates">updates</RouterLink> page and
-      <RouterLink to="/wiki/modding">modding</RouterLink> notes.
+      world tools lives on our <a href="/updates">updates</a> page and
+      <a href="/wiki/modding">modding</a> notes.
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 </script>

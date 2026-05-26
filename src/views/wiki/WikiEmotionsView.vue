@@ -37,14 +37,14 @@
         stressed about bills.
       </p>
       <p>
-        <RouterLink to="/wiki/relationships">Together Cards</RouterLink> can push emotions on purpose when you pick
+        <a href="/wiki/relationships">Together Cards</a> can push emotions on purpose when you pick
         a colored variant — flirty pink options for romance, red mean options for rivalry, and so on.
       </p>
 
       <h2 id="deal">What to do with a card</h2>
       <p>
         Open the thought panel on your active Para. Emotions sit there as cards. Click one to pin a
-        <RouterLink to="/wiki/needs-wants">Want</RouterLink> — a short, optional goal tied to that feeling (“cheer
+        <a href="/wiki/needs-wants">Want</a> — a short, optional goal tied to that feeling (“cheer
         up,” “apologize,” “blow off steam”). Wants clear when the Para sleeps, not at midnight, and finishing them
         feeds personality points for vibe evolutions and talent upgrades.
       </p>
@@ -109,19 +109,18 @@
       <p>
         Custom emotions are supported for Workshop mods. After an update, test emotion packs on a spare save — a
         broken mood can stall wants or careers until you remove the mod. Details on our
-        <RouterLink to="/wiki/modding">modding</RouterLink> page.
+        <a href="/wiki/modding">modding</a> page.
       </p>
     </div>
 
     <div class="wiki-callout">
       More emotions are slated during Early Access alongside jobs and wants. Our
-      <RouterLink to="/updates">updates tracker</RouterLink> lists what Live Mode ships day one vs later.
+      <a href="/updates">updates tracker</a> lists what Live Mode ships day one vs later.
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const emotionRows = [

@@ -27,7 +27,7 @@
       <p>
         Stats, vibe, talent, social perk, and lifestyles come from your choices and play — not from parents. Kids
         inherit faces, not Dad’s vibe. Full breakdown on
-        <RouterLink to="/wiki/traits">stats &amp; personality</RouterLink>.
+        <a href="/wiki/traits">stats &amp; personality</a>.
       </p>
 
       <h2>Genetics on launch day</h2>
@@ -88,8 +88,8 @@
         The character panel holds personality, identity, inventory, relationships, jobs, skills, and thoughts.
         “Memories” right now are short-term context — more like “hunger was 8/10 at 8am” than “we met twenty years
         ago.” That data still feeds Together Cards and want suggestions. Tie-in pages:
-        <RouterLink to="/wiki/emotions">emotions</RouterLink>,
-        <RouterLink to="/wiki/needs-wants">needs &amp; wants</RouterLink>.
+        <a href="/wiki/emotions">emotions</a>,
+        <a href="/wiki/needs-wants">needs &amp; wants</a>.
       </p>
 
       <h2>Parli</h2>
@@ -117,6 +117,5 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 </script>

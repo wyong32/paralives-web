@@ -5,21 +5,21 @@
       <div class="container">
         <div class="page-hero-content">
           <span class="section-label">Development</span>
-          <h1 id="updates-title" class="title-gradient">Paralives Roadmap &amp; Release Progress</h1>
+          <h1 id="updates-title" class="title-gradient">Paralives Roadmap &amp; Early Access Status</h1>
           <p>
-            Track the Paralives release date, Steam Early Access progress, and official roadmap from
-            Paralives Studio — mode-by-mode feature lists, development status, and a dated timeline
-            from public news posts.
+            Paralives is in <strong>Steam Early Access</strong> as of May 25, 2026 — this page keeps
+            Paralives Studio’s public mode-by-mode lists (day one vs later in EA), a short dated
+            milestone timeline, and what is still planned on the road to 1.0.
           </p>
           <p class="updates-hero-meta">
-            Hub page last synced:
-            <time datetime="2026-05-19">May 19, 2026</time>
+            Wiki page last reviewed:
+            <time datetime="2026-05-26">May 26, 2026</time>
           </p>
           <p class="updates-source">
-            <strong>Primary source:</strong> Paralives Studio — Development page. Feature bullets in
-            the three mode sections are copied from the official “Features available on day one of
-            Early Access” and “Planned to come out during Early Access” lists. Always confirm on the
-            developer site before purchase.
+            <strong>Source note:</strong> feature bullets in the three mode sections mirror the
+            official “Features available on day one of Early Access” and “Planned to come out during
+            Early Access” wording. If a future patch or announcement changes scope, treat the
+            developer’s latest post and in-game builds as the authority.
           </p>
         </div>
       </div>
@@ -30,27 +30,27 @@
         <section class="updates-block updates-launch" aria-labelledby="launch-heading">
           <div class="updates-launch-card">
             <p class="updates-launch-date">
-              <time datetime="2026-05-25"
-                >PARALIVES IS COMING OUT ON MAY 25, 2026 IN EARLY ACCESS</time
-              >
+              <time datetime="2026-05-25">EARLY ACCESS — MAY 25, 2026</time>
             </p>
-            <h2 id="launch-heading">PARALIVES IS COMING OUT ON MAY 25, 2026 IN EARLY ACCESS</h2>
+            <h2 id="launch-heading">Steam Early Access began May 25, 2026</h2>
             <p class="updates-launch-summary">
-              The development page lists Steam Early Access on May 25, 2026. In a November 14, 2025
-              team message, Alex Massé announced a delay from the previously planned December 8,
-              2025 window so Live Mode polish and town activities could improve before launch.
+              Paralives entered Early Access on Steam on May 25, 2026 — the date the studio posted
+              publicly for more than a year. The team previously moved the window from December 8,
+              2025 (June 2025 announcement) to May 2026 after November 14, 2025 playtest feedback around
+              Live Mode stability and town activities; that extra time fed build, Paramaker, and Live
+              content before the storefront build went public.
             </p>
             <ul class="updates-facts">
               <li>
-                Current Early Access date: May 25, 2026 (listed on paralives.com/development)
+                Current status: live in Steam Early Access · content still grows through free updates
+                toward 1.0
               </li>
               <li>
-                Previous target: December 8, 2025 (announced June 10, 2025 news post & June 2025 dev
-                log)
+                Announced Early Access start: May 25, 2026 (public development communications)
               </li>
               <li>
-                Delay reason (Nov 14, 2025): Live Mode bugs and not enough town activities; Build
-                Mode and Paramaker feedback remained strong
+                Earlier target was December 8, 2025; delay to May 2026 cited Live Mode polish and
+                town activity depth
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@
             <h2 id="modes-heading">Official Early Access Feature Lists</h2>
             <p>
               Wording below matches the Development page section titles. “Day one” and “during Early
-              Access” are the studio’s own labels — not Paralives Hub predictions.
+              Access” are the studio’s own labels — not predictions from this wiki.
             </p>
           </header>
           <div class="updates-modes-grid">
@@ -110,13 +110,26 @@
 
         <section class="updates-block" aria-labelledby="status-heading">
           <header class="updates-section-head">
-            <h2 id="status-heading">Current Status — May 2026</h2>
-            <p>Quoted from the “Now” section on the official Development page.</p>
+            <h2 id="status-heading">Current focus after launch</h2>
+            <p>
+              Early Access is underway. Following the studio’s public updates, work now centers on
+              post-launch patches, performance, and roadmap features that were always marked for
+              “during Early Access” rather than day one.
+            </p>
           </header>
           <ul class="updates-status">
-            <li>Preparing for the Early Access release of May 25, 2026!</li>
-            <li>Fixing a few more bugs and testing the final build to be released on Steam</li>
-            <li>Creating launch trailers</li>
+            <li>
+              Play the live Steam Early Access build — expect bugs, tuning passes, and evolving town
+              scope.
+            </li>
+            <li>
+              Track day-one vs later-in-EA systems with the official mode lists (mirrored above) and
+              your in-game patch notes.
+            </li>
+            <li>
+              Weather, pets, vehicles, swimming, and world-editing tools remain on the documented
+              during-EA roadmap until each ships.
+            </li>
           </ul>
         </section>
 
@@ -124,19 +137,19 @@
           <header class="updates-section-head">
             <h2 id="roadmap-heading">Full development roadmap</h2>
             <p>
-              For a line-by-line list of completed and upcoming work, Paralives Studio maintains a
-              detailed public roadmap (linked from the Development page as “FULL DEVELOPMENT
-              ROADMAP”). Paralives Hub does not duplicate that database — use the official roadmap
-              for item-level completion status.
+              For a line-by-line list of completed tasks and what is still in progress, follow
+              Paralives Studio’s published development roadmap and news posts. Paralives Wiki does not
+              clone that database — we summarize the major mode buckets so players can see scope at a
+              glance.
             </p>
           </header>
         </section>
 
         <p class="updates-disclaimer">
-          Paralives Hub is an unofficial fan site. This page is maintained for player convenience and
-          must not replace Paralives Studio announcements, the Steam store page, or the official
-          Development / roadmap pages. If anything here conflicts with a newer official post, trust
-          the developer.
+          Paralives Wiki is an unofficial player resource. Treat this page as a convenience summary
+          only — it cannot replace Paralives Studio announcements, storefront purchase details, or
+          in-game patch notes. When in doubt, rely on the developer’s latest public message and what
+          you see in your installed build.
         </p>
       </div>
     </div>
@@ -144,7 +157,7 @@
 </template>
 
 <script setup>
-/** Mode lists and timeline — aligned with paralives.com/development (English bullets as published) */
+/** Mode lists — English bullets aligned with Paralives Studio public Early Access roadmap copy */
 const modes = [
   {
     id: 'live',
@@ -241,37 +254,37 @@ const timeline = [
   {
     iso: '2026-05-25',
     label: 'May 25, 2026',
-    title: 'Early Access release date (official)',
-    text: 'Date shown at the top of the Development page: “PARALIVES IS COMING OUT ON MAY 25, 2026 IN EARLY ACCESS.”',
-    source: 'paralives.com/development',
+    title: 'Steam Early Access goes live',
+    text: 'Paralives releases to players in Steam Early Access on the long-announced May 25, 2026 date. The studio continues development with free updates toward 1.0.',
+    source: 'Paralives Studio public launch communications',
   },
   {
     iso: '2025-11-14',
     label: 'November 14, 2025',
-    title: 'Release delayed to May 25, 2026',
-    text: 'Team message from Alex Massé: delay from December 2025; new date May 25, 2026; focus on Live Mode bugs and town activities before launch.',
-    source: 'paralives.com/news/a-message-from-the-team',
+    title: 'Release window moved to May 25, 2026',
+    text: 'Team update from Alex Massé: shift from the December 2025 target; additional months for Live Mode fixes and richer town activities before the public EA build.',
+    source: 'Paralives Studio team message (Nov 2025)',
   },
   {
     iso: '2025-06-10',
     label: 'June 10, 2025',
-    title: 'December 8, 2025 Early Access announced',
-    text: 'News post title: “Paralives is out December 8, 2025 in Early Access!!” — some features at launch, others added over time as free updates.',
-    source: 'paralives.com/news',
+    title: 'December 8, 2025 EA date announced',
+    text: 'Studio news: target Steam Early Access for December 8, 2025, with ongoing free updates after — superseded later by the May 2026 window.',
+    source: 'Paralives Studio news (Jun 2025)',
   },
   {
     iso: '2024-02-01',
     label: 'February 2024',
-    title: '2025 Early Access release year announced',
-    text: 'February 2024 development log: announced 2025 as the release year for Paralives’ Early Access (alongside the Live Mode gameplay overview).',
-    source: 'paralives.com/development (2024 log)',
+    title: '2025 Early Access year signaled',
+    text: 'Public development recap frames 2025 as the goal year for EA alongside deeper Live Mode demonstrations.',
+    source: 'Paralives Studio development timeline',
   },
   {
     iso: '2019-06-01',
     label: 'January–June 2019',
     title: 'Project start',
-    text: 'Development history: Alex Massé left his job to work on prototypes (build mode focus); Patreon, Discord, website, and social pages were created.',
-    source: 'paralives.com/development (2019 log)',
+    text: 'History shared by the team: prototyping with a build-focused vertical slice, opening community channels, and laying the foundation for long-term crowdfunding support.',
+    source: 'Paralives Studio founding history notes',
   },
 ]
 </script>

@@ -1,7 +1,7 @@
 <template>
   <LegalPageLayout
     title="Contact Us"
-    lead="Reach the Paralives Hub team for corrections, copyright notices, partnerships, or general questions."
+    lead="Reach the Paralives Wiki team for corrections, copyright notices, partnerships, or general questions."
     last-updated="2026-05-19"
   >
     <p>
@@ -30,7 +30,7 @@
       For DMCA notices, mod takedown requests, or attribution updates, contact
       <a href="mailto:paralives@wyong.com?subject=Legal">paralives@wyong.com</a> with subject
       <strong>Legal</strong>. See our
-      <RouterLink to="/legal/copyright">Copyright</RouterLink> page for required notice details.
+      <a href="/legal/copyright">Copyright</a> page for required notice details.
     </p>
 
     <h2>Business and Press</h2>
@@ -49,18 +49,17 @@
 
     <h2>Mailing Information</h2>
     <p>
-      Paralives Hub is an online-only publication. If postal contact is required for legal service,
+      Paralives Wiki is an online-only publication. If postal contact is required for legal service,
       email <a href="mailto:paralives@wyong.com?subject=Legal">paralives@wyong.com</a> with subject
       <strong>Legal</strong> to request current processing details.
     </p>
 
     <p>
-      Thank you for helping us improve Paralives Hub for players worldwide.
+      Thank you for helping us improve Paralives Wiki for players worldwide.
     </p>
   </LegalPageLayout>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import LegalPageLayout from '@/components/legal/LegalPageLayout.vue'
 </script>

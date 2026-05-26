@@ -1,6 +1,6 @@
-/** Melino map data — sourced from paralives.wiki.gg Map:Melino_Interactive_Map */
+/** Melino map data — community-compiled POI set for this wiki (verify in-game after patches) */
 export const MELINO_MAP = {
-  source: 'https://paralives.wiki.gg/wiki/Melino',
+  source: 'Paralives Wiki — community Melino map dataset',
   width: 790,
   height: 897,
   image: '/images/map/melino-town.png',

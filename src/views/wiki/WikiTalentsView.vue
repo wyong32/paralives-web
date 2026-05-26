@@ -7,7 +7,7 @@
       <h2>What you’re actually picking</h2>
       <p>
         A talent is not a hard lock. Every Parafolk can still learn every
-        <RouterLink to="/wiki/skills">skill</RouterLink> in the game. What the talent does is hand you perks so
+        <a href="/wiki/skills">skill</a> in the game. What the talent does is hand you perks so
         the activities that match your pick feel smoother — faster bars, better outcomes, or weird rules if you
         chose the joke option.
       </p>
@@ -18,9 +18,9 @@
 
       <h2>It can change over a long save</h2>
       <p>
-        Knock out <RouterLink to="/wiki/needs-wants">wants</RouterLink> and longer
-        <RouterLink to="/wiki/needs-wants">goals</RouterLink> and you earn personality points — the same currency
-        you use for <RouterLink to="/wiki/vibes">vibe</RouterLink> evolutions. Pour points back into your talent to
+        Knock out <a href="/wiki/needs-wants">wants</a> and longer
+        <a href="/wiki/needs-wants">goals</a> and you earn personality points — the same currency
+        you use for <a href="/wiki/vibes">vibe</a> evolutions. Pour points back into your talent to
         upgrade it. We have not seen many talent evolution branches yet (unlike Serious → Studious), but the system
         is built for growth, not a frozen creation screen.
       </p>
@@ -69,9 +69,9 @@
       <h2>Where talents sit in Paramaker</h2>
       <p>
         Talents are one slice of the personality bundle: seven
-        <RouterLink to="/wiki/traits">stat points</RouterLink>, one
-        <RouterLink to="/wiki/vibes">vibe</RouterLink>, one
-        <RouterLink to="/wiki/relationships">social perk</RouterLink>, plus optional lifestyles. The official Early
+        <a href="/wiki/traits">stat points</a>, one
+        <a href="/wiki/vibes">vibe</a>, one
+        <a href="/wiki/relationships">social perk</a>, plus optional lifestyles. The official Early
         Access sheet lumps these together as “personality traits,” which is why guides sometimes sound like they
         mean a single trait menu — they don’t.
       </p>
@@ -80,19 +80,19 @@
       <p>
         Workshop packs can add custom talents once tools settle in. If you run trait mods, re-check saves after
         each patch — broken personality data can freeze wants or job rolls. More in our
-        <RouterLink to="/wiki/modding">modding</RouterLink> page.
+        <a href="/wiki/modding">modding</a> page.
       </p>
 
       <div class="wiki-callout">
-        Seven talents have shown up in previews so far. Names and numbers may shift on May 25, 2026 launch day —
-        worth a quick look in Paramaker before you commit to a legacy family plan.
+        Seven talents have shown up in previews and Early Access marketing. Names, icons, and tuning can
+        still change with patches — worth a quick look in Paramaker before you commit to a long legacy
+        concept.
       </div>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const talents = [

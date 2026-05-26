@@ -26,9 +26,9 @@ const router = createRouter({
       meta: {
         title: 'Paralives — Game Wiki, Guides, Mods, Simulator & Map',
         description:
-          'Complete Paralives hub: wiki with icons, walkthroughs, mods library, EA roadmap, town map, simulator tools, and start guide with system requirements.',
+          'Paralives player hub now that Steam Early Access is live: eleven-topic wiki, guides, Simulator tools, mods notes, roadmap summaries, interactive town map, and start guide with specs.',
         keywords:
-          'Paralives, Paralives game, Paralives wiki, Paralives guides, Paralives mods, Paralives simulator, Paralives release date, Paralives Steam, Early Access',
+          'Paralives, Paralives Early Access, Paralives Steam, Paralives wiki, Paralives guides, Paralives mods, Paralives simulator',
       },
     },
     {
@@ -38,7 +38,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Start Guide — How to Play on Steam Early Access',
         description:
-          'Paralives start guide: Build Mode, Paramaker, Live Mode walkthrough, first-hour checklist, Steam download, PC/Mac specs, and Early Access launch May 25, 2026.',
+          'Paralives start guide for Steam Early Access: Paramaker, Build Mode, Live Mode walkthrough, first-hour checklist, install notes for PC/Mac, and system requirement tables mirrored from last public storefront data.',
         keywords:
           'Paralives start guide, how to play Paralives, Paralives download PC, system requirements, Early Access, Steam, May 25 2026',
       },
@@ -50,7 +50,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Wiki — Talents, Vibes, Skills & Game Systems',
         description:
-          'Paralives Wiki — 11 topics: talents, vibes, skills, stats, emotions, needs, Parafolks, build tools, careers, relationships, and modding for Early Access.',
+          'Paralives wiki hub covering talents, vibes, skills, traits, emotions, needs, careers, builds, relationships, genetics, and modding — keyed to official day-one vs during-EA lists while Steam Early Access evolves.',
         keywords:
           'Paralives wiki, Paralives talents, Paralives vibes, Paralives skills, emotions, build mode, careers, modding, Early Access',
       },
@@ -193,7 +193,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Guides — Steam Early Access Walkthroughs & Tips',
         description:
-          'Paralives Guides: step-by-step walkthroughs for Build Mode, Paramaker, and Live Mode — beginner paths, mode tips, and Early Access strategies on Paralives Hub.',
+          'Paralives Guides: step-by-step walkthroughs for Build Mode, Paramaker, and Live Mode — beginner paths, mode tips, and Early Access strategies from the Paralives Wiki.',
         keywords:
           'Paralives guides, walkthrough, tips, Early Access, getting started, tutorial, Steam, beginner',
       },
@@ -210,7 +210,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Mods — Steam Workshop & Community Creations',
         description:
-          'Paralives mods hub: Build Mode packs, Paramaker items, gameplay tweaks, install notes, and Steam Workshop links for community creations at Early Access launch.',
+          'Paralives mods directory notes for Steam Workshop packs — curated descriptions and compatibility tips as creators publish EA-ready content.',
         keywords:
           'Paralives mods, Steam Workshop, custom content, furniture pack, community mods, Build Mode',
       },
@@ -227,9 +227,9 @@ const router = createRouter({
       meta: {
         title: 'Paralives Roadmap & Release Date — EA Progress 2026',
         description:
-          'Paralives release date and Early Access roadmap on Steam (May 25, 2026): Live, Build, and Paramaker day-one vs during-EA feature lists updated for players.',
+          'Paralives roadmap summaries for Steam Early Access players: mirrored Live / Build / Paramaker day-one and during-EA bullet lists plus a dated milestone timeline from public studio posts.',
         keywords:
-          'Paralives roadmap, Paralives release date, Paralives progress, Early Access, May 25 2026, Steam, development',
+          'Paralives roadmap, Paralives Early Access, Paralives updates, Steam EA, development, free updates',
       },
     },
     {
@@ -251,7 +251,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Feature Filter — Early Access Wish Checker',
         description:
-          'Paralives Early Access feature filter: compare wishes to day-one and during-EA lists. See what ships on Steam May 25, 2026 before you start a new save.',
+          'Paralives Early Access feature filter: compare personal wishlists to official day-one and during-EA lists so you know what already exists versus what arrives in later patches.',
         keywords:
           'Paralives Early Access features, wish filter, day one, roadmap, simulator, development',
       },
@@ -275,7 +275,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Color Studio — Paramaker Hex Preview Tool',
         description:
-          'Paralives Color Studio: preview Parafolk skin, hair, and outfit hex colors for Paramaker. Plan character looks before Steam Early Access on May 25, 2026.',
+          'Paralives Color Studio: preview Parafolk skin, hair, and outfit hex palettes for Paramaker planning — browser-only previews that do not write to saves.',
         keywords:
           'Paralives colors, Paramaker hex, character colors, palette, simulator, Parafolk',
       },
@@ -307,7 +307,7 @@ const router = createRouter({
       meta: {
         title: 'Paralives Map — Paralives Interactive Map & Melino POI 2026',
         description:
-          'Paralives map for Early Access: Paralives Interactive Map of Melino with pan, zoom, and filters for shops, schools, museum, bus stops, and 50–70 lots. Town guide for May 25, 2026.',
+          'Paralives Melino interactive map with filters for shops, civic lots, workplaces, transit, and residential pins — unofficial fan atlas for navigating Steam Early Access builds.',
         keywords:
           'Paralives map, Paralives Interactive Map, Melino map, town map, interactive map, shops, museum, bus stops, Early Access 2026, Live Mode',
       },
@@ -317,11 +317,11 @@ const router = createRouter({
       name: 'legal-privacy',
       component: () => import('../views/legal/PrivacyPolicyView.vue'),
       meta: {
-        title: 'Privacy Policy — Paralives Hub Data & Cookies',
+        title: 'Privacy Policy — Paralives Wiki Data & Cookies',
         description:
-          'Paralives Hub Privacy Policy: data we collect, cookies, third-party links, retention, your rights, and how to contact us about personal information.',
+          'Paralives Wiki Privacy Policy: data we collect, cookies, third-party links, retention, your rights, and how to contact us about personal information.',
         keywords:
-          'Paralives Hub privacy policy, cookies, personal data, GDPR, data collection, contact',
+          'Paralives Wiki privacy policy, cookies, personal data, GDPR, data collection, contact',
       },
     },
     {
@@ -329,11 +329,11 @@ const router = createRouter({
       name: 'legal-terms',
       component: () => import('../views/legal/TermsOfServiceView.vue'),
       meta: {
-        title: 'Terms of Service — Paralives Hub Site Rules',
+        title: 'Terms of Service — Paralives Wiki Site Rules',
         description:
-          'Paralives Hub Terms of Service: acceptable use, content accuracy, mods, external links, Simulator tools, disclaimers, liability limits, and policy updates.',
+          'Paralives Wiki Terms of Service: acceptable use, content accuracy, mods, external links, Simulator tools, disclaimers, liability limits, and policy updates.',
         keywords:
-          'Paralives Hub terms of service, site rules, acceptable use, disclaimer, liability',
+          'Paralives Wiki terms of service, site rules, acceptable use, disclaimer, liability',
       },
     },
     {
@@ -341,11 +341,11 @@ const router = createRouter({
       name: 'legal-copyright',
       component: () => import('../views/legal/CopyrightView.vue'),
       meta: {
-        title: 'Copyright — Paralives Hub & Game Content Notice',
+        title: 'Copyright — Paralives Wiki & Game Content Notice',
         description:
-          'Copyright notice for Paralives Hub: site content rights, game trademarks, community mods, third-party assets, and how to submit DMCA or attribution requests.',
+          'Copyright notice for Paralives Wiki: site content rights, game trademarks, community mods, third-party assets, and how to submit DMCA or attribution requests.',
         keywords:
-          'Paralives Hub copyright, DMCA, intellectual property, game trademarks, mod copyright',
+          'Paralives Wiki copyright, DMCA, intellectual property, game trademarks, mod copyright',
       },
     },
     {
@@ -353,11 +353,11 @@ const router = createRouter({
       name: 'legal-about',
       component: () => import('../views/legal/AboutUsView.vue'),
       meta: {
-        title: 'About Us — Paralives Hub Wiki, Guides & Tools',
+        title: 'About Us — Paralives Wiki, Guides & Tools',
         description:
-          'About Paralives Hub: mission, wiki and guides, Simulator and map tools, editorial standards, and how we help Paralives players during Steam Early Access.',
+          'About Paralives Wiki: mission, wiki and guides, Simulator and map tools, editorial standards, and how we help Paralives players during Steam Early Access.',
         keywords:
-          'About Paralives Hub, Paralives wiki, guides, mission, player resource, Early Access',
+          'About Paralives Wiki, Paralives wiki, guides, mission, player resource, Early Access',
       },
     },
     {
@@ -365,11 +365,11 @@ const router = createRouter({
       name: 'legal-contact',
       component: () => import('../views/legal/ContactUsView.vue'),
       meta: {
-        title: 'Contact Us — Paralives Hub Support & Legal',
+        title: 'Contact Us — Paralives Wiki Support & Legal',
         description:
-          'Contact Paralives Hub: general questions, wiki corrections, copyright notices, press inquiries, and topics we route to Steam or the developer support teams.',
+          'Contact Paralives Wiki: general questions, wiki corrections, copyright notices, press inquiries, and topics we route to Steam or the developer support teams.',
         keywords:
-          'Contact Paralives Hub, support email, corrections, copyright, press, legal contact',
+          'Contact Paralives Wiki, support email, corrections, copyright, press, legal contact',
       },
     },
   ],

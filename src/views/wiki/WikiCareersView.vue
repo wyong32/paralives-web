@@ -41,10 +41,10 @@
         Each posting shows skill requirements as <strong>application points</strong>. You need enough total points
         across the listed skills — not max level in every line. Some jobs demand a minimum in one core skill. If you
         are short, experience in the same Domain can partially cover the gap, and the right
-        <RouterLink to="/wiki/traits">stat</RouterLink> can add points when skills lag.
+        <a href="/wiki/traits">stat</a> can add points when skills lag.
       </p>
       <p>
-        Grind <RouterLink to="/wiki/skills">skills</RouterLink> and Knowledge <em>before</em> you chase senior titles.
+        Grind <a href="/wiki/skills">skills</a> and Knowledge <em>before</em> you chase senior titles.
         Showing up hired is not the same as being qualified for the next posting.
       </p>
 
@@ -81,7 +81,7 @@
       <h2>Bills, shopping, museum</h2>
       <p>
         Electricity and lot bills hit day one — check finances after big Build Mode sprees. Melino has shops,
-        restaurants, and a museum for long collections. Our <RouterLink to="/map">town map</RouterLink> helps plan
+        restaurants, and a museum for long collections. Our <a href="/map">town map</a> helps plan
         first errands.
       </p>
 
@@ -93,14 +93,13 @@
 
       <div class="wiki-callout">
         Deeper workplaces and more jobs are on the during-EA list. If you are planning a career legacy, skim our
-        <RouterLink to="/updates">updates page</RouterLink> so you know what is actually in build one.
+        <a href="/updates">updates page</a> so you know what is actually in build one.
       </div>
     </div>
   </WikiCategoryShell>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const domains = [

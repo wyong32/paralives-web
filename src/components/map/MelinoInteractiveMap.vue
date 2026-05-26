@@ -45,10 +45,8 @@
           </li>
         </ul>
         <p class="melino-map-legend-note">
-          Map data and icons from
-          <a href="https://paralives.wiki.gg/wiki/Melino" target="_blank" rel="noopener noreferrer"
-            >Paralives Wiki — Melino</a
-          >. Unofficial fan reference.
+          Melino pins and icons are compiled for this player wiki from public previews and community
+          mapping work. Unofficial reference — verify lot names and phases in your current game build.
         </p>
       </aside>
 

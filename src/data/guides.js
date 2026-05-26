@@ -100,7 +100,7 @@ export default [
         adjust your saves as systems land.
       </p>
 
-      <h2>Where to Go Next on Paralives Hub</h2>
+      <h2>Where to Go Next on Paralives Wiki</h2>
       <p>
         When you are ready to go deeper, browse the Wiki for system breakdowns, check Mods once
         Workshop goes live, check Updates for patch notes, and explore the Town Map for venues. More
@@ -111,6 +111,143 @@ export default [
       <p class="guide-outro">
         Have fun building your parallel life — and be kind to a small team shipping a huge genre
         dream. See you in town.
+      </p>
+    `,
+  },
+  {
+    id: 2,
+    title: 'Paralives Cheat & Console Commands',
+    description:
+      'Open the cheat console, money and bills shortcuts, time and sun controls, needs, fire debug tools, plus how to list every command — with patch safety notes.',
+    tags: ['Live Mode', 'Cheats', 'Mods or Configuration'],
+    publishDate: '2026-05-26',
+    readTime: '7 min read',
+    imageUrl: '/images/guides/guide02.webp',
+    imageAlt:
+      'Paralives cheat guide — developer console shortcuts for Paradimes and testing',
+    seo: {
+      title: 'Paralives Cheat Codes — Console Commands & Cheat Codes',
+      description:
+        'Paralives Early Access cheat console: Ctrl+Shift+C, Paradimes cheats, bills, time, needs, fire commands, skill helpers, and backing up saves before testing.',
+      keywords:
+        'Paralives cheats, Paralives console, Paradimes, jackpot, cheats guide, Early Access',
+    },
+    addressBar: 'cheat-console-commands',
+    isHome: true,
+    detailsHtml: `
+      <p class="guide-lead">
+        This Wiki guide summarizes <strong>console / cheat commands</strong> commonly shared by players
+        in Early Access — originally compiled as a Steam Community guide credited to
+        <strong>Cometa Maria</strong> under the category &ldquo;Modding or Configuration.&rdquo;
+        Commands can be renamed, gated, or removed in patches: always verify in your current build before
+        relying on cheats in long-term saves.
+      </p>
+
+      <div class="guide-callout guide-callout--note">
+        <strong>Safety:</strong> Cheats skip normal economy and pacing. Duplicate households, stash a
+        backup save folder, test on a throwaway household first, and read patch notes — especially after hotfixes.
+      </div>
+
+      <h2>Open the console</h2>
+      <p>
+        Close other text inputs, then press
+        <strong>Ctrl + Shift + C</strong>
+        (repeat or use the same chord your build lists in options if it differs — some players also check the in-game help).
+      </p>
+
+      <h2>Money &amp; households</h2>
+      <p>Examples from player documentation (names are case-sensitive in many Unity-style consoles):</p>
+      <ul>
+        <li><strong>jackpot</strong> — large Paradimes lump sum (often cited as ~50,000).</li>
+        <li><strong>makeitrain</strong> — another large grant (often cited ~10,000).</li>
+        <li><strong>payday</strong> — smaller grant (often cited ~200).</li>
+        <li><strong>piggybank</strong> — medium grant (~1,000 in community notes).</li>
+        <li><strong>lottery</strong> — random Paradimes payout.</li>
+        <li>
+          <strong>printmoney &lt;amount&gt;</strong> — add to current household funds
+          (<em>e.g.</em>, <code>printmoney 2000</code>).
+        </li>
+        <li>
+          <strong>setmoney &lt;amount&gt;</strong> — set household funds to the exact total
+          (<em>e.g.</em>, <code>setmoney 10000</code>).
+        </li>
+      </ul>
+
+      <h2>Bills &amp; outages</h2>
+      <ul>
+        <li><strong>causeoutage</strong> / <strong>fixoutage</strong></li>
+        <li><strong>generatebill</strong></li>
+        <li><strong>clearbills</strong></li>
+        <li><strong>clearselectedcharactersbills</strong></li>
+      </ul>
+
+      <h2>Time &amp; sun</h2>
+      <ul>
+        <li><strong>sethour</strong>, <strong>advancehour</strong>, <strong>advanceday</strong></li>
+        <li>
+          Sun tuning (names only — check in-game docs for ranges):
+          <strong>setsunhour</strong>, <strong>afternoonsun</strong>, <strong>dawnsun</strong>,
+          <strong>dusksun</strong>, <strong>midnightsun</strong>, <strong>noonsun</strong>,
+          <strong>clearsun</strong>
+        </li>
+        <li><strong>skipto5minutesbeforework</strong></li>
+      </ul>
+
+      <h2>Needs</h2>
+      <ul>
+        <li>
+          <strong>reliefneed &lt;need name&gt;</strong> —
+          refill a named need (<em>e.g.</em>, <code>reliefneed sleep</code>).
+        </li>
+        <li><strong>reliefallneeds</strong></li>
+        <li><strong>reliefallneedsofallcharacters</strong></li>
+      </ul>
+
+      <p class="guide-lead-sub">
+        Players also report variants such as <code>changeneed</code> /
+        <code>decayneed</code> with need id + intensity, or commands like
+        <code>completecurrentwants</code>; treat these as community-sourced extras until confirmed in your build&apos;s cheat list or official notes.
+      </p>
+
+      <h2>Fire &amp; items</h2>
+      <ul>
+        <li><strong>selectedcharactersonfire</strong></li>
+        <li><strong>extinguishselectedcharactersonfire</strong></li>
+        <li><strong>setitemonfire</strong></li>
+        <li><strong>extinguishallfires</strong></li>
+      </ul>
+
+      <h2>List every command</h2>
+      <p>
+        Type <strong>help</strong> in the console when available — most builds expose the authoritative
+        autocomplete / dump for your version.
+      </p>
+
+      <h2>Gag / fun commands</h2>
+      <ul>
+        <li><strong>cat</strong>, <strong>bear</strong></li>
+        <li><strong>8ball</strong>, <strong>eightball</strong>, <strong>eighteightball</strong></li>
+        <li><strong>equifax</strong>, <strong>hotel</strong>, <strong>spin</strong></li>
+      </ul>
+
+      <h2>Skills, relationships &amp; debug (community additions)</h2>
+      <p>
+        Comment threads attach additional prefixes such as <code>levelupskill …</code>
+        (<em>e.g.</em>, music / cooking / exercising), <code>leveluppersonality</code>,
+        <code>resetpersonality</code>, various relationship debug strings, inventory helpers (<code>printinventory</code>, <code>additemtoinventory</code>, etc.), and life-stage jumpers (<code>setage …</code>).
+      </p>
+      <p>
+        Those entries were not always part of the original guide body and vary by EA patch —
+        typing <strong>help</strong> plus testing on a disposable save stays the quickest way to see what shipped in <em>your</em> exe.
+      </p>
+
+      <div class="guide-callout guide-callout--tip">
+        <strong>About the Steam source:</strong> Community guides sometimes show moderation or compatibility banners.
+        Treat Steam posts as snapshots; this Wiki page is rewritten for clarity — if a command behaves differently now, ping us via Contact and cite your game version plus build number.
+      </div>
+
+      <p class="guide-outro">
+        Cheats exist to fix stuck saves and learn systems fast — balance them against the challenge you actually want when you settle into Melino long term.
       </p>
     `,
   },

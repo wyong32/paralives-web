@@ -3,7 +3,7 @@
     <header class="legal-page-hero">
       <div class="container">
         <nav class="legal-breadcrumb" aria-label="Breadcrumb">
-          <RouterLink to="/">Home</RouterLink>
+          <a href="/">Home</a>
           <span aria-hidden="true">/</span>
           <span>{{ title }}</span>
         </nav>
@@ -25,8 +25,6 @@
 
 <script setup>
 import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
-
 const props = defineProps({
   title: { type: String, required: true },
   lead: { type: String, default: '' },

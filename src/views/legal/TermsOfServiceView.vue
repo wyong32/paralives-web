@@ -1,17 +1,17 @@
 <template>
   <LegalPageLayout
     title="Terms of Service"
-    lead="Rules for using Paralives Hub, our wiki, guides, mods listings, Simulator tools, and related content."
+    lead="Rules for using Paralives Wiki, our wiki, guides, mods listings, Simulator tools, and related content."
     last-updated="2026-05-19"
   >
     <p>
-      Welcome to Paralives Hub. These Terms of Service (“Terms”) govern your access to and use of
+      Welcome to Paralives Wiki. These Terms of Service (“Terms”) govern your access to and use of
       this website. If you do not agree, please do not use the Site.
     </p>
 
     <h2>About the Site</h2>
     <p>
-      Paralives Hub provides Paralives game guides, wiki articles, mods information, development
+      Paralives Wiki provides Paralives game guides, wiki articles, mods information, development
       updates, maps, and planning tools for players. Game names, logos, and assets may be trademarks
       of their respective owners. We are an independent resource site focused on helping players
       learn and enjoy Paralives.
@@ -51,8 +51,8 @@
 
     <h2>Intellectual Property</h2>
     <p>
-      Original text, layout, and branding on Paralives Hub are protected by applicable copyright
-      laws. See our <RouterLink to="/legal/copyright">Copyright</RouterLink> page for more detail.
+      Original text, layout, and branding on Paralives Wiki are protected by applicable copyright
+      laws. See our <a href="/legal/copyright">Copyright</a> page for more detail.
       Other trademarks belong to their owners.
     </p>
 
@@ -64,7 +64,7 @@
 
     <h2>Limitation of Liability</h2>
     <p>
-      To the fullest extent permitted by law, Paralives Hub and its operators shall not be liable for
+      To the fullest extent permitted by law, Paralives Wiki and its operators shall not be liable for
       indirect, incidental, special, or consequential damages arising from your use of the Site or
       reliance on its content.
     </p>
@@ -77,13 +77,12 @@
 
     <h2>Contact</h2>
     <p>
-      For questions about these Terms, use our <RouterLink to="/legal/contact-us">Contact Us</RouterLink>
+      For questions about these Terms, use our <a href="/legal/contact-us">Contact Us</a>
       page.
     </p>
   </LegalPageLayout>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import LegalPageLayout from '@/components/legal/LegalPageLayout.vue'
 </script>

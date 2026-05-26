@@ -10,7 +10,7 @@
           <h2 id="filter-console-title">Wish list checker</h2>
           <p>
             Source wording from Paralives Studio’s public lists.
-            <RouterLink to="/updates">View full roadmap →</RouterLink>
+            <a href="/updates">View full roadmap →</a>
           </p>
         </div>
         <button type="button" class="sim-btn" @click="selectedFeatures = []">Clear all</button>
@@ -109,7 +109,7 @@
           one; mixed results mean some items arrive later in Early Access.
         </li>
         <li>
-          Cross-check important rows on our <RouterLink to="/updates">Updates</RouterLink> page and
+          Cross-check important rows on our <a href="/updates">Updates</a> page and
           the Steam store description before you commit to a save concept.
         </li>
         <li>Use <strong>Clear all</strong> to reset and test a different wish list.</li>
@@ -123,7 +123,7 @@
       </p>
       <p>
         Source labels match Paralives Studio’s public development lists (same data we use on
-        <RouterLink to="/updates">Paralives roadmap</RouterLink>). The filter does not predict patch
+        <a href="/updates">Paralives roadmap</a>). The filter does not predict patch
         dates for during-EA features.
       </p>
     </section>
@@ -132,7 +132,6 @@
 
 <script setup>
 import { computed, ref } from 'vue'
-import { RouterLink } from 'vue-router'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
 
 /** Official Early Access lists — wording from paralives.com/development (same as Updates page) */

@@ -15,7 +15,7 @@
       <h2>Workshop in practice</h2>
       <p>
         Subscribe like any Steam game — objects, traits, build pieces, sometimes full Parafolk with genetics embedded.
-        Our <RouterLink to="/mods">mods hub</RouterLink> collects community write-ups when authors share them; still
+        Our <a href="/mods">mods hub</a> collects community write-ups when authors share them; still
         read patch notes before you load a year-old save.
       </p>
 
@@ -58,7 +58,7 @@
 
       <h2>Relationship mods</h2>
       <p>
-        You can add custom <RouterLink to="/wiki/relationships">relationship labels</RouterLink>, but you cannot rip out
+        You can add custom <a href="/wiki/relationships">relationship labels</a>, but you cannot rip out
         and replace the core categories (family, romance, enemies, and the rest). Plan modded labels as additions, not
         a full rewrite of social structure.
       </p>
@@ -71,7 +71,7 @@
       </p>
 
       <div class="wiki-callout">
-        Before you mod-replace a vanilla system, check our <RouterLink to="/updates">roadmap</RouterLink> so you are not
+        Before you mod-replace a vanilla system, check our <a href="/updates">roadmap</a> so you are not
         duplicating a feature the base game is about to ship.
       </div>
     </div>
@@ -79,7 +79,6 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import WikiCategoryShell from '@/components/wiki/WikiCategoryShell.vue'
 
 const modSystems = [

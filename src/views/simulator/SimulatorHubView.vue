@@ -6,10 +6,10 @@
     :show-hub-link="false"
   >
     <div class="sim-hub-grid">
-      <RouterLink
+      <a
         v-for="card in cards"
         :key="card.to"
-        :to="card.to"
+        :href="card.to"
         class="sim-hub-card"
         :class="`sim-hub-card--${card.accent}`"
       >
@@ -17,13 +17,13 @@
         <h2>{{ card.title }}</h2>
         <p>{{ card.desc }}</p>
         <span class="sim-hub-card-cta">Open tool →</span>
-      </RouterLink>
+      </a>
     </div>
 
     <section class="sim-seo" aria-labelledby="sim-seo-hub">
       <h2 id="sim-seo-hub">What is the Paralives Simulator?</h2>
       <p>
-        The <strong>Paralives Simulator</strong> is a set of free browser tools on Paralives Hub that
+        The <strong>Paralives Simulator</strong> is a set of free browser tools on Paralives Wiki that
         help you plan a Steam Early Access save <em>before</em> you launch the game. You can check
         which features ship on day one, sketch a Paramaker personality spread, preview Parafolk
         colors, and roll a short play session goal — then copy notes into your own checklist or
@@ -38,22 +38,22 @@
       <h3>What each tool does</h3>
       <ul>
         <li>
-          <RouterLink to="/simulator/feature-filter"><strong>Feature filter</strong></RouterLink>
+          <a href="/simulator/feature-filter"><strong>Feature filter</strong></a>
           — tick wishes (pets, pools, weather, mod tools) and see whether they are listed for day
           one or during Early Access.
         </li>
         <li>
-          <RouterLink to="/simulator/trait-points"><strong>Trait points</strong></RouterLink>
+          <a href="/simulator/trait-points"><strong>Trait points</strong></a>
           — allocate seven personality points across Physique, Mind, Creativity, and Charisma using
           reported Paramaker limits.
         </li>
         <li>
-          <RouterLink to="/simulator/color-palette"><strong>Color studio</strong></RouterLink>
+          <a href="/simulator/color-palette"><strong>Color studio</strong></a>
           — pick hex colors for skin, hair, and outfit zones on a preview figure, then copy codes
           into Paramaker’s color wheel.
         </li>
         <li>
-          <RouterLink to="/simulator/session-roll"><strong>Session roll</strong></RouterLink>
+          <a href="/simulator/session-roll"><strong>Session roll</strong></a>
           — random short challenges based on official day-one Live, Build, and Paramaker mechanics.
         </li>
       </ul>
@@ -61,7 +61,7 @@
       <h3>How to use the simulator (step by step)</h3>
       <ol>
         <li>
-          Read our <RouterLink to="/updates">Updates &amp; roadmap</RouterLink> page so you know
+          Read our <a href="/updates">Updates &amp; roadmap</a> page so you know
           what ships on <time datetime="2026-05-25">May 25, 2026</time> versus later in EA.
         </li>
         <li>
@@ -70,7 +70,7 @@
         </li>
         <li>
           Plan your first household in <strong>trait points</strong> and <strong>color studio</strong>,
-          then open <RouterLink to="/start">Start Here</RouterLink> for a first-hour walkthrough.
+          then open <a href="/start">Start Here</a> for a first-hour walkthrough.
         </li>
         <li>
           On launch night, use <strong>session roll</strong> if you want a focused goal instead of
@@ -83,7 +83,7 @@
         New players deciding whether Early Access fits their expectations, returning life-sim fans
         comparing Paralives to other games, and storytellers who like to plan builds and personalities
         on paper first. Pair the simulator with our
-        <RouterLink to="/wiki">Paralives Wiki</RouterLink> for talents, emotions, and careers.
+        <a href="/wiki">Paralives Wiki</a> for talents, emotions, and careers.
       </p>
 
       <h3>Frequently asked questions</h3>
@@ -96,14 +96,14 @@
         <dt>Are feature lists guaranteed accurate?</dt>
         <dd>
           Lists follow Paralives Studio’s public Development page and our
-          <RouterLink to="/updates">roadmap summary</RouterLink>. Dates and scope can change with
+          <a href="/updates">roadmap summary</a>. Dates and scope can change with
           patches — verify on Steam and in-game.
         </dd>
         <dt>Where do I learn the real game rules?</dt>
         <dd>
-          Use <RouterLink to="/start">Start Here</RouterLink>, <RouterLink to="/guides">Guides</RouterLink>,
+          Use <a href="/start">Start Here</a>, <a href="/guides">Guides</a>,
           and wiki articles such as
-          <RouterLink to="/wiki/traits">Stats &amp; Personality</RouterLink> after Early Access
+          <a href="/wiki/traits">Stats &amp; Personality</a> after Early Access
           launches.
         </dd>
       </dl>
@@ -112,7 +112,6 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
 
 const cards = [

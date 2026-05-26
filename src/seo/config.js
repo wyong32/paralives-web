@@ -1,6 +1,5 @@
 /**
- * Paralives Hub — canonical、OG、Twitter、sitemap 使用此域名。
- * @see https://paralives.wiki
+ * Paralives Wiki — canonical、OG、Twitter、sitemap 使用此域名。
  */
 export const seoConfig = {
   domain: 'paralives.wiki',
@@ -11,9 +10,9 @@ export const seoConfig = {
   defaults: {
     title: 'Paralives — Game Wiki, Guides, Mods, Simulator & Map',
     description:
-      'Complete Paralives hub: 11-topic wiki with icons, walkthroughs, mods library, EA roadmap, town map, simulator tools, and start guide with system requirements.',
+      'Paralives player wiki for Steam Early Access: reference topics, guides, Simulator, town map, roadmap notes, and start guide with system requirements.',
     keywords:
-      'Paralives, Paralives game, Paralives wiki, Paralives guides, Paralives mods, Paralives simulator, Paralives release date, Paralives Steam, Early Access',
+      'Paralives, Paralives Early Access, Paralives Steam, Paralives wiki, Paralives guides, Paralives mods, Paralives simulator',
     author: 'Paralives Wiki',
     type: 'website',
   },

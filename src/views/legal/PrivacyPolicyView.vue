@@ -1,17 +1,17 @@
 <template>
   <LegalPageLayout
     title="Privacy Policy"
-    lead="How Paralives Hub collects, uses, and protects information when you browse our wiki, guides, mods, and tools."
+    lead="How Paralives Wiki collects, uses, and protects information when you browse our wiki, guides, mods, and tools."
     last-updated="2026-05-19"
   >
     <p>
-      This Privacy Policy explains what data we may process when you visit Paralives Hub (the
+      This Privacy Policy explains what data we may process when you visit Paralives Wiki (the
       “Site”) and how we handle it. By using the Site, you agree to the practices described below.
     </p>
 
     <h2>Information We Collect</h2>
     <p>
-      Paralives Hub is primarily an informational website. We do not require an account to read
+      Paralives Wiki is primarily an informational website. We do not require an account to read
       articles, use the Simulator, or browse the wiki. We may automatically receive standard
       technical data from your browser or device, such as:
     </p>
@@ -61,7 +61,7 @@
     <p>
       Depending on your location, you may have rights to access, correct, delete, or restrict certain
       processing of personal data. To exercise these rights, contact us via the
-      <RouterLink to="/legal/contact-us">Contact Us</RouterLink> page.
+      <a href="/legal/contact-us">Contact Us</a> page.
     </p>
 
     <h2>Children</h2>
@@ -78,13 +78,12 @@
 
     <h2>Contact</h2>
     <p>
-      Questions about privacy? Visit <RouterLink to="/legal/contact-us">Contact Us</RouterLink> or email
+      Questions about privacy? Visit <a href="/legal/contact-us">Contact Us</a> or email
       <a href="mailto:paralives@wyong.com">paralives@wyong.com</a>.
     </p>
   </LegalPageLayout>
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'
 import LegalPageLayout from '@/components/legal/LegalPageLayout.vue'
 </script>

@@ -5,7 +5,7 @@
       <div class="container">
         <div class="page-hero-content wiki-hero-content">
           <nav class="wiki-breadcrumb" aria-label="Breadcrumb">
-            <RouterLink to="/wiki">Wiki</RouterLink>
+            <a href="/wiki">Wiki</a>
             <span aria-hidden="true">/</span>
             <span>{{ title }}</span>
           </nav>
@@ -30,16 +30,16 @@
                 <h2 class="wiki-aside-title">Keep reading</h2>
                 <ul class="wiki-aside-nav">
                   <li v-if="neighbors.prev">
-                    <RouterLink :to="`/wiki/${neighbors.prev.slug}`" class="wiki-aside-link">
+                    <a :href="`/wiki/${neighbors.prev.slug}`" class="wiki-aside-link">
                       <span class="wiki-aside-dir">Previous</span>
                       <span class="wiki-aside-label">{{ neighbors.prev.title }}</span>
-                    </RouterLink>
+                    </a>
                   </li>
                   <li v-if="neighbors.next">
-                    <RouterLink :to="`/wiki/${neighbors.next.slug}`" class="wiki-aside-link">
+                    <a :href="`/wiki/${neighbors.next.slug}`" class="wiki-aside-link">
                       <span class="wiki-aside-dir">Next</span>
                       <span class="wiki-aside-label">{{ neighbors.next.title }}</span>
-                    </RouterLink>
+                    </a>
                   </li>
                 </ul>
               </section>
@@ -48,10 +48,10 @@
                 <h2 class="wiki-aside-title">Other topics</h2>
                 <ul class="wiki-aside-topics">
                   <li v-for="topic in sidebarTopics" :key="topic.slug">
-                    <RouterLink :to="`/wiki/${topic.slug}`" class="wiki-aside-topic">
+                    <a :href="`/wiki/${topic.slug}`" class="wiki-aside-topic">
                       <span>{{ topic.title }}</span>
                       <span class="wiki-aside-tag">{{ topic.tag }}</span>
-                    </RouterLink>
+                    </a>
                   </li>
                 </ul>
               </section>
@@ -60,7 +60,7 @@
                 <h2 class="wiki-aside-title">Explore</h2>
                 <ul class="wiki-aside-quick">
                   <li v-for="link in wikiQuickLinks" :key="link.to">
-                    <RouterLink :to="link.to">{{ link.label }}</RouterLink>
+                    <a :href="link.to">{{ link.label }}</a>
                   </li>
                 </ul>
               </section>
@@ -69,9 +69,9 @@
         </div>
 
         <footer class="wiki-cat-footer">
-          <RouterLink to="/wiki">← All wiki topics</RouterLink>
+          <a href="/wiki">← All wiki topics</a>
           <span aria-hidden="true">·</span>
-          <RouterLink to="/updates">Development updates</RouterLink>
+          <a href="/updates">Development updates</a>
           <p class="wiki-source-note">
             Unofficial player guide — details can shift during Early Access. Check in-game after patches.
           </p>
@@ -83,7 +83,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { getWikiNeighbors, getWikiSlugFromPath, wikiQuickLinks } from '@/data/wikiNav.js'
 import '../../assets/wiki-pages.css'
 
@@ -91,8 +91,6 @@ defineProps({
   title: { type: String, required: true },
   lead: { type: String, default: '' },
   titleId: { type: String, default: 'wiki-cat-title' },
-  /** @deprecated layout is full-width; prop kept for compatibility */
-  containerClass: { type: String, default: '' },
 })
 
 const route = useRoute()

@@ -109,7 +109,7 @@
           so you do not forget your build.
         </li>
         <li>
-          Read <RouterLink to="/wiki/traits">Stats &amp; Personality</RouterLink> for how stats link
+          Read <a href="/wiki/traits">Stats &amp; Personality</a> for how stats link
           to lifestyles and social perks in Live Mode.
         </li>
       </ol>
@@ -126,7 +126,6 @@
 
 <script setup>
 import { computed, reactive } from 'vue'
-import { RouterLink } from 'vue-router'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
 import { useSimulatorCopy } from '../../composables/useSimulatorCopy.js'
 

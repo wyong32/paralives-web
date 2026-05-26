@@ -82,8 +82,8 @@
       </ul>
       <p>
         For a full walkthrough instead of a random goal, start with
-        <RouterLink to="/start">Paralives Start Guide</RouterLink> or
-        <RouterLink to="/guides">Paralives Guides</RouterLink>.
+        <a href="/start">Paralives Start Guide</a> or
+        <a href="/guides">Paralives Guides</a>.
       </p>
     </section>
   </SimulatorLayout>
@@ -91,7 +91,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
 
 /** Session challenges — mechanics referenced from official day-one EA lists only */
