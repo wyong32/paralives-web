@@ -30,7 +30,7 @@ export const GPT_SLOTS_SIM_SESSION = pack('simsession', 3)
 export const GPT_SLOTS_SIM_FEATURE = pack('simfeature', 3)
 export const GPT_SLOTS_SIM_COLOR = pack('simcolor', 3)
 
-/** 供 enableServices 前一次性 defineSlot */
+/** 全站页内点位汇总（不参与启动 define；仅供核对数量或脚本使用） */
 export const GPT_ALL_INPAGE_SLOTS = [
   ...GPT_SLOTS_HOME,
   ...GPT_SLOTS_START,

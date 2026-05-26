@@ -166,11 +166,11 @@
 </template>
 
 <script setup>
-import { computed, watch, nextTick } from 'vue'
+import { computed, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import mods from '@/data/mods.js'
 import { GPT_SLOTS_MOD_DETAIL } from '@/config/gptPageSlots'
-import { mountGptPageAds } from '@/utils/gptAds'
+import { mountGptPageAds, destroyGptPageAds } from '@/utils/gptAds'
 
 /** 与 ModsView.vue MOD_CATEGORIES 展示名对齐 */
 const CATEGORY_LABELS = Object.freeze({
@@ -189,12 +189,15 @@ const mod = computed(() => mods.find((m) => m.addressBar === route.params.slug))
 watch(
   mod,
   async (m) => {
+    destroyGptPageAds(GPT_SLOTS_MOD_DETAIL)
     if (!m) return
     await nextTick()
     mountGptPageAds(GPT_SLOTS_MOD_DETAIL)
   },
   { immediate: true },
 )
+
+onUnmounted(() => destroyGptPageAds(GPT_SLOTS_MOD_DETAIL))
 
 const otherMods = computed(() => mods.filter((m) => m.addressBar !== route.params.slug).slice(0, 4))
 

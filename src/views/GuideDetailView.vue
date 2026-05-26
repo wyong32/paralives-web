@@ -99,11 +99,11 @@
 </template>
 
 <script setup>
-import { computed, watch, nextTick } from 'vue'
+import { computed, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import guides from '@/data/guides.js'
 import { GPT_SLOTS_GUIDE_DETAIL } from '@/config/gptPageSlots'
-import { mountGptPageAds } from '@/utils/gptAds'
+import { mountGptPageAds, destroyGptPageAds } from '@/utils/gptAds'
 
 const imgSm = '/images/ico.webp'
 
@@ -114,12 +114,15 @@ const guide = computed(() => guides.find((g) => g.addressBar === route.params.sl
 watch(
   guide,
   async (g) => {
+    destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
     if (!g) return
     await nextTick()
     mountGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
   },
   { immediate: true },
 )
+
+onUnmounted(() => destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL))
 
 const otherGuides = computed(() =>
   guides.filter((g) => g.addressBar !== route.params.slug).slice(0, 3),
