@@ -118,11 +118,8 @@
   <body>
     <div id="app"></div>
     <!-- 锚点 / 插屏：后台固定 div id（与 src/config/gpt.js GPT_UNIT_SPECS 一致） -->
-    <!-- 锚定：贴底悬浮，避免紧跟在整站 #app 后把「footer 下面」顶出长空白 -->
-    <div
-      id="div-gpt-ad-1779702015214-0"
-      style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 9500; min-width: 320px; min-height: 50px; text-align: center"
-    ></div>
+    <!-- 锚定：布局见 main.css；未出稿不占高度，有稿时由 slotRenderEnded 加 .gpt-anchor-has-ad -->
+    <div id="div-gpt-ad-1779702015214-0"></div>
     <!-- 插屏：槽位必须在 DOM；勿写 min-height:480px，否则未出稿时会在页面最底占一大块白（全屏由创意/覆层负责） -->
     <div
       id="div-gpt-ad-1779702201476-0"

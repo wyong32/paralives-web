@@ -23,6 +23,15 @@ export function registerParalivesGptSlots() {
     // 弃用 pubads.enableSingleRequest()；页内按需注册后首页约 10 槽以内，可自行改为 true。
     googletag.setConfig({ singleRequest: false })
     googletag.enableServices()
+
+    const anchorId = GPT_UNIT_SPECS.anchor.elementId
+    pubads.addEventListener('slotRenderEnded', function (event) {
+      if (event.slot.getSlotElementId() !== anchorId) return
+      var node = document.getElementById(anchorId)
+      if (!node) return
+      if (event.isEmpty) node.classList.remove('gpt-anchor-has-ad')
+      else node.classList.add('gpt-anchor-has-ad')
+    })
   })
 
   googletag.cmd.push(function () {
