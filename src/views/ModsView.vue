@@ -24,6 +24,11 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-mods-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <section class="mods-list-section">
@@ -52,6 +57,11 @@
                   <h2 class="mods-list-title">{{ listHeading }}</h2>
                   <p class="mods-list-sub">{{ filteredMods.length }} listing(s)</p>
                 </header>
+
+                <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-mods-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
                 <ul v-if="filteredMods.length" class="mods-page-list">
                   <li v-for="mod in filteredMods" :key="mod.id">
@@ -83,11 +93,17 @@
                 </ul>
 
                 <p v-else class="mods-list-empty" role="status">No mods in this category.</p>
+
+                <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-mods-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
               </div>
             </div>
           </template>
 
           <div v-else class="list-empty list-empty--mods" role="status">
+            
             <p class="list-empty-label">Mods</p>
             <h2 class="list-empty-title">No mods listed yet</h2>
             <p>
@@ -106,7 +122,6 @@
               <li><a href="/wiki/build-tools">Build Mode Tools</a></li>
             </ul>
           </div>
-
             <section class="mods-install-guide" aria-labelledby="mods-install-heading">
               <h2 id="mods-install-heading" class="mods-install-guide-title">How to install mods</h2>
               <p class="mods-install-lead">
@@ -132,6 +147,11 @@
                   sizes="(max-width: 960px) 100vw, min(928px, 100vw - 340px)"
                 />
               </figure>
+
+              <!-- 广告：GPT slot 4 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-mods-4" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
 
               <div class="mods-install-grid">
                 <section id="mod-install-steps" class="mods-install-card">
@@ -222,6 +242,10 @@
                 </section>
 
                 <section id="mod-install-troubleshoot" class="mods-install-card mods-install-card--wide">
+                  <!-- 广告：GPT slot 5 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-mods-5" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
                   <h3>Not showing up?</h3>
                   <figure class="mods-install-figure mods-install-figure--in-card">
                     <img
@@ -249,6 +273,10 @@
                 </section>
 
                 <section id="mod-install-faq" class="mods-install-card mods-install-card--wide">
+                  <!-- 广告：GPT slot 6 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-mods-6" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
                   <h3>FAQ</h3>
                   <div class="mods-install-faq-item">
                     <h4>Are mods safe?</h4>
@@ -278,6 +306,7 @@
                     </p>
                   </div>
                 </section>
+                
 
                 <section id="mod-install-tips" class="mods-install-card mods-install-card--wide">
                   <h3>New to modding?</h3>
@@ -325,6 +354,10 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import mods from '@/data/mods.js'
+import { GPT_SLOTS_MODS } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_MODS)
 
 /**
  * 固定分类：`mods.js` 里 `classify` 与第一项 key 一致。

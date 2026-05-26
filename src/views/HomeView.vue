@@ -51,7 +51,10 @@
       </div>
     </section>
 
-    <!-- Quick -->
+    <!-- 广告：GPT banner_1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     <section class="quick-section" aria-labelledby="quick-heading">
       <span class="section-dots" aria-hidden="true"></span>
       <div class="container">
@@ -74,7 +77,13 @@
           </ul>
         </div>
       </div>
+
+      <!-- 广告：GPT banner_2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
+    
 
     <!-- Hot Guides：上图下文 -->
     <section class="guides-section" aria-labelledby="guides-heading">
@@ -109,6 +118,11 @@
           </p>
         </div>
       </div>
+
+      <!-- 广告：GPT banner_3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <!-- Database -->
@@ -165,6 +179,11 @@
           </p>
         </div>
       </div>
+
+      <!-- 广告：GPT fixed_1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-4" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
     </section>
 
     <!-- Hot Mods：左图右文 -->
@@ -197,6 +216,11 @@
           </p>
         </div>
       </div>
+
+      <!-- 广告：GPT banner_2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-5" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <!-- About -->
@@ -264,6 +288,10 @@
                 </ul>
               </div>
             </article>
+            <!-- 广告：GPT banner_3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-6" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
             <article class="about-row about-row--reverse">
               <figure class="about-row-media">
                 <img src="/images/about-02.webp" alt="Paralives Wiki — player guides and database" width="480" height="260" />
@@ -307,6 +335,10 @@
                 </ul>
               </div>
             </article>
+            <!-- 广告：GPT banner_1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-7" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
           </div>
         </div>
       </div>
@@ -331,6 +363,10 @@
           </ul>
         </div>
       </div>
+      <!-- 广告：GPT fixed_1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-home-8" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
     </section>
 
     <!-- Footer CTA -->
@@ -361,6 +397,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import guides from '@/data/guides.js'
 import mods from '@/data/mods.js'
+import { GPT_SLOTS_HOME } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_HOME)
 
 /** Steam / official descriptors — genres, modes, and community-facing features */
 const heroGameTags = [

@@ -30,9 +30,18 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-wiki-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <section class="wiki-main-section">
+      <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-wiki-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
       <div class="container">
         <ul class="wiki-hub-grid">
           <li v-for="cat in wikiCategories" :key="cat.slug">
@@ -49,11 +58,20 @@
           </li>
         </ul>
       </div>
+      <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-wiki-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
   </article>
 </template>
 
 <script setup>
+import { GPT_SLOTS_WIKI } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_WIKI)
+
 /** Wiki hub cards — content lives in src/views/wiki/*.vue */
 const wikiCategories = [
   {

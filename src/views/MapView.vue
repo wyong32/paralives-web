@@ -39,6 +39,11 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <div class="map-body">
@@ -66,6 +71,11 @@
 
             <MelinoInteractiveMap />
           </section>
+          
+<!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- Intro -->
           <section id="overview" class="map-section" aria-labelledby="overview-heading">
@@ -96,6 +106,11 @@
               </li>
             </ul>
           </section>
+
+          <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- POI directory -->
           <section id="venues" class="map-section" aria-labelledby="venues-heading">
@@ -136,6 +151,11 @@
             </ul>
           </section>
 
+          <!-- 广告：GPT slot 4 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-4" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
+
           <!-- EA town features -->
           <section id="town-features" class="map-section" aria-labelledby="features-heading">
             <h2 id="features-heading">Paralives Map Features by Release Phase</h2>
@@ -159,6 +179,11 @@
               </article>
             </div>
           </section>
+
+          <!-- 广告：GPT slot 5 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-5" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- First visit -->
           <section id="first-visit" class="map-section" aria-labelledby="visit-heading">
@@ -185,6 +210,11 @@
             </p>
           </section>
 
+          <!-- 广告：GPT slot 6 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-6" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
           <!-- FAQ -->
           <section id="faq" class="map-section map-faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading">Paralives map FAQ</h2>
@@ -195,6 +225,11 @@
               </div>
             </dl>
           </section>
+
+          <!-- 广告：GPT slot 7 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-map-7" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- Related -->
           <section id="related" class="map-section map-related" aria-labelledby="related-heading">
@@ -239,6 +274,10 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import MelinoInteractiveMap from '@/components/map/MelinoInteractiveMap.vue'
+import { GPT_SLOTS_MAP } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_MAP)
 
 const PAGE_URL = 'https://paralives.wiki/map'
 const SITE_ORIGIN = 'https://paralives.wiki'

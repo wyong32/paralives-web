@@ -26,6 +26,11 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <div class="start-body">
@@ -63,6 +68,10 @@
         </aside>
 
         <div class="start-main">
+          <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
           <!-- 1 -->
           <section id="modes" class="start-section" aria-labelledby="modes-heading">
             <h2 id="modes-heading">Three game modes</h2>
@@ -102,6 +111,11 @@
             </p>
           </section>
 
+          <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
           <!-- 2 -->
           <section id="boot" class="start-section" aria-labelledby="boot-heading">
             <h2 id="boot-heading">From install to your household</h2>
@@ -138,6 +152,11 @@
               </figure>
             </div>
           </section>
+
+          <!-- 广告：GPT slot 4 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-4" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
 
           <!-- 3 -->
           <section id="paramaker" class="start-section" aria-labelledby="paramaker-heading">
@@ -185,6 +204,11 @@
             </p>
           </section>
 
+          <!-- 广告：GPT slot 5 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-5" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
           <!-- 4 -->
           <section id="build" class="start-section" aria-labelledby="build-heading">
             <h2 id="build-heading">Build Mode before you move in</h2>
@@ -226,6 +250,11 @@
             </p>
           </section>
 
+          <!-- 广告：GPT slot 6 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-6" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
           <!-- 5 -->
           <section id="live" class="start-section" aria-labelledby="live-heading">
             <h2 id="live-heading">First things in Live Mode</h2>
@@ -261,6 +290,11 @@
               tools (all on the official day-one list).
             </p>
           </section>
+
+          <!-- 广告：GPT slot 7 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-7" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- 6 -->
           <section id="careers" class="start-section" aria-labelledby="careers-heading">
@@ -382,6 +416,11 @@
             </p>
           </section>
 
+          <!-- 广告：GPT slot 8 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-8" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
+
           <!-- 7 -->
           <section id="playstyles" class="start-section" aria-labelledby="playstyles-heading">
             <h2 id="playstyles-heading">Recommended ways to play</h2>
@@ -405,6 +444,11 @@
               </article>
             </div>
           </section>
+
+          <!-- 广告：GPT slot 9 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-9" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- 8 -->
           <section id="caution" class="start-section" aria-labelledby="caution-heading">
@@ -431,6 +475,11 @@
               </li>
             </ul>
           </section>
+
+          <!-- 广告：GPT slot 10 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-10" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
           <!-- 9 -->
           <section id="about" class="start-section start-section--ref" aria-labelledby="about-heading">
@@ -487,6 +536,11 @@
             </div>
           </section>
 
+          <!-- 广告：GPT slot 11 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-start-11" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
           <!-- 10 -->
           <section id="specs" class="start-section start-section--ref" aria-labelledby="specs-heading">
             <h2 id="specs-heading">System requirements</h2>
@@ -541,6 +595,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { GPT_SLOTS_START } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_START)
 const toc = [
   { id: 'modes', num: 1, label: 'Three game modes' },
   { id: 'boot', num: 2, label: 'Install to household' },

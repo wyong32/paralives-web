@@ -5,6 +5,12 @@
     accent="filter"
     hero-image="/images/about-01.webp"
   >
+
+  <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-simfeature-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
     <section class="sim-console" aria-labelledby="filter-console-title">
       <header class="sim-console-head">
         <div>
@@ -88,6 +94,12 @@
         <p v-else class="sim-note">Select at least one feature to see availability.</p>
       </div>
     </section>
+
+    <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-simfeature-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
     <section class="sim-seo" aria-labelledby="sim-seo-filter">
       <h2 id="sim-seo-filter">About the Paralives feature filter</h2>
       <p>
@@ -128,12 +140,21 @@
         dates for during-EA features.
       </p>
     </section>
+
+    <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-simfeature-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
   </SimulatorLayout>
 </template>
 
 <script setup>
 import { computed, ref } from 'vue'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
+import { GPT_SLOTS_SIM_FEATURE } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_SIM_FEATURE)
 
 /** Official Early Access lists — wording from paralives.com/development (same as Updates page) */
 const eaModes = [

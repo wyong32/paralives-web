@@ -12,16 +12,6 @@
               Paralives Studio’s public mode-by-mode lists (day one vs later in EA), a short dated
               milestone timeline, and what is still planned on the road to 1.0.
             </p>
-            <p class="updates-hero-meta">
-              Wiki page last reviewed:
-              <time datetime="2026-05-26">May 26, 2026</time>
-            </p>
-            <p class="updates-source">
-              <strong>Source note:</strong> feature bullets in the three mode sections mirror the
-              official “Features available on day one of Early Access” and “Planned to come out during
-              Early Access” wording. If a future patch or announcement changes scope, treat the
-              developer’s latest post and in-game builds as the authority.
-            </p>
           </div>
           <figure class="page-hero-visual">
             <img
@@ -35,6 +25,11 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-updates-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <div class="updates-body">
@@ -42,6 +37,7 @@
         <section class="updates-block updates-launch" aria-labelledby="launch-heading">
           <div class="updates-launch-card">
             <img src="/images/update-01.webp" alt="Paralives Early Access launch" width="100%">
+            
             <p class="updates-launch-date">
               <time datetime="2026-05-25">EARLY ACCESS — MAY 25, 2026</time>
             </p>
@@ -68,6 +64,11 @@
             </ul>
           </div>
         </section>
+
+        <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-updates-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
         <section class="updates-block" aria-labelledby="modes-heading">
           <header class="updates-section-head">
@@ -103,6 +104,11 @@
             </article>
           </div>
         </section>
+
+        <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-updates-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
         <section class="updates-block" aria-labelledby="timeline-heading">
           <header class="updates-section-head">
@@ -146,6 +152,11 @@
           </ul>
         </section>
 
+        <!-- 广告：GPT slot 4 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-updates-4" style="min-width: 300px; min-height: 50px;"></div>
+    </aside>
+
         <section class="updates-block" aria-labelledby="roadmap-heading">
           <header class="updates-section-head">
             <h2 id="roadmap-heading">Full development roadmap</h2>
@@ -157,6 +168,11 @@
             </p>
           </header>
         </section>
+
+        <!-- 广告：GPT slot 5 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-updates-5" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
 
         <p class="updates-disclaimer">
           Paralives Wiki is an unofficial player resource. Treat this page as a convenience summary
@@ -170,6 +186,11 @@
 </template>
 
 <script setup>
+import { GPT_SLOTS_UPDATES } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_UPDATES)
+
 /** Mode lists — English bullets aligned with Paralives Studio public Early Access roadmap copy */
 const modes = [
   {

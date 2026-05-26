@@ -24,9 +24,18 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-guides-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
 
     <section class="guides-list-section">
+      <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-guides-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
       <div class="container">
         <div class="guides-list-content">
           <ul v-if="guides.length" class="guides-page-grid">
@@ -74,12 +83,20 @@
           </div>
         </div>
       </div>
+      <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-guides-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
     </section>
   </article>
 </template>
 
 <script setup>
 import guides from '@/data/guides.js'
+import { GPT_SLOTS_GUIDES } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_GUIDES)
 
 function formatDate(iso) {
   return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {

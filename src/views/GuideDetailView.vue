@@ -24,11 +24,24 @@
       </div>
     </section>
 
+    <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-guidedetail-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
     <section class="guide-detail-body-section">
       <div class="container">
         <div class="guide-detail-layout">
           <div class="guide-article-col">
+            <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-guidedetail-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
             <div class="guide-article-prose" v-html="guide.detailsHtml"></div>
+            <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-guidedetail-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
           </div>
           <aside class="guide-aside" aria-label="Guide info">
             <div class="guide-aside-card">
@@ -86,15 +99,27 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import guides from '@/data/guides.js'
+import { GPT_SLOTS_GUIDE_DETAIL } from '@/config/gptPageSlots'
+import { mountGptPageAds } from '@/utils/gptAds'
 
 const imgSm = '/images/ico.webp'
 
 const route = useRoute()
 
 const guide = computed(() => guides.find((g) => g.addressBar === route.params.slug))
+
+watch(
+  guide,
+  async (g) => {
+    if (!g) return
+    await nextTick()
+    mountGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
+  },
+  { immediate: true },
+)
 
 const otherGuides = computed(() =>
   guides.filter((g) => g.addressBar !== route.params.slug).slice(0, 3),

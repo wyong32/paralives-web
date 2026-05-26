@@ -8,11 +8,8 @@
             <nav class="mod-breadcrumb" aria-label="Breadcrumb">
               <a href="/mods">Mods</a>
               <span aria-hidden="true">/</span>
-          <a
-            v-if="categoryHref && classifyLabel"
-            :href="categoryHref"
-          >{{ classifyLabel }}</a>
-          <template v-if="categoryHref && classifyLabel">
+              <a v-if="categoryHref && classifyLabel" :href="categoryHref">{{ classifyLabel }}</a>
+              <template v-if="categoryHref && classifyLabel">
                 <span aria-hidden="true">/</span>
               </template>
               <span class="mod-breadcrumb-current">{{ mod.title }}</span>
@@ -20,7 +17,10 @@
             <span class="mod-detail-eyebrow">Workshop listing</span>
             <h1 id="mod-title" class="mod-detail-title">{{ mod.title }}</h1>
             <p class="mod-detail-lede">{{ mod.description }}</p>
-            <div v-if="starRating !== null" class="mod-detail-meta-row mod-detail-meta-row--primary">
+            <div
+              v-if="starRating !== null"
+              class="mod-detail-meta-row mod-detail-meta-row--primary"
+            >
               <span class="mod-meta-label">Recommendation</span>
               <div
                 class="mod-detail-stars"
@@ -60,6 +60,11 @@
           </figure>
         </div>
       </div>
+
+      <!-- 广告：banner_1 -->
+      <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+        <div id="div-gpt-ad-moddetail-1" style="min-width: 300px; min-height: 250px;"></div>
+      </aside>
     </section>
 
     <section class="mod-detail-body-section" aria-label="Mod details">
@@ -78,27 +83,31 @@
                   <span aria-hidden="true">↗</span>
                 </a>
                 <p class="mod-detail-disclaimer">
-                  This listing points to Steam Workshop for Paralives. Workshop browsing and subscribing
-                  usually require owning the game on Steam — if you have not purchased it yet, you may
-                  not be able to open or explore the Workshop normally. Subscribe or download via Steam
-                  (or from the in-game mod browser once you own the game). External site; Paralives
-                  Wiki does not host mod files.
+                  This listing points to Steam Workshop for Paralives. Workshop browsing and
+                  subscribing usually require owning the game on Steam — if you have not purchased
+                  it yet, you may not be able to open or explore the Workshop normally. Subscribe or
+                  download via Steam (or from the in-game mod browser once you own the game).
+                  External site; Paralives Wiki does not host mod files.
                 </p>
               </template>
               <template v-else>
                 <p class="mod-detail-placeholder">
-                  No direct Workshop link on this listing yet — search by title in Steam or the in-game
-                  mod browser.
+                  No direct Workshop link on this listing yet — search by title in Steam or the
+                  in-game mod browser.
                 </p>
                 <p class="mod-detail-disclaimer">
-                  Workshop content is tied to owning Paralives on Steam — without a licence, Steam may
-                  block or limit Workshop access. After purchase, subscribe from Steam or inside the game.
-                  When we have a stable item URL, it will appear here as a button.
+                  Workshop content is tied to owning Paralives on Steam — without a licence, Steam
+                  may block or limit Workshop access. After purchase, subscribe from Steam or inside
+                  the game. When we have a stable item URL, it will appear here as a button.
                 </p>
               </template>
             </div>
 
-            <nav v-if="otherMods.length" class="mod-detail-related" aria-labelledby="mod-related-heading">
+            <nav
+              v-if="otherMods.length"
+              class="mod-detail-related"
+              aria-labelledby="mod-related-heading"
+            >
               <h2 id="mod-related-heading" class="mod-related-title">More mods</h2>
               <ul class="mod-related-list">
                 <li v-for="item in otherMods" :key="item.id">
@@ -123,7 +132,17 @@
 
           <div class="mod-detail-article-col">
             <div class="mod-article-panel">
+              <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-moddetail-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
               <div class="mod-article-prose" v-html="mod.detailsHtml"></div>
+
+              <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-moddetail-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
             </div>
             <footer class="mod-detail-end">
               <a href="/mods" class="mod-detail-back-link">← Back to all mods</a>
@@ -147,9 +166,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import mods from '@/data/mods.js'
+import { GPT_SLOTS_MOD_DETAIL } from '@/config/gptPageSlots'
+import { mountGptPageAds } from '@/utils/gptAds'
 
 /** 与 ModsView.vue MOD_CATEGORIES 展示名对齐 */
 const CATEGORY_LABELS = Object.freeze({
@@ -165,19 +186,26 @@ const route = useRoute()
 
 const mod = computed(() => mods.find((m) => m.addressBar === route.params.slug))
 
-const otherMods = computed(() =>
-  mods.filter((m) => m.addressBar !== route.params.slug).slice(0, 4),
+watch(
+  mod,
+  async (m) => {
+    if (!m) return
+    await nextTick()
+    mountGptPageAds(GPT_SLOTS_MOD_DETAIL)
+  },
+  { immediate: true },
 )
+
+const otherMods = computed(() => mods.filter((m) => m.addressBar !== route.params.slug).slice(0, 4))
 
 const classifyLabel = computed(() => crumbClassify(mod.value?.classify))
 
 const categoryHref = computed(() => {
   const k = normClassify(mod.value?.classify)
   if (!k) return ''
-  const qs =
-    Object.prototype.hasOwnProperty.call(CATEGORY_LABELS, k)
-      ? `?cat=${encodeURIComponent(k)}`
-      : '?cat=other'
+  const qs = Object.prototype.hasOwnProperty.call(CATEGORY_LABELS, k)
+    ? `?cat=${encodeURIComponent(k)}`
+    : '?cat=other'
   return `/mods${qs}`
 })
 
@@ -478,9 +506,7 @@ function formatModDate(val) {
   border-radius: var(--radius-sm);
   text-decoration: none;
   color: var(--color-ink);
-  transition:
-    background 0.18s ease,
-    transform 0.18s ease;
+  transition: background 0.18s ease, transform 0.18s ease;
 }
 
 .mod-related-link:hover {

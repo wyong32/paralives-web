@@ -5,6 +5,11 @@
     accent="roll"
     hero-image="/images/wiki/emotions/Emotion-Happy.png"
   >
+  <!-- 广告：GPT slot 1 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-simsession-1" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
     <section class="sim-console" aria-labelledby="roll-console-title">
       <header class="sim-console-head">
         <div>
@@ -48,6 +53,12 @@
 
       </div>
     </section>
+
+    <!-- 广告：GPT slot 2 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-simsession-2" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
+
     <section class="sim-seo" aria-labelledby="sim-seo-roll">
       <h2 id="sim-seo-roll">About the session challenge roll</h2>
       <p>
@@ -87,12 +98,21 @@
         <a href="/guides">Paralives Guides</a>.
       </p>
     </section>
+
+    <!-- 广告：GPT slot 3 -->
+    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
+      <div id="div-gpt-ad-simsession-3" style="min-width: 300px; min-height: 250px;"></div>
+    </aside>
   </SimulatorLayout>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
+import { GPT_SLOTS_SIM_SESSION } from '@/config/gptPageSlots'
+import { useGptAds } from '@/utils/gptAds'
+
+useGptAds(GPT_SLOTS_SIM_SESSION)
 
 /** Session challenges — mechanics referenced from official day-one EA lists only */
 const sessionChallenges = [
