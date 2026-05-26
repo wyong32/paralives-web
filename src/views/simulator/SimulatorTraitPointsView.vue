@@ -3,6 +3,7 @@
     title="Personality point allocator"
     lead="Plan a 7-point spread across four categories from public Paramaker previews: 7 total, at least 1 per category, up to 3 each. Confirm rules in-game after Early Access launch."
     accent="traits"
+    hero-image="/images/wiki/talents/Talent-Art.png"
   >
     <section class="sim-console" aria-labelledby="trait-console-title">
       <header class="sim-console-head">

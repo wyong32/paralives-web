@@ -3,6 +3,7 @@
     title="Feature wish filter"
     lead="Select features you care about. Labels match the official Development page — day one vs during Early Access. Cross-check on our Updates page before you buy."
     accent="filter"
+    hero-image="/images/about-01.webp"
   >
     <section class="sim-console" aria-labelledby="filter-console-title">
       <header class="sim-console-head">

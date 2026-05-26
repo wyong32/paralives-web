@@ -34,6 +34,11 @@
   --shadow-pop: 0 4px 0 var(--color-sage-dark);
 
   --hero-bg-fallback: #4a7d5c;
+
+  /* Sticky site header (~logo + padding + border) — anchors & wiki sidebars sit slightly below */
+  --site-header-sticky-height: 5.5rem;
+  --site-scroll-gap: 0.85rem;
+  --site-anchor-offset: calc(var(--site-header-sticky-height) + var(--site-scroll-gap));
 }
 
 *,
@@ -475,6 +480,55 @@ img {
   align-items: flex-start;
   gap: 0.85rem;
   max-width: 720px;
+}
+
+/* 内页 Hero 双栏：左侧文案、右侧配图（窄屏下图在文案下方） */
+.page-hero-row {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .page-hero-row {
+    grid-template-columns: minmax(0, 1fr) minmax(200px, min(36vw, 340px));
+    gap: 2rem;
+  }
+}
+
+.page-hero-row .page-hero-content {
+  max-width: none;
+}
+
+.page-hero-visual {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--color-white);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-white) 90%, transparent);
+}
+
+.page-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+@media (max-width: 899px) {
+  .page-hero-visual {
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+.page-hero-section--map .page-hero-visual {
+  border-color: color-mix(in srgb, var(--color-white) 55%, transparent);
 }
 
 .page-hero-content img.page-hero-icon {

@@ -70,13 +70,35 @@
 .sim-hero-inner {
   position: relative;
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
+  align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .sim-hero-inner {
-    grid-template-columns: 1fr auto;
-    align-items: end;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, min(32vw, 300px));
+    gap: 2rem;
+  }
+}
+
+.sim-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.sim-hero-back {
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+.sim-hero-visual {
+  margin: 0;
+}
+
+@media (max-width: 899px) {
+  .sim-hero-visual {
+    max-width: 400px;
+    margin-inline: auto;
   }
 }
 

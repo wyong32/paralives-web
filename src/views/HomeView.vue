@@ -24,7 +24,7 @@
       <span class="hero-deco hero-deco--3" aria-hidden="true"></span>
       <div class="container">
         <div class="hero-content">
-          <span class="hero-badge">✦ Paralives Wiki · Steam Early Access (since May 2026)</span>
+          <span class="hero-badge">✦ Paralives Wiki · Steam Early Access (since May 25, 2026)</span>
           <h1 id="hero-heading">
             <span class="title-gradient">Paralives</span>
             Wiki — Guides, Mods &amp; Tools
@@ -324,7 +324,7 @@
           <ul class="faq-list">
             <li v-for="item in faqItems" :key="item.q">
               <article class="faq-item">
-                <h3>{{ item.q }}</h3>
+                <h3 :class="{ 'faq-item__q--highlight': item.highlight }">{{ item.q }}</h3>
                 <p>{{ item.a }}</p>
               </article>
             </li>
@@ -563,7 +563,7 @@ const wikiTopics = [
   {
     slug: 'careers',
     title: 'Careers & Economy',
-    desc: 'Jobs, bills, museum collections.',
+    desc: 'Jobs, bills — who works where list when you crave spoilers.',
     tag: 'Live Mode',
     to: '/wiki/careers',
     icon: null,
@@ -578,8 +578,8 @@ const wikiTopics = [
   },
   {
     slug: 'modding',
-    title: 'Modding',
-    desc: 'Workshop, no paid DLC.',
+    title: 'Mods & DLC',
+    desc: 'Workshop, free updates vs paid DLC.',
     tag: 'Community',
     to: '/wiki/modding',
     icon: null,
@@ -601,10 +601,12 @@ const featuredMods = mods
 const faqItems = [
   {
     q: 'Is Paralives out yet?',
+    highlight: true,
     a: 'Yes — it entered Steam Early Access on May 25, 2026 for Windows and macOS builds. The team still describes multiple years of free updates before calling the project 1.0, with no paid DLC planned — only free patches.',
   },
   {
     q: 'How much does Paralives cost during Early Access?',
+    highlight: true,
     a: 'The studio publicly quoted an introductory Early Access price near $39.99 USD and warned it may rise gradually as content grows. Always confirm the price shown in the store client you use before buying.',
   },
   {
@@ -613,7 +615,7 @@ const faqItems = [
   },
   {
     q: 'What is on the Paralives Wiki?',
-    a: 'Eleven topics: talents, vibes, skills, stats, emotions, needs & wants, Parafolks & genetics, build tools, careers, relationships, and modding. Each explains official day-one scope versus roadmap items slated for later in EA.',
+    a: 'Eleven topics: talents, vibes, skills, stats, emotions, needs & wants, Parafolks & genetics, build tools, careers, relationships, and mods & DLC. Each explains official day-one scope versus roadmap items slated for later in EA.',
   },
   {
     q: 'Where should a new Paralives player start?',
@@ -625,7 +627,7 @@ const faqItems = [
   },
   {
     q: 'Are Paralives mods supported now?',
-    a: 'The public day-one checklist included in-game modding tools and Steam Workshop hooks. Use the Modding wiki topic for how it is intended to work, then verify options inside your build after each patch.',
+    a: 'The public day-one checklist included in-game modding tools and Steam Workshop hooks. Use the Mods & DLC wiki topic for how that fits free updates and curated listings, then verify options inside your build after each patch.',
   },
   {
     q: 'Is the Paralives Wiki official?',
@@ -1054,6 +1056,26 @@ const faqItems = [
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: var(--color-sage-dark);
+}
+
+/* 仅强调问题标题一条：不改变整张卡片底色与边框 */
+.faq-item__q--highlight {
+  font-size: clamp(1.08rem, 2.35vw, 1.34rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: -0.1rem -0.2rem 0.55rem;
+  padding: 0.4rem 0.65rem 0.42rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  border-left: 4px solid var(--color-sage-dark);
+  background: linear-gradient(
+    105deg,
+    color-mix(in srgb, var(--color-lemon) 62%, var(--color-white)) 0%,
+    color-mix(in srgb, var(--color-peach) 42%, var(--color-white)) 92%,
+    transparent 100%
+  );
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--color-white) 70%, transparent);
 }
 
 .faq-item p {

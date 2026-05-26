@@ -23,6 +23,8 @@ const staticRoutes = [
   { path: '/wiki/needs-wants', name: 'wiki-needs-wants' },
   { path: '/wiki/parafolks', name: 'wiki-parafolks' },
   { path: '/wiki/build-tools', name: 'wiki-build-tools' },
+  { path: '/wiki/careers/occupations', name: 'wiki-careers-occupations' },
+  { path: '/wiki/careers/economy', name: 'wiki-careers-economy' },
   { path: '/wiki/careers', name: 'wiki-careers' },
   { path: '/wiki/relationships', name: 'wiki-relationships' },
   { path: '/wiki/modding', name: 'wiki-modding' },

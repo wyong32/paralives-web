@@ -5,7 +5,7 @@
     <section class="page-hero-section page-hero-section--map" aria-labelledby="map-title">
       <span class="section-dots" aria-hidden="true"></span>
       <div class="container">
-        <div class="map-hero-layout">
+        <div class="page-hero-row">
           <div class="page-hero-content">
             <span class="section-label">Live Mode · Town</span>
             <h1 id="map-title" class="title-gradient title-gradient--light">
@@ -27,12 +27,14 @@
               Wiki is unofficial and not affiliated with the developer.
             </p>
           </div>
-          <figure class="map-hero-media">
+          <figure class="page-hero-visual">
             <img
               src="/images/map-hero.webp"
               alt="Melino town overview — Paralives Early Access open world map"
               loading="eager"
               decoding="async"
+              width="680"
+              height="510"
             />
           </figure>
         </div>
@@ -435,46 +437,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.map-hero-layout {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .map-hero-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(260px, 38%);
-    gap: 2rem;
-  }
-}
-
-.map-hero-layout .page-hero-content {
-  max-width: none;
-}
-
-.map-hero-media {
-  margin: 0;
-  flex-shrink: 0;
-}
-
-.map-hero-media img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  border: 3px solid color-mix(in srgb, var(--color-white) 55%, transparent);
-  box-shadow: var(--shadow-card);
-}
-
-@media (max-width: 1023px) {
-  .map-hero-media {
-    max-width: 420px;
-    margin-inline: auto;
-  }
-}
-
 .map-hero-meta,
 .map-hero-source {
   margin-top: 0.75rem;

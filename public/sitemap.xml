@@ -68,6 +68,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://paralives.wiki/wiki/careers/occupations</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
+    <loc>https://paralives.wiki/wiki/careers/economy</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+  </url>
+  <url>
     <loc>https://paralives.wiki/wiki/careers</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -182,80 +194,92 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://paralives.wiki/guides/paralives-early-access-first-impressions-review</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://paralives.wiki/guides/paralives-lag-fix-performance-optimization</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://paralives.wiki/mods/favorite-links-by-myshunosun</loc>
-    <lastmod>2001-05-23</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/sensible-camera-control</loc>
-    <lastmod>2001-05-25</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/kidi-furniture-items</loc>
-    <lastmod>2001-02-27</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/rococo-bedroom-items</loc>
-    <lastmod>2001-03-11</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/display-townies-on-map</loc>
-    <lastmod>2001-05-25</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/vegan-alternative-clutter</loc>
-    <lastmod>2001-02-26</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/the-goth-household</loc>
-    <lastmod>2001-05-20</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/the-caliente-household</loc>
-    <lastmod>2001-05-24</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/eliza-richards</loc>
-    <lastmod>2001-05-24</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/split-level-house</loc>
-    <lastmod>2001-05-23</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/split-level-house</loc>
-    <lastmod>2001-05-23</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/polarisu-a-little-ghibli-style-house</loc>
-    <lastmod>2001-05-23</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://paralives.wiki/mods/cute-couples-apartment</loc>
-    <lastmod>2001-05-24</lastmod>
+    <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

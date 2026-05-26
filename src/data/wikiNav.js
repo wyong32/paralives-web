@@ -10,7 +10,7 @@ export const wikiTopics = [
   { slug: 'build-tools', title: 'Build Mode', tag: 'Build' },
   { slug: 'careers', title: 'Careers & Economy', tag: 'Live Mode' },
   { slug: 'relationships', title: 'Relationships', tag: 'Social' },
-  { slug: 'modding', title: 'Modding', tag: 'Community' },
+  { slug: 'modding', title: 'Mods & DLC', tag: 'Community' },
 ]
 
 export const wikiQuickLinks = [

@@ -3,6 +3,7 @@
     title="Paramaker color studio"
     lead="Tap a body zone, pick a color, and watch your Parafolk preview update. Copy hex codes into Paramaker’s color wheel — this does not edit your save file."
     accent="palette"
+    hero-image="/images/wiki/vibes/Vibe-Energetic.png"
   >
     <section class="sim-console" aria-labelledby="palette-console-title">
       <header class="sim-console-head">

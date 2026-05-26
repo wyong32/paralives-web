@@ -3,13 +3,25 @@
     <section class="page-hero-section page-hero-section--guides" aria-labelledby="guides-title">
       <span class="section-dots" aria-hidden="true"></span>
       <div class="container">
-        <div class="page-hero-content">
-          <span class="section-label">Walkthroughs</span>
-          <h1 id="guides-title" class="title-gradient">Paralives Guides</h1>
-          <p>
-            Step-by-step Paralives game help for Early Access on Steam — beginner walkthroughs,
-            mode tips, and realistic expectations, updated as patches ship.
-          </p>
+        <div class="page-hero-row">
+          <div class="page-hero-content">
+            <span class="section-label">Walkthroughs</span>
+            <h1 id="guides-title" class="title-gradient">Paralives Guides</h1>
+            <p>
+              Step-by-step Paralives game help for Early Access on Steam — beginner walkthroughs,
+              mode tips, and realistic expectations, updated as patches ship.
+            </p>
+          </div>
+          <figure class="page-hero-visual">
+            <img
+              src="/images/guides/guide01.webp"
+              alt="Paralives guides and walkthroughs for Early Access"
+              width="680"
+              height="510"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
         </div>
       </div>
     </section>

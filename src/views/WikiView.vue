@@ -3,19 +3,31 @@
     <section class="page-hero-section page-hero-section--wiki" aria-labelledby="wiki-title">
       <span class="section-dots" aria-hidden="true"></span>
       <div class="container">
-        <div class="page-hero-content">
-          <span class="section-label">Encyclopedia</span>
-          <h1 id="wiki-title" class="title-gradient">Paralives Wiki</h1>
-          <p>
-            Your Paralives game encyclopedia — talents, vibes, skills, stats, emotions, needs,
-            Parafolks, build tools, careers, relationships, and modding. Each article cites the studio’s
-            official day-one Steam Early Access list (May 25, 2026) versus items marked for later in EA,
-            then asks you to double-check unfamiliar details in-game after patches.
-          </p>
-          <p class="wiki-hero-meta">
-            {{ wikiCategories.length }} categories · unofficial fan reference · verify in-game after
-            patches
-          </p>
+        <div class="page-hero-row">
+          <div class="page-hero-content">
+            <span class="section-label">Encyclopedia</span>
+            <h1 id="wiki-title" class="title-gradient">Paralives Wiki</h1>
+            <p>
+              Your Paralives game encyclopedia — talents, vibes, skills, stats, emotions, needs,
+              Parafolks, build tools, careers, relationships, and modding. Each article cites the studio’s
+              official day-one Steam Early Access list (May 25, 2026) versus items marked for later in EA,
+              then asks you to double-check unfamiliar details in-game after patches.
+            </p>
+            <p class="wiki-hero-meta">
+              {{ wikiCategories.length }} categories · unofficial fan reference · verify in-game after
+              patches
+            </p>
+          </div>
+          <figure class="page-hero-visual">
+            <img
+              src="/images/about-02.webp"
+              alt="Paralives Wiki — reference topics and game systems"
+              width="680"
+              height="510"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
         </div>
       </div>
     </section>
@@ -111,7 +123,8 @@ const wikiCategories = [
   {
     slug: 'careers',
     title: 'Careers & Economy',
-    description: 'Jobs, bills, shops, and the museum at Early Access launch.',
+    description:
+      'Jobs, bills, shops — and a browsable cheat sheet that lists titles by café, hospital, studios, schools, and shops.',
     hubTag: 'Live Mode',
     imageUrl: 'https://placehold.co/480x260/fff3a0/6B9B7B?text=Careers',
     imageAlt: 'Paralives careers and economy',
@@ -126,11 +139,12 @@ const wikiCategories = [
   },
   {
     slug: 'modding',
-    title: 'Modding',
-    description: 'In-game tools, Workshop, and free updates — no paid DLC.',
+    title: 'Mods & DLC',
+    description:
+      'Workshop mods, paid DLC versus free EA updates, and how the wiki Mods listings connect to Steam.',
     hubTag: 'Community',
     imageUrl: 'https://placehold.co/480x260/a78bfa/6B9B7B?text=Mods',
-    imageAlt: 'Paralives modding guide',
+    imageAlt: 'Paralives mods, Workshop, and DLC policy overview',
   },
 ]
 </script>

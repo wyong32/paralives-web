@@ -4,7 +4,7 @@ export default [
         title: 'Favorite links by myshunosun',
         description: 'A tattoo collection by myshunosun featuring 6 different styles with full recolor support, perfect for players who want to add more personality and visual detail to their characters.',
         tags: ['Character Customization', 'Tattoos', 'Cosmetic Mod', 'Recolorable', 'Modpacks'],
-        publishDate: 'May 24',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod01.webp',
         imageAlt: 'Preview image for Favorite links by myshunosun, showing multiple tattoo designs on male and female characters',
         seo: {
@@ -65,7 +65,7 @@ export default [
         title: 'Sensible Camera Control',
         description: 'A practical camera mod that removes automatic tilt and other built-in camera constraints, giving players more consistent and predictable control over viewing angles.',
         tags: ['Camera', 'Quality of Life', 'Controls', 'Gameplay Utility', 'Modpacks'],
-        publishDate: 'May 26',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod02.webp',
         imageAlt: 'Preview image for Sensible Camera Control with a town environment and the mod title displayed across the screen',
         seo: {
@@ -126,7 +126,7 @@ export default [
         title: 'Kidi Furniture Items',
         description: 'A charming kids-room furniture mod that adds playful and cozy decor pieces, including a pillow-fort bed, bench, bean bag chair, and canopy, all styled to match the Paralives aesthetic.',
         tags: ['Furniture', 'Kids Room', 'Decor', 'Cosmetic Mod', 'Modpacks'],
-        publishDate: 'February 28',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod03.webp',
         imageAlt: 'Preview image for Kidi Furniture Items showing a cozy children’s room setup with a pillow fort bed, bean bag chair, and soft decorative furniture',
         seo: {
@@ -189,7 +189,7 @@ export default [
         title: 'Rococo Bedroom Items',
         description: 'An elegant bedroom furniture mod inspired by rococo styling, featuring a royal-looking bed, vanity desk, side table, chair, and rug designed to bring a more luxurious atmosphere to interior builds.',
         tags: ['Furniture', 'Bedroom', 'Decor', 'Luxury Style', 'Modpacks'],
-        publishDate: 'March 12',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod04.webp',
         imageAlt: 'Preview image for Rococo Bedroom Items showing ornate pastel beds and a luxurious bedroom setup with matching rococo-inspired furniture',
         seo: {
@@ -252,7 +252,7 @@ export default [
         title: 'Display Townies on Map',
         description: 'A useful UI mod that makes townies appear on the world map when zooming out, helping players understand where characters are and making navigation feel more informative.',
         tags: ['UI', 'Map', 'Quality of Life', 'Townies', 'Modpacks'],
-        publishDate: 'May 26',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod05.webp',
         imageAlt: 'Preview image for Display Townies on Map showing character portraits visible across the world map interface',
         seo: {
@@ -313,7 +313,7 @@ export default [
         title: 'Vegan Alternative Clutter',
         description: 'A small kitchen clutter pack featuring vegan alternatives to familiar everyday items, including almond milk and matching countertop decor designed in the Paralives style.',
         tags: ['Clutter', 'Kitchen', 'Decor', 'Vegan', 'Modpacks'],
-        publishDate: 'February 27',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod06.webp',
         imageAlt: 'Preview image for Vegan Alternative Clutter showing almond milk, a reusable bottle, and kitchen countertop accessories',
         seo: {
@@ -376,7 +376,7 @@ export default [
         title: 'The Goth Household',
         description: 'The iconic Goth family arrives as a ready-to-play household, bringing Mortimer, Bella, their children, and their unmistakable mysterious charm into your world.',
         tags: ['Households', 'Goth Family', 'Characters', 'Storytelling', 'Parafolks Collection'],
-        publishDate: 'May 21',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod07.webp',
         imageAlt: 'Preview image for The Goth Household showing Mortimer, Bella, and their children together in a town square',
         seo: {
@@ -435,7 +435,7 @@ export default [
         title: 'The Caliente Household',
         description: 'The Caliente sisters arrive as a ready-to-play household filled with charm, secrets, and suspicious timing, opening the door to dramatic stories surrounding Bella and Mortimer.',
         tags: ['Households', 'Caliente Sisters', 'Characters', 'Storytelling', 'Drama'],
-        publishDate: 'May 25',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod08.webp',
         imageAlt: 'Preview image for The Caliente Household showing the red-haired and blonde Caliente sisters posing outdoors',
         seo: {
@@ -494,7 +494,7 @@ export default [
         title: 'Eliza Richards',
         description: 'A story-ready character household centered on Eliza Richards, a young woman leaving a difficult past behind to begin the new life she has always dreamed of.',
         tags: ['Households', 'Character', 'Storytelling', 'Life Restart', 'ParaLives Paras'],
-        publishDate: 'May 25',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod09.webp',
         imageAlt: 'Preview portrait of Eliza Richards, a dark-haired character wearing a yellow floral top and ribbon choker',
         seo: {
@@ -553,7 +553,7 @@ export default [
         title: 'Split Level House',
         description: 'A welcoming suburban split-level home with 3 bedrooms and 2 bathrooms, offering a practical family layout and a classic residential look ready for everyday storytelling.',
         tags: ['Houses', 'Family Home', 'Residential', 'Split Level', 'Suburban'],
-        publishDate: 'May 24',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod10.webp',
         imageAlt: 'Preview image for Split Level House showing a classic suburban home with a landscaped front garden and multi-level exterior',
         seo: {
@@ -612,7 +612,7 @@ export default [
         title: 'Split Level House',
         description: 'A welcoming suburban split-level home with 3 bedrooms and 2 bathrooms, offering a practical family layout and a classic residential look ready for everyday storytelling.',
         tags: ['Houses', 'Family Home', 'Residential', 'Split Level', 'Suburban'],
-        publishDate: 'May 24',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod11.webp',
         imageAlt: 'Preview image for Split Level House showing a classic suburban home with a landscaped front garden and multi-level exterior',
         seo: {
@@ -671,7 +671,7 @@ export default [
         title: 'polarisu-A Little Ghibli-Style House',
         description: 'A warm, nature-filled three-bedroom home inspired by the gentle charm of Ghibli-style living, with a flexible backyard space ready for a workshop or utility room.',
         tags: ['Houses', 'Ghibli Style', 'Family Home', 'Nature', 'Three Bedrooms'],
-        publishDate: 'May 24',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod12.webp',
         imageAlt: 'Preview image for polarisu-A Little Ghibli-Style House showing a bright two-story home surrounded by trees, flowers, and a garden path',
         seo: {
@@ -730,7 +730,7 @@ export default [
         title: "Cute Couple's Apartment",
         description: 'A cozy two-person apartment with simple decor, plenty of everyday clutter, and a warm lived-in atmosphere designed for romantic household stories.',
         tags: ['Houses', 'Apartment', 'Couple Home', 'Cozy Decor', 'Romance'],
-        publishDate: 'May 25',
+        publishDate: '2026-05-26',
         imageUrl: '/images/mods/mod13.webp',
         imageAlt: "Preview image for Cute Couple's Apartment showing a cozy kitchen and dining area with warm wooden flooring and homey decorations",
         seo: {

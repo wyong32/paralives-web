@@ -2,14 +2,17 @@
   <div class="sim-page" :class="`sim-page--${accent}`">
     <header class="sim-hero" :aria-labelledby="titleId">
       <div class="container sim-hero-inner">
-        <div>
+        <div class="sim-hero-copy">
           <span class="sim-hero-badge">Paralives Simulator</span>
           <h1 :id="titleId">{{ title }}</h1>
           <p class="sim-hero-lead">{{ lead }}</p>
+          <a v-if="showHubLink" href="/simulator" class="sim-btn sim-btn--primary sim-hero-back">
+            ← All tools
+          </a>
         </div>
-        <a v-if="showHubLink" href="/simulator" class="sim-btn sim-btn--primary">
-          ← All tools
-        </a>
+        <figure class="page-hero-visual sim-hero-visual" aria-hidden="true">
+          <img :src="heroImage" alt="" width="480" height="360" loading="eager" decoding="async" />
+        </figure>
       </div>
     </header>
 
@@ -53,6 +56,7 @@ defineProps({
   accent: { type: String, default: 'hub' },
   titleId: { type: String, default: 'sim-tool-title' },
   showHubLink: { type: Boolean, default: true },
+  heroImage: { type: String, default: '/images/about-01.webp' },
 })
 
 const tools = [

@@ -3,6 +3,7 @@
     title="Session challenge roll"
     lead="Random short goals built only from mechanics on the official day-one Early Access lists. Use for inspiration — your save may differ after patches."
     accent="roll"
+    hero-image="/images/wiki/emotions/Emotion-Happy.png"
   >
     <section class="sim-console" aria-labelledby="roll-console-title">
       <header class="sim-console-head">

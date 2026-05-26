@@ -60,8 +60,8 @@
 @media (min-width: 960px) {
   .wiki-article-aside {
     position: sticky;
-    top: 5.5rem;
-    max-height: calc(100vh - 6.5rem);
+    top: var(--site-anchor-offset);
+    max-height: calc(100vh - var(--site-anchor-offset) - 1.35rem);
     overflow-y: auto;
     padding-bottom: 1rem;
   }
@@ -136,6 +136,68 @@
   font-weight: 600;
   color: var(--color-ink);
   line-height: 1.35;
+}
+
+/* In-page section links inside “Keep reading” (long articles) */
+.wiki-aside-panel--inpage-toc {
+  box-shadow: var(--shadow-soft);
+  border-color: color-mix(in srgb, var(--color-sage) 36%, transparent);
+}
+
+.wiki-aside-inpage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.wiki-aside-inpage-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-mint) 48%, transparent);
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  line-height: 1.35;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-sage) 10%, transparent);
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.wiki-aside-inpage-link::before {
+  content: '';
+  flex-shrink: 0;
+  width: 3px;
+  align-self: stretch;
+  min-height: 1rem;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--color-sage) 50%, var(--color-mint));
+  opacity: 0.7;
+  transition:
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+.wiki-aside-inpage-link:hover {
+  color: var(--color-sage-deep);
+  border-color: color-mix(in srgb, var(--color-sage) 35%, transparent);
+  transform: translateX(2px);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--color-sage) 12%, transparent);
+}
+
+.wiki-aside-inpage-link:hover::before {
+  opacity: 1;
+  background: var(--color-coral);
 }
 
 .wiki-aside-topics {
@@ -244,7 +306,7 @@
   font-size: clamp(1.2rem, 2.5vw, 1.45rem);
   color: var(--color-ink);
   margin: 2rem 0 0.65rem;
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: var(--site-anchor-offset);
 }
 
 .wiki-prose h2:first-child {
@@ -255,7 +317,16 @@
   font-size: 1.05rem;
   color: var(--color-ink);
   margin: 1.25rem 0 0.5rem;
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: var(--site-anchor-offset);
+}
+
+/* #hash jumps — sticky header + gutter */
+.wiki-article-main :is(section, article)[id] {
+  scroll-margin-top: var(--site-anchor-offset);
+}
+
+.wiki-article-main .wiki-prose :is(h2, h3, h4)[id] {
+  scroll-margin-top: var(--site-anchor-offset);
 }
 
 .wiki-prose p {
@@ -290,6 +361,44 @@
 .wiki-callout--warn {
   border-left-color: var(--color-coral);
   background: color-mix(in srgb, var(--color-coral) 8%, var(--color-white));
+}
+
+/* Cream panel note — title + prose (EA disclaimer style) */
+.wiki-callout--snapshot {
+  border-radius: var(--radius-md);
+  margin: 0 0 1.25rem;
+  border: 2px solid color-mix(in srgb, var(--color-peach) 55%, transparent);
+  border-left: 4px solid var(--color-sage-dark);
+  background: var(--color-cream);
+  box-shadow: var(--shadow-card);
+  padding: 1.2rem 1.35rem 1.35rem;
+}
+
+.wiki-callout--snapshot .wiki-callout__title {
+  margin: 0 0 0.7rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-sage-dark);
+  line-height: 1.25;
+}
+
+.wiki-callout--snapshot .wiki-callout__body {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.62;
+  color: var(--color-ink-muted);
+}
+
+.wiki-callout--snapshot .wiki-callout__body:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-occ-lead-tip {
+  margin: 1rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.58;
+  color: var(--color-ink-muted);
 }
 
 .wiki-badge {
@@ -543,4 +652,375 @@
       grid-template-columns: repeat(2, 1fr);
     }
   }
+}
+
+.wiki-article-layout--full {
+  grid-template-columns: 1fr;
+}
+
+.wiki-occ-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 1.5rem;
+}
+
+.wiki-occ-stat {
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 2px solid color-mix(in srgb, var(--color-sage) 28%, transparent);
+  box-shadow: var(--shadow-card);
+}
+
+.wiki-occ-stat strong {
+  display: block;
+  font-family: var(--font-cartoon);
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--color-sage-dark);
+}
+
+.wiki-occ-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-ink-muted);
+}
+
+.wiki-occ-mechanics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.wiki-occ-mechanic {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 2px solid color-mix(in srgb, var(--color-mint) 55%, transparent);
+  background: color-mix(in srgb, var(--color-mint) 14%, var(--color-white));
+}
+
+.wiki-occ-mechanic b {
+  display: inline-grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-bottom: 0.45rem;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--color-sage-dark);
+  background: color-mix(in srgb, var(--color-mint) 42%, var(--color-white));
+}
+
+.wiki-occ-mechanic h3 {
+  font-size: 1.02rem;
+  margin: 0 0 0.35rem;
+  color: var(--color-ink);
+}
+
+.wiki-occ-mechanic p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+}
+
+.wiki-occ-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0 0;
+}
+
+.wiki-occ-field {
+  padding: 0.35rem 0.68rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-sage-dark);
+  background: color-mix(in srgb, var(--color-mint) 42%, var(--color-white));
+  border: 1px solid color-mix(in srgb, var(--color-sage) 22%, transparent);
+}
+
+.wiki-occ-sector {
+  margin-bottom: 1.15rem;
+  padding: 1.1rem 1.15rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 2px solid color-mix(in srgb, var(--color-mint) 45%, transparent);
+}
+
+.wiki-occ-sector-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.wiki-occ-sector-head h3 {
+  margin: 0;
+  font-size: 1.12rem;
+  color: var(--color-ink);
+}
+
+.wiki-occ-sector-count {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-coral-deep);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.wiki-occ-workplace-card {
+  border: 1px solid color-mix(in srgb, var(--color-sage) 22%, transparent);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.65rem;
+  background: color-mix(in srgb, var(--color-cream) 68%, var(--color-white));
+  overflow: hidden;
+}
+
+.wiki-occ-workplace-card:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-occ-workplace-title {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--color-mint) 28%, var(--color-white));
+  border-bottom: 1px solid color-mix(in srgb, var(--color-sage) 18%, transparent);
+}
+
+.wiki-occ-workplace-count {
+  margin-left: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-ink-muted);
+}
+
+.wiki-occ-workplace-card .wiki-occ-role-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.72rem;
+}
+
+.wiki-occ-role {
+  padding: 0.28rem 0.52rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  background: var(--color-white);
+  border: 1px solid color-mix(in srgb, var(--color-mint) 58%, transparent);
+}
+
+.wiki-occ-faq-item {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--color-sage) 18%, transparent);
+  background: color-mix(in srgb, var(--color-mint) 10%, var(--color-white));
+}
+
+.wiki-occ-faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-occ-faq-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-family: var(--font-display);
+  color: var(--color-sage-dark);
+}
+
+.wiki-occ-faq-item p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+}
+
+/* Careers — economy appendix (/wiki/careers/economy) */
+.wiki-econ-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 1.5rem;
+}
+
+.wiki-econ-stat {
+  padding: 0.95rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 2px solid color-mix(in srgb, var(--color-sage) 28%, transparent);
+  box-shadow: var(--shadow-card);
+}
+
+.wiki-econ-stat strong {
+  display: block;
+  font-family: var(--font-cartoon);
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--color-sage-dark);
+}
+
+.wiki-econ-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-ink-muted);
+}
+
+.wiki-econ-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 0.25rem;
+}
+
+.wiki-econ-flow-card {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 2px solid color-mix(in srgb, var(--color-mint) 52%, transparent);
+  background: var(--color-white);
+}
+
+.wiki-econ-flow-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.02rem;
+  color: var(--color-ink);
+}
+
+.wiki-econ-flow-card--in {
+  border-top: 4px solid var(--color-sage);
+}
+
+.wiki-econ-flow-card--out {
+  border-top: 4px solid var(--color-coral);
+}
+
+.wiki-econ-flow-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wiki-econ-flow-card li {
+  position: relative;
+  padding: 0.42rem 0 0.42rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  line-height: 1.48;
+}
+
+.wiki-econ-flow-card--in li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+  color: var(--color-sage-dark);
+}
+
+.wiki-econ-flow-card--out li::before {
+  content: '−';
+  position: absolute;
+  left: 0;
+  font-weight: 900;
+  color: var(--color-coral-deep);
+}
+
+.wiki-econ-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0.85rem;
+  margin: 1rem 0 0;
+}
+
+.wiki-econ-cards--pair {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.wiki-econ-card {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 2px solid color-mix(in srgb, var(--color-sage) 22%, transparent);
+  background: color-mix(in srgb, var(--color-cream) 55%, var(--color-white));
+}
+
+.wiki-econ-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 0.98rem;
+  color: var(--color-ink);
+}
+
+.wiki-econ-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+}
+
+.wiki-econ-rewards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.25rem, 1fr));
+  gap: 0.55rem;
+  margin: 0.85rem 0 1rem;
+}
+
+.wiki-econ-reward {
+  padding: 0.72rem 0.82rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--color-ink-muted);
+  background: color-mix(in srgb, var(--color-mint) 12%, var(--color-white));
+  border: 1px solid color-mix(in srgb, var(--color-sage) 20%, transparent);
+}
+
+.wiki-econ-reward strong {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--color-sage-dark);
+  margin-bottom: 0.2rem;
+}
+
+.wiki-data-table.wiki-econ-table {
+  margin-top: 0.85rem;
+  font-size: 0.88rem;
+}
+
+.wiki-econ-faq-item {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid color-mix(in srgb, var(--color-sage) 18%, transparent);
+  background: color-mix(in srgb, var(--color-mint) 10%, var(--color-white));
+}
+
+.wiki-econ-faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.wiki-econ-faq-item h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-family: var(--font-display);
+  color: var(--color-sage-dark);
+}
+
+.wiki-econ-faq-item p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
 }

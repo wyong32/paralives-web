@@ -3,24 +3,36 @@
     <section class="page-hero-section page-hero-section--updates" aria-labelledby="updates-title">
       <span class="section-dots" aria-hidden="true"></span>
       <div class="container">
-        <div class="page-hero-content">
-          <span class="section-label">Development</span>
-          <h1 id="updates-title" class="title-gradient">Paralives Roadmap &amp; Early Access Status</h1>
-          <p>
-            Paralives is in <strong>Steam Early Access</strong> as of May 25, 2026 — this page keeps
-            Paralives Studio’s public mode-by-mode lists (day one vs later in EA), a short dated
-            milestone timeline, and what is still planned on the road to 1.0.
-          </p>
-          <p class="updates-hero-meta">
-            Wiki page last reviewed:
-            <time datetime="2026-05-26">May 26, 2026</time>
-          </p>
-          <p class="updates-source">
-            <strong>Source note:</strong> feature bullets in the three mode sections mirror the
-            official “Features available on day one of Early Access” and “Planned to come out during
-            Early Access” wording. If a future patch or announcement changes scope, treat the
-            developer’s latest post and in-game builds as the authority.
-          </p>
+        <div class="page-hero-row">
+          <div class="page-hero-content">
+            <span class="section-label">Development</span>
+            <h1 id="updates-title" class="title-gradient">Paralives Roadmap &amp; Early Access Status</h1>
+            <p>
+              Paralives is in <strong>Steam Early Access</strong> as of May 25, 2026 — this page keeps
+              Paralives Studio’s public mode-by-mode lists (day one vs later in EA), a short dated
+              milestone timeline, and what is still planned on the road to 1.0.
+            </p>
+            <p class="updates-hero-meta">
+              Wiki page last reviewed:
+              <time datetime="2026-05-26">May 26, 2026</time>
+            </p>
+            <p class="updates-source">
+              <strong>Source note:</strong> feature bullets in the three mode sections mirror the
+              official “Features available on day one of Early Access” and “Planned to come out during
+              Early Access” wording. If a future patch or announcement changes scope, treat the
+              developer’s latest post and in-game builds as the authority.
+            </p>
+          </div>
+          <figure class="page-hero-visual">
+            <img
+              src="/images/update-01.webp"
+              alt="Paralives Steam Early Access launch and roadmap"
+              width="680"
+              height="510"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
         </div>
       </div>
     </section>
@@ -29,6 +41,7 @@
       <div class="container">
         <section class="updates-block updates-launch" aria-labelledby="launch-heading">
           <div class="updates-launch-card">
+            <img src="/images/update-01.webp" alt="Paralives Early Access launch" width="100%">
             <p class="updates-launch-date">
               <time datetime="2026-05-25">EARLY ACCESS — MAY 25, 2026</time>
             </p>

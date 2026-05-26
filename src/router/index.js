@@ -151,6 +151,30 @@ const router = createRouter({
       },
     },
     {
+      path: '/wiki/careers/occupations',
+      name: 'wiki-careers-occupations',
+      component: () => import('../views/wiki/WikiCareersOccupationsView.vue'),
+      meta: {
+        title: 'Paralives Careers and Occupations — Paralives Wiki',
+        description:
+          'Browse Paralives jobs grouped by café, hospital, studios, shops, schools, and other Melino workplaces — a spoiler-friendly list next to our Careers hub.',
+        keywords:
+          'Paralives jobs, Paralives workplaces, job titles, rabbit hole careers, Early Access wiki',
+      },
+    },
+    {
+      path: '/wiki/careers/economy',
+      name: 'wiki-careers-economy',
+      component: () => import('../views/wiki/WikiCareersEconomyView.vue'),
+      meta: {
+        title: 'Paralives Economy — Paradimes, Bills & Shopping — Paralives Wiki',
+        description:
+          'Paralives economy reference: starting Paradimes, Build Mode meter costs, bills, daycare, tech salary tracks, shopping, museum milestones, Community Center bundles, and emergency costs for Early Access.',
+        keywords:
+          'Paralives economy, Paralives money, Paradimes, Paralives bills, Paralives shopping, daycare, museum, Early Access',
+      },
+    },
+    {
       path: '/wiki/careers',
       name: 'wiki-careers',
       component: () => import('../views/wiki/WikiCareersView.vue'),
@@ -179,11 +203,11 @@ const router = createRouter({
       name: 'wiki-modding',
       component: () => import('../views/wiki/WikiModdingView.vue'),
       meta: {
-        title: 'Paralives Modding Wiki — Steam Workshop & Custom Content',
+        title: 'Paralives mods & DLC — Workshop, free updates, wiki listings',
         description:
-          'Paralives modding guide: in-game tools, Steam Workshop, custom traits, emotions, needs, skills, and genetics mods — full Workshop support and free game updates.',
+          'Paralives mods explained: Steam Workshop, in-game tools, how paid DLC compares to multi-year free Early Access updates, and how our /mods curated listings tie in.',
         keywords:
-          'Paralives modding, Steam Workshop, mod tools, custom content, traits mods, Early Access',
+          'Paralives mods, Paralives DLC, Steam Workshop, Early Access updates, custom content, modding tools',
       },
     },
     {

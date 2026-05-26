@@ -4,6 +4,7 @@
     lead="Free planning tools for Steam Early Access — check feature availability, plan Paramaker stats and colors, and roll session goals before you launch Paralives."
     accent="hub"
     :show-hub-link="false"
+    hero-image="/images/about-02.webp"
   >
     <div class="sim-hub-grid">
       <a

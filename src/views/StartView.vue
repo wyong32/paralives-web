@@ -3,15 +3,27 @@
     <section class="page-hero-section page-hero-section--start" aria-labelledby="start-title">
       <span class="section-dots" aria-hidden="true"></span>
       <div class="container">
-        <div class="page-hero-content">
-          <h1 id="start-title" class="title-gradient">Paralives Start Guide</h1>
-          <p>
-            Learn the three modes, create your first Parafolks, build a home, find work, and know what to do in
-            town. Game info and PC specs are at the end.
-          </p>
-          <p class="start-hero-meta">
-            Updated <time datetime="2026-05-26">May 26, 2026</time>
-          </p>
+        <div class="page-hero-row">
+          <div class="page-hero-content">
+            <h1 id="start-title" class="title-gradient">Paralives Start Guide</h1>
+            <p>
+              Learn the three modes, create your first Parafolks, build a home, find work, and know what to do in
+              town. Game info and PC specs are at the end.
+            </p>
+            <p class="start-hero-meta">
+              Updated <time datetime="2026-05-26">May 26, 2026</time>
+            </p>
+          </div>
+          <figure class="page-hero-visual">
+            <img
+              src="/images/start-01.webp"
+              alt="Paralives — getting started with Create-a-Parafolk and early town play"
+              width="680"
+              height="510"
+              loading="eager"
+              decoding="async"
+            />
+          </figure>
         </div>
       </div>
     </section>
