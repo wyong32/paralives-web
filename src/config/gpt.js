@@ -1,6 +1,7 @@
 /**
  * Paralives GAM export（2025）：路径与尺寸与后台代码块一致。
  * 锚点 / 插屏 div id 亦为后台分配的固定 id。
+ * ★ 锚定、插屏的 defineSlot + enableServices + display 写在 index.html；改 unit 时请与此处同步。
  */
 const BASE = '/23346398271/paralives.wiki_all_0525'
 const SITE = 'paralives.wiki_0525'
