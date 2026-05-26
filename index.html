@@ -19,22 +19,17 @@
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="https://paralives.wiki/" />
     <script>
-      (function () {
+      // LCP hints for hero: preload poster frame (matches HomeView poster). Do not preload as=video —
+      // Chrome often warns "unsupported `as` value" for `<link rel=preload as=video>`.
+      ;(function () {
         var path = location.pathname.replace(/\/+$/, '') || '/'
         if (path !== '/') return
-        var poster = document.createElement('link')
-        poster.rel = 'preload'
-        poster.as = 'image'
-        poster.href = 'https://placehold.co/1920x900/5a8f6e/ffdac1?text='
-        poster.setAttribute('fetchpriority', 'high')
-        document.head.appendChild(poster)
-        var video = document.createElement('link')
-        video.rel = 'preload'
-        video.as = 'video'
-        video.href = '/video/hero-bg.mp4'
-        video.type = 'video/mp4'
-        video.setAttribute('fetchpriority', 'high')
-        document.head.appendChild(video)
+        var preloadPoster = document.createElement('link')
+        preloadPoster.rel = 'preload'
+        preloadPoster.as = 'image'
+        preloadPoster.href = '/images/map-hero.webp'
+        preloadPoster.setAttribute('fetchpriority', 'high')
+        document.head.appendChild(preloadPoster)
       })()
     </script>
     <meta property="og:type" content="website" />
