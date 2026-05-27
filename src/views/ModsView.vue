@@ -25,9 +25,9 @@
         </div>
       </div>
 
-      <!-- 广告：GPT slot 1 -->
+      <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-mods-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
     </section>
 
@@ -58,9 +58,9 @@
                   <p class="mods-list-sub">{{ filteredMods.length }} listing(s)</p>
                 </header>
 
-                <!-- 广告：GPT slot 2 -->
+                <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-mods-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
                 <ul v-if="filteredMods.length" class="mods-page-list">
@@ -94,9 +94,9 @@
 
                 <p v-else class="mods-list-empty" role="status">No mods in this category.</p>
 
-                <!-- 广告：GPT slot 3 -->
+                <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-mods-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
               </div>
             </div>
@@ -148,9 +148,9 @@
                 />
               </figure>
 
-              <!-- 广告：GPT slot 4 -->
+              <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-4" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-mods-4" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
               <div class="mods-install-grid">
@@ -242,9 +242,9 @@
                 </section>
 
                 <section id="mod-install-troubleshoot" class="mods-install-card mods-install-card--wide">
-                  <!-- 广告：GPT slot 5 -->
+                  <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-5" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-mods-5" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
                   <h3>Not showing up?</h3>
                   <figure class="mods-install-figure mods-install-figure--in-card">
@@ -273,9 +273,9 @@
                 </section>
 
                 <section id="mod-install-faq" class="mods-install-card mods-install-card--wide">
-                  <!-- 广告：GPT slot 6 -->
+                  <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-6" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-mods-6" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
                   <h3>FAQ</h3>
                   <div class="mods-install-faq-item">
@@ -354,10 +354,10 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import mods from '@/data/mods.js'
-import { GPT_SLOTS_MODS } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_MODS)
+useGptAds(pageBannerEntries('mods', 6))
 
 /**
  * 固定分类：`mods.js` 里 `classify` 与第一项 key 一致。

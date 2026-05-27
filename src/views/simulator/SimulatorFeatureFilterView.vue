@@ -6,9 +6,9 @@
     hero-image="/images/about-01.webp"
   >
 
-  <!-- 广告：GPT slot 1 -->
+  <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simfeature-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simfeature-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="sim-console" aria-labelledby="filter-console-title">
@@ -95,9 +95,9 @@
       </div>
     </section>
 
-    <!-- 广告：GPT slot 2 -->
+    <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simfeature-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simfeature-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="sim-seo" aria-labelledby="sim-seo-filter">
@@ -141,9 +141,9 @@
       </p>
     </section>
 
-    <!-- 广告：GPT slot 3 -->
+    <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simfeature-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simfeature-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
   </SimulatorLayout>
 </template>
@@ -151,10 +151,10 @@
 <script setup>
 import { computed, ref } from 'vue'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
-import { GPT_SLOTS_SIM_FEATURE } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_SIM_FEATURE)
+useGptAds(pageBannerEntries('simfeature', 3))
 
 /** Official Early Access lists — wording from paralives.com/development (same as Updates page) */
 const eaModes = [

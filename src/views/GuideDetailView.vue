@@ -28,9 +28,9 @@
       </div>
     </section>
 
-    <!-- 广告：GPT slot 1 -->
+    <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guidedetail-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-guidedetail-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="guide-detail-body-section">
@@ -53,18 +53,18 @@
 
         <div class="guide-detail-layout">
           <div class="guide-article-col">
-            <!-- 广告：GPT slot 2 -->
+            <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guidedetail-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-guidedetail-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
             <div
               ref="guideProseRef"
               class="guide-article-prose"
               v-html="guide.detailsHtml"
             ></div>
-            <!-- 广告：GPT slot 3 -->
+            <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guidedetail-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-guidedetail-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
           </div>
           <aside class="guide-aside" aria-label="Guide info">
@@ -115,8 +115,10 @@
 import { computed, ref, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import guides from '@/data/guides.js'
-import { GPT_SLOTS_GUIDE_DETAIL } from '@/config/gptPageSlots'
-import { mountGptPageAds, destroyGptPageAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { destroyGptPageAds, mountGptPageAds } from '@/gpt/ads'
+
+const GUIDE_DETAIL_ADS = pageBannerEntries('guidedetail', 3)
 
 const route = useRoute()
 const guideProseRef = ref(null)
@@ -207,10 +209,10 @@ watch(
     disconnectTocObserver()
     guideToc.value = []
     activeTocId.value = ''
-    destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
+    destroyGptPageAds(GUIDE_DETAIL_ADS)
     if (!g) return
     await nextTick()
-    mountGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
+    mountGptPageAds(GUIDE_DETAIL_ADS)
     await nextTick()
     guideToc.value = applyGuideToc(guideProseRef.value)
     if (guideToc.value.length) {
@@ -234,7 +236,7 @@ watch(
 
 onUnmounted(() => {
   disconnectTocObserver()
-  destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
+  destroyGptPageAds(GUIDE_DETAIL_ADS)
 })
 
 function formatDate(iso) {

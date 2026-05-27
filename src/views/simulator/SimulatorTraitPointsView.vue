@@ -5,9 +5,9 @@
     accent="traits"
     hero-image="/images/wiki/talents/Talent-Art.png"
   >
-  <!-- 广告：GPT slot 1 -->
+  <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simtrait-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simtrait-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="sim-console" aria-labelledby="trait-console-title">
@@ -92,9 +92,9 @@
       </div>
     </section>
 
-    <!-- 广告：GPT slot 2 -->
+    <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simtrait-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simtrait-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="sim-seo" aria-labelledby="sim-seo-traits">
@@ -134,9 +134,9 @@
       </p>
     </section>
 
-    <!-- 广告：GPT slot 3 -->
+    <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simtrait-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simtrait-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
   </SimulatorLayout>
 </template>
@@ -145,10 +145,10 @@
 import { computed, reactive } from 'vue'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
 import { useSimulatorCopy } from '../../composables/useSimulatorCopy.js'
-import { GPT_SLOTS_SIM_TRAIT } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_SIM_TRAIT)
+useGptAds(pageBannerEntries('simtrait', 3))
 
 const TOTAL_POINTS = 7
 const MIN_TRAIT = 1

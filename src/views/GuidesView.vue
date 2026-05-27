@@ -25,16 +25,16 @@
         </div>
       </div>
 
-      <!-- 广告：GPT slot 1 -->
+      <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guides-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-guides-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
     </section>
 
     <section class="guides-list-section">
-      <!-- 广告：GPT slot 2 -->
+      <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guides-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-guides-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
       <div class="container">
         <div class="guides-list-content">
@@ -83,9 +83,9 @@
           </div>
         </div>
       </div>
-      <!-- 广告：GPT slot 3 -->
+      <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guides-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-guides-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
     </section>
   </article>
@@ -93,10 +93,10 @@
 
 <script setup>
 import guides from '@/data/guides.js'
-import { GPT_SLOTS_GUIDES } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_GUIDES)
+useGptAds(pageBannerEntries('guides', 3))
 
 function formatDate(iso) {
   return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {

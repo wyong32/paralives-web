@@ -26,9 +26,9 @@
         </div>
       </div>
 
-      <!-- 广告：GPT slot 1 -->
+      <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-updates-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
     </section>
 
@@ -65,9 +65,9 @@
           </div>
         </section>
 
-        <!-- 广告：GPT slot 2 -->
+        <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-updates-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
         <section class="updates-block" aria-labelledby="modes-heading">
@@ -105,9 +105,9 @@
           </div>
         </section>
 
-        <!-- 广告：GPT slot 3 -->
+        <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-updates-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
         <section class="updates-block" aria-labelledby="timeline-heading">
@@ -152,9 +152,9 @@
           </ul>
         </section>
 
-        <!-- 广告：GPT slot 4 -->
+        <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-4" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-updates-4" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
         <section class="updates-block" aria-labelledby="roadmap-heading">
@@ -169,9 +169,9 @@
           </header>
         </section>
 
-        <!-- 广告：GPT slot 5 -->
+        <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-5" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-updates-5" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
         <p class="updates-disclaimer">
@@ -186,10 +186,10 @@
 </template>
 
 <script setup>
-import { GPT_SLOTS_UPDATES } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_UPDATES)
+useGptAds(pageBannerEntries('updates', 5))
 
 /** Mode lists — English bullets aligned with Paralives Studio public Early Access roadmap copy */
 const modes = [

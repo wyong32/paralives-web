@@ -27,9 +27,9 @@
         </div>
       </div>
 
-      <!-- 广告：GPT slot 1 -->
+      <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
     </section>
 
@@ -68,9 +68,9 @@
         </aside>
 
         <div class="start-main">
-          <!-- 广告：GPT slot 2 -->
+          <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
           <!-- 1 -->
           <section id="modes" class="start-section" aria-labelledby="modes-heading">
@@ -111,9 +111,9 @@
             </p>
           </section>
 
-          <!-- 广告：GPT slot 3 -->
+          <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 2 -->
@@ -153,9 +153,9 @@
             </div>
           </section>
 
-          <!-- 广告：GPT slot 4 -->
+          <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-4" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-4" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 3 -->
@@ -204,9 +204,9 @@
             </p>
           </section>
 
-          <!-- 广告：GPT slot 5 -->
+          <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-5" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-5" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 4 -->
@@ -250,9 +250,9 @@
             </p>
           </section>
 
-          <!-- 广告：GPT slot 6 -->
+          <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-6" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-6" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 5 -->
@@ -291,9 +291,9 @@
             </p>
           </section>
 
-          <!-- 广告：GPT slot 7 -->
+          <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-7" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-7" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 6 -->
@@ -416,9 +416,9 @@
             </p>
           </section>
 
-          <!-- 广告：GPT slot 8 -->
+          <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-8" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-8" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 7 -->
@@ -445,9 +445,9 @@
             </div>
           </section>
 
-          <!-- 广告：GPT slot 9 -->
+          <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-9" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-9" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 8 -->
@@ -476,9 +476,9 @@
             </ul>
           </section>
 
-          <!-- 广告：GPT slot 10 -->
+          <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-10" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-10" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 9 -->
@@ -536,9 +536,9 @@
             </div>
           </section>
 
-          <!-- 广告：GPT slot 11 -->
+          <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-11" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-start-11" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- 10 -->
@@ -595,10 +595,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { GPT_SLOTS_START } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_START)
+useGptAds(pageBannerEntries('start', 11))
 const toc = [
   { id: 'modes', num: 1, label: 'Three game modes' },
   { id: 'boot', num: 2, label: 'Install to household' },

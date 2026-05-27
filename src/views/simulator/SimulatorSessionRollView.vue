@@ -5,9 +5,9 @@
     accent="roll"
     hero-image="/images/wiki/emotions/Emotion-Happy.png"
   >
-  <!-- 广告：GPT slot 1 -->
+  <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simsession-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simsession-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="sim-console" aria-labelledby="roll-console-title">
@@ -54,9 +54,9 @@
       </div>
     </section>
 
-    <!-- 广告：GPT slot 2 -->
+    <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simsession-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simsession-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
     <section class="sim-seo" aria-labelledby="sim-seo-roll">
@@ -99,9 +99,9 @@
       </p>
     </section>
 
-    <!-- 广告：GPT slot 3 -->
+    <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simsession-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-simsession-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
   </SimulatorLayout>
 </template>
@@ -109,10 +109,10 @@
 <script setup>
 import { ref } from 'vue'
 import SimulatorLayout from '../../components/simulator/SimulatorLayout.vue'
-import { GPT_SLOTS_SIM_SESSION } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_SIM_SESSION)
+useGptAds(pageBannerEntries('simsession', 3))
 
 /** Session challenges — mechanics referenced from official day-one EA lists only */
 const sessionChallenges = [

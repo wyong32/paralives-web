@@ -40,9 +40,9 @@
         </div>
       </div>
 
-      <!-- 广告：GPT slot 1 -->
+      <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-1" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-1" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
     </section>
 
@@ -72,9 +72,9 @@
             <MelinoInteractiveMap />
           </section>
           
-<!-- 广告：GPT slot 2 -->
+<!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-2" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-2" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- Intro -->
@@ -107,9 +107,9 @@
             </ul>
           </section>
 
-          <!-- 广告：GPT slot 3 -->
+          <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-3" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-3" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- POI directory -->
@@ -151,9 +151,9 @@
             </ul>
           </section>
 
-          <!-- 广告：GPT slot 4 -->
+          <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-4" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-4" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- EA town features -->
@@ -180,9 +180,9 @@
             </div>
           </section>
 
-          <!-- 广告：GPT slot 5 -->
+          <!-- 广告：banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-5" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-5" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- First visit -->
@@ -210,9 +210,9 @@
             </p>
           </section>
 
-          <!-- 广告：GPT slot 6 -->
+          <!-- 广告：banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-6" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-6" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- FAQ -->
@@ -226,9 +226,9 @@
             </dl>
           </section>
 
-          <!-- 广告：GPT slot 7 -->
+          <!-- 广告：banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-7" class="gpt-banner-ad"></div>
+      <div id="div-gpt-ad-map-7" style="min-width: 300px; min-height: 250px;"></div>
     </aside>
 
           <!-- Related -->
@@ -274,10 +274,10 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import MelinoInteractiveMap from '@/components/map/MelinoInteractiveMap.vue'
-import { GPT_SLOTS_MAP } from '@/config/gptPageSlots'
-import { useGptAds } from '@/utils/gptAds'
+import { pageBannerEntries } from '@/gpt/config'
+import { useGptAds } from '@/gpt/ads'
 
-useGptAds(GPT_SLOTS_MAP)
+useGptAds(pageBannerEntries('map', 7))
 
 const PAGE_URL = 'https://paralives.wiki/map'
 const SITE_ORIGIN = 'https://paralives.wiki'
