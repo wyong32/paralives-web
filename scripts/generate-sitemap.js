@@ -17,6 +17,7 @@ const staticRoutes = [
   { path: '/wiki', name: 'wiki' },
   { path: '/wiki/talents', name: 'wiki-talents' },
   { path: '/wiki/vibes', name: 'wiki-vibes' },
+  { path: '/wiki/skills/leveling', name: 'wiki-skills-leveling' },
   { path: '/wiki/skills', name: 'wiki-skills' },
   { path: '/wiki/traits', name: 'wiki-traits' },
   { path: '/wiki/emotions', name: 'wiki-emotions' },

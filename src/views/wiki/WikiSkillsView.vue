@@ -16,6 +16,19 @@
         life and fun. Do not only grind what your boss lists.
       </p>
 
+      <p class="wiki-skills-appendix-titles-line">
+        Paralives Skills — Levels, Knowledge &amp; Talents
+      </p>
+
+      <aside class="wiki-skills-cta" aria-label="Paralives Skills — Levels, Knowledge and Talents">
+        <span class="wiki-skills-cta-eyebrow">Data-verified appendix</span>
+        <p class="wiki-skills-cta-desc">
+          Full skill registry, XP tuning, Knowledge directory, training routes, career reference counts, Talents
+          cross-check and Early Access limits — verified from installed game settings.
+        </p>
+        <a class="btn btn-primary wiki-skills-cta-btn" href="/wiki/skills/leveling">Open the leveling appendix →</a>
+      </aside>
+
       <h2>Level 20 and the white arrows</h2>
       <p>
         Each skill tops out at <strong>level 20</strong>. The bar fills as you practice; little white arrows hint
@@ -90,6 +103,12 @@
         You can add skills through Workshop mods, but they must slot into an existing Knowledge family — you cannot
         invent a brand-new Knowledge category without a deeper mod. See <a href="/wiki/modding">modding</a>.
       </p>
+
+      <p class="wiki-skills-cta-tail">
+        Want the verified registry and career cross-check?
+        Jump to <a href="/wiki/skills/leveling"><strong>Levels, Knowledge &amp; Talents</strong></a>
+        — it assumes the same Live Mode skill rules described here.
+      </p>
     </div>
   </WikiCategoryShell>
 </template>
@@ -135,3 +154,77 @@ const skillRows = [
   },
 ]
 </script>
+
+<style scoped>
+.wiki-skills-appendix-titles-line {
+  margin: 1.25rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+
+.wiki-skills-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin: 0 0 1.85rem;
+  padding: 1.25rem 1.35rem 1.35rem;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--color-sage-dark);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-lemon) 72%, var(--color-white)) 0%,
+    color-mix(in srgb, var(--color-mint) 48%, var(--color-white)) 52%,
+    color-mix(in srgb, var(--color-peach) 35%, var(--color-white)) 100%
+  );
+  box-shadow:
+    0 5px 0 color-mix(in srgb, var(--color-sage-dark) 22%, transparent),
+    var(--shadow-card);
+}
+
+.wiki-skills-cta-eyebrow {
+  display: inline-block;
+  width: fit-content;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--font-cartoon);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-sage-dark);
+  background: color-mix(in srgb, var(--color-white) 78%, transparent);
+  border: 2px dashed color-mix(in srgb, var(--color-sage) 45%, transparent);
+}
+
+.wiki-skills-cta-desc {
+  margin: 0 0 0.15rem;
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--color-ink-muted);
+  max-width: none;
+}
+
+.wiki-skills-cta-btn {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.65rem 1.25rem;
+}
+
+.wiki-skills-cta-tail {
+  margin-top: 0;
+  font-size: 0.98rem;
+  color: var(--color-ink-muted);
+}
+
+@media (max-width: 520px) {
+  .wiki-skills-cta-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+</style>

@@ -52,9 +52,6 @@ export const GPT_BANNERS = [
   },
 ]
 
-/** 可选 fixed_1；本项目无 fixed，接入时在真实代码存在且页面有 fixed 占位时填写 */
-export const GPT_FIXED = null
-
 const bannerByKey = new Map(GPT_BANNERS.map((b) => [b.key, b]))
 
 export function getBannerSpec(unit) {

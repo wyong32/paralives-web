@@ -87,6 +87,18 @@ const router = createRouter({
       },
     },
     {
+      path: '/wiki/skills/leveling',
+      name: 'wiki-skills-leveling',
+      component: () => import('../views/wiki/WikiSkillsLevelingView.vue'),
+      meta: {
+        title: 'Paralives Skills Guide: Levels and Knowledge | Paralives Wiki',
+        description:
+          'Explore verified Paralives skills: levels, Knowledge categories, Talents, training methods, career uses, child skills and Early Access data notes.',
+        keywords:
+          'Paralives skills, Paralives skills guide, Paralives skill leveling, Paralives Knowledge skills, Paralives Talents, Paralives Cooking skill, Paralives Programming skill, Paralives Fitness skill, Paralives career skills',
+      },
+    },
+    {
       path: '/wiki/skills',
       name: 'wiki-skills',
       component: () => import('../views/wiki/WikiSkillsView.vue'),

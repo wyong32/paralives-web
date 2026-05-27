@@ -38,7 +38,7 @@
         <nav
           v-if="guideToc.length"
           class="guide-toc-mobile"
-          aria-label="Sections on this guide"
+          aria-label="On this page"
         >
           <a
             v-for="(item, i) in guideToc"
@@ -69,8 +69,8 @@
           </div>
           <aside class="guide-aside" aria-label="Guide info">
             <div v-if="guideToc.length" class="guide-aside-card guide-aside-card--toc">
-              <h2>Sections</h2>
-              <nav class="guide-toc-nav" aria-label="Guide section links">
+              <h2>On This Page</h2>
+              <nav class="guide-toc-nav" aria-label="On this page">
                 <a
                   v-for="item in guideToc"
                   :key="item.id"
@@ -83,7 +83,17 @@
               </nav>
             </div>
 
-            <div class="guide-aside-card guide-aside-card--links">
+            <div
+              v-if="guide.sidebarChecklist?.items?.length"
+              class="guide-aside-card guide-aside-card--checklist"
+            >
+              <h2>{{ guide.sidebarChecklist.title }}</h2>
+              <ul class="guide-aside-checklist">
+                <li v-for="item in guide.sidebarChecklist.items" :key="item">{{ item }}</li>
+              </ul>
+            </div>
+
+            <div v-else class="guide-aside-card guide-aside-card--links">
               <h2>Explore more</h2>
               <ul class="guide-aside-links">
                 <li><a href="/guides">All guides</a></li>
@@ -401,7 +411,7 @@ function formatDate(iso) {
   background: var(--color-white);
 }
 
-/* 移动端：正文前章节快跳（桌面端用侧栏 Sections） */
+/* 移动端：正文前章节快跳（桌面端用侧栏 On This Page） */
 .guide-toc-mobile {
   display: flex;
   flex-wrap: wrap;
@@ -509,6 +519,36 @@ function formatDate(iso) {
   font-size: 1rem;
   margin-bottom: 0.75rem;
   color: var(--color-ink);
+}
+
+.guide-aside-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.guide-aside-checklist li {
+  position: relative;
+  padding: 0.45rem 0 0.45rem 1.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-mint) 35%, transparent);
+  color: var(--color-ink-muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.guide-aside-checklist li:last-child {
+  border-bottom: 0;
+}
+
+.guide-aside-checklist li::before {
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  content: '✓';
+  color: var(--color-sage-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
 }
 
 .guide-aside-links {

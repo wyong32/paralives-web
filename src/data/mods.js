@@ -623,7 +623,7 @@ export default [
         score: 5,
         classify: "split_level_house",
         downloadUrl: 'https://steamcommunity.com/sharedfiles/filedetails/?id=3731146265',
-        addressBar: 'split-level-house',
+        addressBar: 'split-level-house-v2',
         isHome: true,
         detailsHtml: `
             <section>

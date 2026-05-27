@@ -33,13 +33,12 @@
 
     <div class="wiki-cat-body">
       <div class="container wiki-cat-container">
-        <div class="wiki-article-layout" :class="{ 'wiki-article-layout--full': fullWidth }">
+        <div class="wiki-article-layout">
           <div class="wiki-article-main">
             <slot />
           </div>
 
           <aside
-            v-if="!fullWidth"
             class="wiki-article-aside"
             aria-label="Wiki sidebar"
           >
@@ -70,7 +69,7 @@
                 </slot>
               </section>
 
-              <section v-if="!hideDefaultAsideSections && sidebarTopics.length" class="wiki-aside-panel">
+              <section v-if="sidebarTopics.length" class="wiki-aside-panel">
                 <h2 class="wiki-aside-title">Other topics</h2>
                 <ul class="wiki-aside-topics">
                   <li v-for="topic in sidebarTopics" :key="topic.slug">
@@ -83,7 +82,6 @@
               </section>
 
               <section
-                v-if="!hideDefaultAsideSections"
                 class="wiki-aside-panel wiki-aside-panel--muted"
               >
                 <h2 class="wiki-aside-title">Explore</h2>
@@ -127,10 +125,6 @@ const props = defineProps({
     validator: (v) =>
       v == null || (typeof v.href === 'string' && typeof v.title === 'string'),
   },
-  /** 主栏全宽，不渲染右侧栏（长列表页用） */
-  fullWidth: { type: Boolean, default: false },
-  /** 隐藏 Keep reading（含 #keep-reading）/ Other topics / Explore；#aside 仍渲染 */
-  hideDefaultAsideSections: { type: Boolean, default: false },
   /** 各分类页可在调用处覆盖；默认与 Wiki 总览气质一致 */
   heroImage: { type: String, default: '/images/about-02.webp' },
 })
@@ -147,7 +141,6 @@ const neighbors = computed(() => {
 const hasKeepReadingSlot = computed(() => Boolean(slots['keep-reading']?.()?.length))
 
 const showKeepReadingSection = computed(() => {
-  if (props.hideDefaultAsideSections) return false
   const n = neighbors.value
   return hasKeepReadingSlot.value || Boolean(n.prev || n.next)
 })

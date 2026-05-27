@@ -3,7 +3,7 @@
  */
 /* global googletag */
 import { onMounted, onUnmounted } from 'vue'
-import { getBannerSpec, GPT_FIXED, GPT_GLOBAL } from '@/gpt/config'
+import { getBannerSpec, GPT_GLOBAL } from '@/gpt/config'
 
 const MOBILE_MAX_WIDTH = 768
 
@@ -47,14 +47,6 @@ function buildSizeMapping(sizes) {
 }
 
 function defineInpageSlot(elementId, unit, pubads, reg) {
-  if (unit === 'fixed' || unit === 'fixed1') {
-    if (!GPT_FIXED?.path) return null
-    const fixed = GPT_FIXED
-    const slot = googletag.defineSlot(fixed.path, fixed.sizes, elementId).addService(pubads)
-    reg.set(elementId, slot)
-    return slot
-  }
-
   const spec = getBannerSpec(unit)
   if (!spec?.path) return null
 
