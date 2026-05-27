@@ -53,7 +53,7 @@
 
     <!-- 广告：GPT banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-1" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-home-1" class="gpt-banner-ad"></div>
     </aside>
     <section class="quick-section" aria-labelledby="quick-heading">
       <span class="section-dots" aria-hidden="true"></span>
@@ -80,7 +80,7 @@
 
       <!-- 广告：GPT banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-home-2" class="gpt-banner-ad"></div>
     </aside>
     </section>
     
@@ -121,7 +121,7 @@
 
       <!-- 广告：GPT banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-home-3" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -180,9 +180,9 @@
         </div>
       </div>
 
-      <!-- 广告：GPT fixed_1 -->
+      <!-- 广告：GPT banner → 轮换 1／2／3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-4" style="min-width: 300px; min-height: 50px;"></div>
+      <div id="div-gpt-ad-home-4" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -219,7 +219,7 @@
 
       <!-- 广告：GPT banner_2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-5" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-home-5" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -290,7 +290,7 @@
             </article>
             <!-- 广告：GPT banner_3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-6" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-home-6" class="gpt-banner-ad"></div>
     </aside>
             <article class="about-row about-row--reverse">
               <figure class="about-row-media">
@@ -337,7 +337,7 @@
             </article>
             <!-- 广告：GPT banner_1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-7" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-home-7" class="gpt-banner-ad"></div>
     </aside>
           </div>
         </div>
@@ -363,9 +363,9 @@
           </ul>
         </div>
       </div>
-      <!-- 广告：GPT fixed_1 -->
+      <!-- 广告：GPT banner → 轮换 1／2／3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-home-8" style="min-width: 300px; min-height: 50px;"></div>
+      <div id="div-gpt-ad-home-8" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -390,6 +390,17 @@
         </div>
       </div>
     </section>
+
+    <!-- 锚定 + 插屏：仅首页，Teleport 到 body（与 GAM 后台 id 一致） -->
+    <Teleport to="body">
+      <div id="div-gpt-ad-1779702015214-0" data-gpt-home-only></div>
+      <div
+        id="div-gpt-ad-1779702201476-0"
+        data-gpt-home-only
+        aria-hidden="true"
+        style="min-width: 0; min-height: 0; height: 0; margin: 0; padding: 0; border: 0; overflow: hidden; line-height: 0; font-size: 0"
+      ></div>
+    </Teleport>
   </article>
 </template>
 
@@ -397,10 +408,10 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import guides from '@/data/guides.js'
 import mods from '@/data/mods.js'
-import { GPT_SLOTS_HOME } from '@/config/gptPageSlots'
+import { GPT_SLOTS_HOME, GPT_SLOTS_HOME_GLOBAL } from '@/config/gptPageSlots'
 import { useGptAds } from '@/utils/gptAds'
 
-useGptAds(GPT_SLOTS_HOME)
+useGptAds([...GPT_SLOTS_HOME_GLOBAL, ...GPT_SLOTS_HOME])
 
 /** Steam / official descriptors — genres, modes, and community-facing features */
 const heroGameTags = [

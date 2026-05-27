@@ -63,7 +63,7 @@
 
       <!-- 广告：banner_1 -->
       <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-        <div id="div-gpt-ad-moddetail-1" style="min-width: 300px; min-height: 250px;"></div>
+        <div id="div-gpt-ad-moddetail-1" class="gpt-banner-ad"></div>
       </aside>
     </section>
 
@@ -134,14 +134,14 @@
             <div class="mod-article-panel">
               <!-- 广告：GPT slot 2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-moddetail-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-moddetail-2" class="gpt-banner-ad"></div>
     </aside>
 
               <div class="mod-article-prose" v-html="mod.detailsHtml"></div>
 
               <!-- 广告：GPT slot 3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-moddetail-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-moddetail-3" class="gpt-banner-ad"></div>
     </aside>
             </div>
             <footer class="mod-detail-end">

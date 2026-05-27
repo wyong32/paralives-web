@@ -267,8 +267,7 @@ export default [
     },
     isHome: true,
     addressBar: "paralives-early-access-first-impressions-review",
-    detailsHtml: `<h1>Paralives Early Access Review: A Promising Life Sim That Builders Will Love First
-  </h1>
+    detailsHtml: `
   <p>Paralives has finally arrived in Early Access, giving life simulation fans a new world to explore, characters to create, and homes to design. Based on early Steam user feedback, the game already has a strong creative foundation, but its live mode, performance, and technical stability still need meaningful improvement.
   </p>
   <p><img src="/images/guides/guide03-01.webp" alt="paralives-open-world-town" width="50%">
@@ -388,8 +387,7 @@ export default [
     },
     isHome: true,
     addressBar: "paralives-lag-fix-performance-optimization",
-    detailsHtml: `<h1>Paralives Lag Fix Guide: How to Reduce Stuttering, Low FPS, and Performance Issues
-  </h1>
+    detailsHtml: `
   <p>Paralives is now available in Early Access, but many players are reporting lag, stuttering, low FPS, long loading times, freezing, and occasional crashes. These problems can appear in Live Mode, while moving the camera, or after playing for a longer session.
   </p>
   <p>This guide collects the most useful early community suggestions for improving Paralives performance. There is currently no guaranteed fix for every system, but the steps below may make the game smoother while official optimization updates continue.

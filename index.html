@@ -19,8 +19,6 @@
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="https://paralives.wiki/" />
     <script>
-      // LCP hints for hero: preload poster frame (matches HomeView poster). Do not preload as=video —
-      // Chrome often warns "unsupported `as` value" for `<link rel=preload as=video>`.
       ;(function () {
         var path = location.pathname.replace(/\/+$/, '') || '/'
         if (path !== '/') return
@@ -62,40 +60,8 @@
       content="/images/logo.webp"
     />
     <title>Paralives Wiki — Game Wiki, Guides, Mods, Simulator &amp; Map</title>
-    <!-- GAM：加载 GPT 库；锚定/插屏的 define 与 enableServices 见下方内联脚本（勿在别处再调 enableServices） -->
+    <!-- GAM：仅加载 GPT；defineSlot / enableServices 由首屏路由内 gptAds.js 触发（首页含锚定+插屏） -->
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
-    <script>
-      window.googletag = window.googletag || { cmd: [] }
-      googletag.cmd.push(function () {
-        var pubads = googletag.pubads()
-        googletag
-          .defineSlot(
-            '/23346398271/paralives.wiki_all_0525/paralives.wiki_0525_anchor_1',
-            [320, 50],
-            'div-gpt-ad-1779702015214-0',
-          )
-          .addService(pubads)
-        googletag
-          .defineSlot(
-            '/23346398271/paralives.wiki_all_0525/paralives.wiki_0525_inter_1',
-            [[320, 480], 'fluid'],
-            'div-gpt-ad-1779702201476-0',
-          )
-          .addService(pubads)
-        // 与弃用 API 等价的 setConfig；全站另含页内 define，此处保持 singleRequest: false
-        googletag.setConfig({ singleRequest: false })
-        googletag.enableServices()
-
-        var anchorId = 'div-gpt-ad-1779702015214-0'
-        pubads.addEventListener('slotRenderEnded', function (event) {
-          if (event.slot.getSlotElementId() !== anchorId) return
-          var node = document.getElementById(anchorId)
-          if (!node) return
-          if (event.isEmpty) node.classList.remove('gpt-anchor-has-ad')
-          else node.classList.add('gpt-anchor-has-ad')
-        })
-      })
-    </script>
     <script type="application/ld+json" data-seo-ld="1">
       {
         "@context": "https://schema.org",
@@ -132,13 +98,12 @@
     <script>
       window.addEventListener('load', function () {
         setTimeout(function () {
-          // 延迟加载Google Analytics
           const gtagScript = document.createElement('script');
           gtagScript.async = true;
           gtagScript.defer = true;
           gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XH8752Q5WG';
           document.head.appendChild(gtagScript);
-  
+
           window.dataLayer = window.dataLayer || [];
           function gtag() { dataLayer.push(arguments); }
           gtag('js', new Date());
@@ -149,29 +114,6 @@
   </head>
   <body>
     <div id="app"></div>
-    <!-- 锚定：路径同 GAM「paralives.wiki_0525_anchor_1」；布局（未出稿不占高）见 main.css -->
-    <!-- /23346398271/paralives.wiki_all_0525/paralives.wiki_0525_anchor_1 -->
-    <div id="div-gpt-ad-1779702015214-0"></div>
-    <script>
-      window.googletag = window.googletag || { cmd: [] }
-      googletag.cmd.push(function () {
-        googletag.display('div-gpt-ad-1779702015214-0')
-      })
-    </script>
-
-    <!-- 插屏：路径同 GAM「paralives.wiki_0525_inter_1」；勿设 min-height:480px 以免未出稿顶出大块空白 -->
-    <!-- /23346398271/paralives.wiki_all_0525/paralives.wiki_0525_inter_1 -->
-    <div
-      id="div-gpt-ad-1779702201476-0"
-      aria-hidden="true"
-      style="min-width: 0; min-height: 0; height: 0; margin: 0; padding: 0; border: 0; overflow: hidden; line-height: 0; font-size: 0"
-    ></div>
-    <script>
-      window.googletag = window.googletag || { cmd: [] }
-      googletag.cmd.push(function () {
-        googletag.display('div-gpt-ad-1779702201476-0')
-      })
-    </script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

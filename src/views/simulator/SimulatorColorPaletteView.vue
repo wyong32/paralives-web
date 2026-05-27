@@ -8,7 +8,7 @@
 
   <!-- 广告：GPT slot 1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simcolor-1" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-simcolor-1" class="gpt-banner-ad"></div>
     </aside>
     
     <section class="sim-console" aria-labelledby="palette-console-title">
@@ -76,7 +76,7 @@
 
     <!-- 广告：GPT slot 2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simcolor-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-simcolor-2" class="gpt-banner-ad"></div>
     </aside>
 
     <section class="sim-seo" aria-labelledby="sim-seo-palette">
@@ -113,7 +113,7 @@
     </section>
     <!-- 广告：GPT slot 3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-simcolor-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-simcolor-3" class="gpt-banner-ad"></div>
     </aside>
 
   </SimulatorLayout>

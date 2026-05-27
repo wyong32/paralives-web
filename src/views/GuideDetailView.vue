@@ -12,7 +12,7 @@
           <span>{{ guide.tags?.[0] || 'Article' }}</span>
         </nav>
         <header class="guide-detail-header">
-          <ul v-if="guide.tags?.length" class="guide-detail-tags">
+          <ul v-if="guide.tags?.length" class="guide-detail-tags" aria-label="Topics">
             <li v-for="tag in guide.tags" :key="tag">{{ tag }}</li>
           </ul>
           <h1 id="guide-title">{{ guide.title }}</h1>
@@ -20,45 +20,67 @@
           <p class="guide-detail-meta">
             <time :datetime="guide.publishDate">{{ formatDate(guide.publishDate) }}</time>
           </p>
+          <p class="guide-detail-disclaimer">
+            Fan-written for Early Access players. Facts may change with patches — check
+            <a href="/updates">Updates</a> after major releases.
+          </p>
         </header>
       </div>
     </section>
 
     <!-- 广告：GPT slot 1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guidedetail-1" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-guidedetail-1" class="gpt-banner-ad"></div>
     </aside>
 
     <section class="guide-detail-body-section">
       <div class="container">
+        <nav
+          v-if="guideToc.length"
+          class="guide-toc-mobile"
+          aria-label="Sections on this guide"
+        >
+          <a
+            v-for="(item, i) in guideToc"
+            :key="item.id"
+            :href="`#${item.id}`"
+            class="guide-toc-mobile-link"
+            :class="{ 'is-active': activeTocId === item.id }"
+          >
+            {{ i + 1 }}
+          </a>
+        </nav>
+
         <div class="guide-detail-layout">
           <div class="guide-article-col">
             <!-- 广告：GPT slot 2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guidedetail-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-guidedetail-2" class="gpt-banner-ad"></div>
     </aside>
-            <div class="guide-article-prose" v-html="guide.detailsHtml"></div>
+            <div
+              ref="guideProseRef"
+              class="guide-article-prose"
+              v-html="guide.detailsHtml"
+            ></div>
             <!-- 广告：GPT slot 3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guidedetail-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-guidedetail-3" class="gpt-banner-ad"></div>
     </aside>
           </div>
           <aside class="guide-aside" aria-label="Guide info">
-            <div class="guide-aside-card">
-              <img
-                :src="imgSm"
-                alt=""
-                class="guide-aside-icon"
-                aria-hidden="true"
-              />
-              <h2>On this guide</h2>
-              <ul v-if="guide.tags?.length" class="guide-aside-tags">
-                <li v-for="tag in guide.tags" :key="tag">{{ tag }}</li>
-              </ul>
-              <p class="guide-aside-note">
-                Fan-written for Early Access players. Facts may change with patches — check Updates
-                after major releases.
-              </p>
+            <div v-if="guideToc.length" class="guide-aside-card guide-aside-card--toc">
+              <h2>Sections</h2>
+              <nav class="guide-toc-nav" aria-label="Guide section links">
+                <a
+                  v-for="item in guideToc"
+                  :key="item.id"
+                  :href="`#${item.id}`"
+                  class="guide-toc-nav-link"
+                  :class="{ 'is-active': activeTocId === item.id }"
+                >
+                  {{ item.label }}
+                </a>
+              </nav>
             </div>
 
             <div class="guide-aside-card guide-aside-card--links">
@@ -71,15 +93,6 @@
                 <li><a href="/map">Town map</a></li>
               </ul>
             </div>
-
-            <ul v-if="otherGuides.length" class="guide-aside-more">
-              <li v-for="item in otherGuides" :key="item.id">
-                <a :href="`/guides/${item.addressBar}`">
-                  <span v-if="item.tags?.[0]" class="guide-aside-more-tag">{{ item.tags[0] }}</span>
-                  {{ item.title }}
-                </a>
-              </li>
-            </ul>
           </aside>
         </div>
       </div>
@@ -99,34 +112,130 @@
 </template>
 
 <script setup>
-import { computed, watch, nextTick, onUnmounted } from 'vue'
+import { computed, ref, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import guides from '@/data/guides.js'
 import { GPT_SLOTS_GUIDE_DETAIL } from '@/config/gptPageSlots'
 import { mountGptPageAds, destroyGptPageAds } from '@/utils/gptAds'
 
-const imgSm = '/images/ico.webp'
-
 const route = useRoute()
+const guideProseRef = ref(null)
+const guideToc = ref([])
+const activeTocId = ref('')
+
+let tocObserver = null
 
 const guide = computed(() => guides.find((g) => g.addressBar === route.params.slug))
+
+function disconnectTocObserver() {
+  tocObserver?.disconnect()
+  tocObserver = null
+}
+
+/** URL-safe slug from heading text; used when injected HTML has no id on h2 */
+function slugifyHeading(text) {
+  const raw = String(text || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[''`]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+  return raw.slice(0, 72) || 'section'
+}
+
+/**
+ * Assign stable ids to h2 in injected prose and return toc entries.
+ * Preserves existing id attributes when present.
+ */
+function applyGuideToc(proseEl) {
+  if (!proseEl) return []
+  const headings = proseEl.querySelectorAll('h2')
+  const used = new Set()
+  const items = []
+  headings.forEach((h) => {
+    let id = h.getAttribute('id')?.trim()
+    if (!id) {
+      const base = slugifyHeading(h.textContent)
+      id = base
+      let n = 2
+      while (used.has(id)) {
+        id = `${base}-${n}`
+        n += 1
+      }
+      h.id = id
+    }
+    used.add(id)
+    const label = (h.textContent || '').trim()
+    if (!label) return
+    items.push({ id, label })
+  })
+  return items
+}
+
+function setupTocObserver(ids) {
+  disconnectTocObserver()
+  if (!ids.length) return
+  tocObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+      const id = visible[0]?.target?.id
+      if (id) activeTocId.value = id
+    },
+    { rootMargin: '-20% 0px -55% 0px', threshold: [0, 0.25, 0.5] },
+  )
+  ids.forEach((id) => {
+    const el = document.getElementById(id)
+    if (el) tocObserver.observe(el)
+  })
+}
+
+function scrollToHashIfPresent() {
+  const raw = route.hash?.replace(/^#/, '')
+  if (!raw) return
+  const el = document.getElementById(raw)
+  if (!el) return
+  requestAnimationFrame(() => {
+    el.scrollIntoView({ behavior: 'auto', block: 'start' })
+  })
+}
 
 watch(
   guide,
   async (g) => {
+    disconnectTocObserver()
+    guideToc.value = []
+    activeTocId.value = ''
     destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
     if (!g) return
     await nextTick()
     mountGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
+    await nextTick()
+    guideToc.value = applyGuideToc(guideProseRef.value)
+    if (guideToc.value.length) {
+      activeTocId.value = guideToc.value[0].id
+      await nextTick()
+      setupTocObserver(guideToc.value.map((t) => t.id))
+      scrollToHashIfPresent()
+    }
   },
   { immediate: true },
 )
 
-onUnmounted(() => destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL))
-
-const otherGuides = computed(() =>
-  guides.filter((g) => g.addressBar !== route.params.slug).slice(0, 3),
+watch(
+  () => route.hash,
+  async () => {
+    if (!guide.value || !guideToc.value.length) return
+    await nextTick()
+    scrollToHashIfPresent()
+  },
 )
+
+onUnmounted(() => {
+  disconnectTocObserver()
+  destroyGptPageAds(GPT_SLOTS_GUIDE_DETAIL)
+})
 
 function formatDate(iso) {
   if (!iso) return ''
@@ -266,9 +375,104 @@ function formatDate(iso) {
   color: var(--color-lemon);
 }
 
+.guide-detail-disclaimer {
+  margin-top: 1rem;
+  max-width: 52ch;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--color-white) 76%, transparent);
+}
+
+.guide-detail-disclaimer a {
+  color: var(--color-lemon);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.guide-detail-disclaimer a:hover {
+  color: var(--color-white);
+}
+
 .guide-detail-body-section {
   padding: 2.5rem 0 4.5rem;
   background: var(--color-white);
+}
+
+/* 移动端：正文前章节快跳（桌面端用侧栏 Sections） */
+.guide-toc-mobile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-cream) 60%, var(--color-white));
+  border: 2px solid color-mix(in srgb, var(--color-mint) 45%, transparent);
+}
+
+@media (min-width: 1025px) {
+  .guide-toc-mobile {
+    display: none;
+  }
+}
+
+.guide-toc-mobile-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-family: var(--font-cartoon);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  border: 2px solid color-mix(in srgb, var(--color-sage) 28%, transparent);
+}
+
+.guide-toc-mobile-link.is-active {
+  background: var(--color-sage);
+  color: var(--color-white);
+  border-color: var(--color-sage);
+}
+
+.guide-aside-card--toc .guide-toc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  max-height: min(60vh, 22rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 0.25rem;
+  margin-right: -0.25rem;
+}
+
+.guide-toc-nav-link {
+  display: block;
+  padding: 0.38rem 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-mint) 55%, transparent);
+  line-height: 1.35;
+  transition: color 0.15s ease;
+}
+
+.guide-toc-nav-link:last-child {
+  border-bottom: none;
+}
+
+.guide-toc-nav-link:hover {
+  color: var(--color-sage-dark);
+}
+
+.guide-toc-nav-link.is-active {
+  color: var(--color-ink);
 }
 
 .guide-detail-layout {
@@ -298,38 +502,11 @@ function formatDate(iso) {
   box-shadow: var(--shadow-card);
 }
 
-.guide-aside-icon {
-  border-radius: var(--radius-sm);
-  margin-bottom: 0.65rem;
-}
-
 .guide-aside-card h2 {
   font-family: var(--font-cartoon);
   font-size: 1rem;
   margin-bottom: 0.75rem;
   color: var(--color-ink);
-}
-
-.guide-aside-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  list-style: none;
-  margin-bottom: 0.85rem;
-}
-
-.guide-aside-tags li {
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  background: var(--color-lemon);
-}
-
-.guide-aside-note {
-  font-size: 0.85rem;
-  color: var(--color-ink-muted);
-  line-height: 1.55;
 }
 
 .guide-aside-links {
@@ -349,37 +526,6 @@ function formatDate(iso) {
   text-decoration: underline;
 }
 
-.guide-aside-more {
-  list-style: none;
-}
-
-.guide-aside-more a {
-  display: block;
-  padding: 0.85rem 1rem;
-  background: var(--color-white);
-  border-radius: var(--radius-sm);
-  border: 2px solid var(--color-peach);
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--color-ink);
-  line-height: 1.4;
-  transition: border-color 0.2s ease;
-}
-
-.guide-aside-more a:hover {
-  border-color: var(--color-sage);
-}
-
-.guide-aside-more-tag {
-  display: block;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-coral-deep);
-  margin-bottom: 0.25rem;
-}
-
 .guide-not-found {
   text-align: center;
   padding: 5rem 1rem;
@@ -396,6 +542,10 @@ function formatDate(iso) {
 }
 
 @media (max-width: 1024px) {
+  .guide-aside-card--toc {
+    display: none;
+  }
+
   .guide-detail-layout {
     grid-template-columns: 1fr;
   }
@@ -434,6 +584,7 @@ function formatDate(iso) {
   font-size: 1.35rem;
   color: var(--color-sage-dark);
   margin: 2rem 0 0.85rem;
+  scroll-margin-top: var(--site-anchor-offset, 6.35rem);
 }
 
 .guide-article-prose h3 {

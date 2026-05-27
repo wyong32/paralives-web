@@ -28,7 +28,7 @@
 
       <!-- 广告：GPT slot 1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-1" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-updates-1" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -67,7 +67,7 @@
 
         <!-- 广告：GPT slot 2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-updates-2" class="gpt-banner-ad"></div>
     </aside>
 
         <section class="updates-block" aria-labelledby="modes-heading">
@@ -107,7 +107,7 @@
 
         <!-- 广告：GPT slot 3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-updates-3" class="gpt-banner-ad"></div>
     </aside>
 
         <section class="updates-block" aria-labelledby="timeline-heading">
@@ -154,7 +154,7 @@
 
         <!-- 广告：GPT slot 4 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-4" style="min-width: 300px; min-height: 50px;"></div>
+      <div id="div-gpt-ad-updates-4" class="gpt-banner-ad"></div>
     </aside>
 
         <section class="updates-block" aria-labelledby="roadmap-heading">
@@ -171,7 +171,7 @@
 
         <!-- 广告：GPT slot 5 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-5" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-updates-5" class="gpt-banner-ad"></div>
     </aside>
 
         <p class="updates-disclaimer">

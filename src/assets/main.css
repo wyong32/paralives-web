@@ -920,8 +920,18 @@ img {
   }
 }
 
-/* GAM 底部锚定（index.html）：未出稿不占版面；出稿后在 slotRenderEnded 里加上 .gpt-anchor-has-ad。
-   若在浏览器打开了 Google Publisher Console，调试层仍可能对「空缺」画一大块，与页面 CSS 留白不同。 */
+/* GAM 底部锚定：仅在首页 Teleport；未出稿不占版面 → .gpt-anchor-has-ad */
+
+/* GPT 横幅占位：不写死 300px 宽；桌面留白由 sizeMapping → 970×250，容器随 max-width 撑开 */
+
+.gpt-banner-ad {
+  display: inline-block;
+  width: min(970px, 100%);
+  min-height: 250px;
+  margin-inline: auto;
+  vertical-align: top;
+}
+
 #div-gpt-ad-1779702015214-0 {
   position: fixed;
   left: 0;

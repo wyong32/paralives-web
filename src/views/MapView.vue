@@ -42,7 +42,7 @@
 
       <!-- 广告：GPT slot 1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-1" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-map-1" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -74,7 +74,7 @@
           
 <!-- 广告：GPT slot 2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-map-2" class="gpt-banner-ad"></div>
     </aside>
 
           <!-- Intro -->
@@ -109,7 +109,7 @@
 
           <!-- 广告：GPT slot 3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-map-3" class="gpt-banner-ad"></div>
     </aside>
 
           <!-- POI directory -->
@@ -153,7 +153,7 @@
 
           <!-- 广告：GPT slot 4 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-4" style="min-width: 300px; min-height: 50px;"></div>
+      <div id="div-gpt-ad-map-4" class="gpt-banner-ad"></div>
     </aside>
 
           <!-- EA town features -->
@@ -182,7 +182,7 @@
 
           <!-- 广告：GPT slot 5 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-5" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-map-5" class="gpt-banner-ad"></div>
     </aside>
 
           <!-- First visit -->
@@ -212,7 +212,7 @@
 
           <!-- 广告：GPT slot 6 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-6" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-map-6" class="gpt-banner-ad"></div>
     </aside>
 
           <!-- FAQ -->
@@ -228,7 +228,7 @@
 
           <!-- 广告：GPT slot 7 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-7" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-map-7" class="gpt-banner-ad"></div>
     </aside>
 
           <!-- Related -->

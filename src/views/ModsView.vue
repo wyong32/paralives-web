@@ -27,7 +27,7 @@
 
       <!-- 广告：GPT slot 1 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-1" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-mods-1" class="gpt-banner-ad"></div>
     </aside>
     </section>
 
@@ -60,7 +60,7 @@
 
                 <!-- 广告：GPT slot 2 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-2" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-mods-2" class="gpt-banner-ad"></div>
     </aside>
 
                 <ul v-if="filteredMods.length" class="mods-page-list">
@@ -96,7 +96,7 @@
 
                 <!-- 广告：GPT slot 3 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-3" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-mods-3" class="gpt-banner-ad"></div>
     </aside>
               </div>
             </div>
@@ -150,7 +150,7 @@
 
               <!-- 广告：GPT slot 4 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-4" style="min-width: 300px; min-height: 50px;"></div>
+      <div id="div-gpt-ad-mods-4" class="gpt-banner-ad"></div>
     </aside>
 
               <div class="mods-install-grid">
@@ -244,7 +244,7 @@
                 <section id="mod-install-troubleshoot" class="mods-install-card mods-install-card--wide">
                   <!-- 广告：GPT slot 5 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-5" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-mods-5" class="gpt-banner-ad"></div>
     </aside>
                   <h3>Not showing up?</h3>
                   <figure class="mods-install-figure mods-install-figure--in-card">
@@ -275,7 +275,7 @@
                 <section id="mod-install-faq" class="mods-install-card mods-install-card--wide">
                   <!-- 广告：GPT slot 6 -->
     <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-mods-6" style="min-width: 300px; min-height: 250px;"></div>
+      <div id="div-gpt-ad-mods-6" class="gpt-banner-ad"></div>
     </aside>
                   <h3>FAQ</h3>
                   <div class="mods-install-faq-item">

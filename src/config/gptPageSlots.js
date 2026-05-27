@@ -1,10 +1,10 @@
 /**
- * 页面内占位：全站唯一的 div id + 所用广告单元（与 gpt.js 中 GPT_UNIT_SPECS 键一致）。
- * 从上到下循环 banner1 → banner2 → banner3 → fixed。
+ * 页面内占位：全站唯一的 div id + 所用广告单元（仅 banner1 / banner2 / banner3 轮换）。
  */
+import { GPT_UNIT_SPECS } from '@/config/gpt'
 
 function pack(pageSlug, count) {
-  const cycle = ['banner1', 'banner2', 'banner3', 'fixed']
+  const cycle = ['banner1', 'banner2', 'banner3']
   const out = []
   for (let i = 0; i < count; i++) {
     out.push({
@@ -14,6 +14,12 @@ function pack(pageSlug, count) {
   }
   return out
 }
+
+/** 仅首页：锚定 + 插屏（Teleport 到 body），与 GAM 后台 id 一致 */
+export const GPT_SLOTS_HOME_GLOBAL = [
+  { elementId: GPT_UNIT_SPECS.anchor.elementId, unitKey: 'anchor' },
+  { elementId: GPT_UNIT_SPECS.inter.elementId, unitKey: 'inter' },
+]
 
 export const GPT_SLOTS_HOME = pack('home', 8)
 export const GPT_SLOTS_START = pack('start', 11)
@@ -30,7 +36,7 @@ export const GPT_SLOTS_SIM_SESSION = pack('simsession', 3)
 export const GPT_SLOTS_SIM_FEATURE = pack('simfeature', 3)
 export const GPT_SLOTS_SIM_COLOR = pack('simcolor', 3)
 
-/** 全站页内点位汇总（不参与启动 define；仅供核对数量或脚本使用） */
+/** 页内横幅汇总（不含首页全局锚定/插屏；仅供核对） */
 export const GPT_ALL_INPAGE_SLOTS = [
   ...GPT_SLOTS_HOME,
   ...GPT_SLOTS_START,
