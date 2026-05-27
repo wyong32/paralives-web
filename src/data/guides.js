@@ -830,7 +830,7 @@ export default [
     tags: ['Beginner', 'Build Mode', 'Early Access'],
     publishDate: '2026-05-27',
     readTime: '12 min read',
-    imageUrl: '/images/mods/houses/split-level-house.webp',
+    imageUrl: '/images/guides/guide06.webp',
     imageAlt: 'A furnished split-level Paralives home layout viewed from above',
     seo: {
       title: 'Paralives Build Mode Guide: Beginner Building Tips and Controls',
