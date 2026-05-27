@@ -6,16 +6,6 @@
     :breadcrumb-parent="{ title: 'Skills', href: '/wiki/skills' }"
     hero-image="/images/guides/guide03-03.webp"
   >
-    <aside class="wiki-callout wiki-callout--snapshot" aria-label="Data verification notice">
-      <p class="wiki-callout__title">Verification scope</p>
-      <p class="wiki-callout__body">
-        Based on installed <code>Skills.setting</code>, <code>Translations.setting</code>,
-        <code>Interactions.setting</code>, <code>Personalities.setting</code> and
-        <code>Occupations.setting</code>. Entries explicitly disabled or present only as translation text are labelled
-        separately rather than presented as confirmed playable skills.
-      </p>
-    </aside>
-
     <div class="wiki-prose">
       <div class="wiki-skills-stats" aria-label="Verified Paralives skill system summary">
         <div v-for="s in stats" :key="s.label" class="wiki-skills-stat">
