@@ -619,6 +619,107 @@ function formatDate(iso) {
   color: var(--color-sage-dark);
 }
 
+/* 正文表格（v-html）：薄荷表头 / 蜜桃网格 / 斑马行；极宽表可加 <div class="guide-table-scroll"> 包裹 */
+.guide-article-prose table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.35rem 0;
+  border: 3px solid color-mix(in srgb, var(--color-sage) 35%, transparent);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--color-mint-deep) 14%, transparent);
+  table-layout: auto;
+}
+
+.guide-article-prose caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 0.55rem 0.25rem 0;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.guide-article-prose thead,
+.guide-article-prose tfoot {
+  background: transparent;
+}
+
+.guide-article-prose thead th {
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--color-sage) 40%, var(--color-mint));
+  color: var(--color-ink);
+  border-color: color-mix(in srgb, var(--color-sage-dark) 28%, var(--color-peach));
+}
+
+.guide-article-prose tfoot th,
+.guide-article-prose tfoot td {
+  background: color-mix(in srgb, var(--color-mint) 52%, var(--color-white));
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .guide-article-prose thead th {
+    white-space: normal;
+  }
+}
+
+.guide-article-prose th,
+.guide-article-prose td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  border: 2px solid color-mix(in srgb, var(--color-peach) 55%, transparent);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.guide-article-prose th {
+  font-family: var(--font-cartoon);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-sage-dark);
+}
+
+.guide-article-prose td {
+  font-size: 0.93rem;
+  color: var(--color-ink-muted);
+}
+
+.guide-article-prose tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--color-cream) 70%, var(--color-white));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .guide-article-prose tbody tr:hover td {
+    background: color-mix(in srgb, var(--color-mint) 26%, var(--color-white));
+  }
+}
+
+.guide-article-prose .guide-table-scroll {
+  max-width: 100%;
+  margin: 1.35rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-sm);
+  border: 3px solid color-mix(in srgb, var(--color-sage) 35%, transparent);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--color-mint-deep) 14%, transparent);
+  background: var(--color-white);
+}
+
+.guide-article-prose .guide-table-scroll table {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 100%;
+  width: max(100%, 28rem);
+}
+
 .guide-callout {
   padding: 1rem 1.2rem;
   border-radius: var(--radius-sm);

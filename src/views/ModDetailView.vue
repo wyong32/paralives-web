@@ -703,6 +703,107 @@ function formatModDate(val) {
   color: var(--color-ink);
 }
 
+/* 正文表格（v-html）；极宽时用 <div class="mod-table-scroll"> 包裹 */
+.mod-article-prose table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1.35rem 0;
+  border: 3px solid color-mix(in srgb, var(--color-lavender-deep) 28%, transparent);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--color-lavender) 55%, transparent);
+  table-layout: auto;
+}
+
+.mod-article-prose caption {
+  caption-side: bottom;
+  text-align: left;
+  padding: 0.55rem 0.25rem 0;
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink-muted);
+}
+
+.mod-article-prose thead,
+.mod-article-prose tfoot {
+  background: transparent;
+}
+
+.mod-article-prose thead th {
+  white-space: nowrap;
+  background: color-mix(in srgb, var(--color-lavender-deep) 32%, var(--color-lavender));
+  color: var(--color-ink);
+  border-color: color-mix(in srgb, var(--color-lavender-deep) 42%, var(--color-white));
+}
+
+.mod-article-prose tfoot th,
+.mod-article-prose tfoot td {
+  background: color-mix(in srgb, var(--color-lavender) 48%, var(--color-white));
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .mod-article-prose thead th {
+    white-space: normal;
+  }
+}
+
+.mod-article-prose th,
+.mod-article-prose td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  border: 2px solid color-mix(in srgb, var(--color-lavender-deep) 22%, transparent);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.mod-article-prose th {
+  font-family: var(--font-cartoon);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-lavender-deep);
+}
+
+.mod-article-prose td {
+  font-size: 0.93rem;
+  color: var(--color-ink-muted);
+}
+
+.mod-article-prose tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--color-lavender) 14%, var(--color-white));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mod-article-prose tbody tr:hover td {
+    background: color-mix(in srgb, var(--color-lavender) 28%, var(--color-white));
+  }
+}
+
+.mod-article-prose .mod-table-scroll {
+  max-width: 100%;
+  margin: 1.35rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-sm);
+  border: 3px solid color-mix(in srgb, var(--color-lavender-deep) 28%, transparent);
+  box-shadow: 0 4px 0 color-mix(in srgb, var(--color-lavender) 55%, transparent);
+  background: var(--color-white);
+}
+
+.mod-article-prose .mod-table-scroll table {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 100%;
+  width: max(100%, 28rem);
+}
+
 .mod-callout {
   padding: 1rem 1.15rem;
   border-radius: var(--radius-sm);
