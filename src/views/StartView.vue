@@ -26,11 +26,6 @@
           </figure>
         </div>
       </div>
-
-      <!-- 广告：banner_1 -->
-    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-start-1" style="min-width: 300px; min-height: 250px;"></div>
-    </aside>
     </section>
 
     <div class="start-body">
@@ -598,7 +593,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { pageBannerEntries } from '@/gpt/config'
 import { useGptAds } from '@/gpt/ads'
 
-useGptAds(pageBannerEntries('start', 11))
+useGptAds(pageBannerEntries('start', 10, 2))
 const toc = [
   { id: 'modes', num: 1, label: 'Three game modes' },
   { id: 'boot', num: 2, label: 'Install to household' },

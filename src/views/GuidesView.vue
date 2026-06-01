@@ -24,11 +24,6 @@
           </figure>
         </div>
       </div>
-
-      <!-- 广告：banner_1 -->
-    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-guides-1" style="min-width: 300px; min-height: 250px;"></div>
-    </aside>
     </section>
 
     <section class="guides-list-section">
@@ -96,7 +91,7 @@ import guides from '@/data/guides.js'
 import { pageBannerEntries } from '@/gpt/config'
 import { useGptAds } from '@/gpt/ads'
 
-useGptAds(pageBannerEntries('guides', 3))
+useGptAds(pageBannerEntries('guides', 2, 2))
 
 function formatDate(iso) {
   return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {

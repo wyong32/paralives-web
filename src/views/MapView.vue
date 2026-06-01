@@ -39,11 +39,6 @@
           </figure>
         </div>
       </div>
-
-      <!-- 广告：banner_1 -->
-    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-map-1" style="min-width: 300px; min-height: 250px;"></div>
-    </aside>
     </section>
 
     <div class="map-body">
@@ -277,7 +272,7 @@ import MelinoInteractiveMap from '@/components/map/MelinoInteractiveMap.vue'
 import { pageBannerEntries } from '@/gpt/config'
 import { useGptAds } from '@/gpt/ads'
 
-useGptAds(pageBannerEntries('map', 7))
+useGptAds(pageBannerEntries('map', 6, 2))
 
 const PAGE_URL = 'https://paralives.wiki/map'
 const SITE_ORIGIN = 'https://paralives.wiki'

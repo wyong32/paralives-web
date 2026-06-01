@@ -59,11 +59,11 @@ export function getBannerSpec(unit) {
   return bannerByKey.get(key) ?? null
 }
 
-/** 生成页内 useGptAds 列表：第 n 个占位循环映射 banner_1…banner_N */
-export function pageBannerEntries(pageSlug, slotCount) {
+/** 生成页内 useGptAds 列表；startSlot 默认 1，可跳过 hero 内已移除的占位 */
+export function pageBannerEntries(pageSlug, slotCount, startSlot = 1) {
   const n = GPT_BANNERS.length
   return Array.from({ length: slotCount }, (_, i) => [
-    `div-gpt-ad-${pageSlug}-${i + 1}`,
-    GPT_BANNERS[i % n].key,
+    `div-gpt-ad-${pageSlug}-${startSlot + i}`,
+    GPT_BANNERS[(startSlot - 1 + i) % n].key,
   ])
 }

@@ -60,11 +60,6 @@
           </figure>
         </div>
       </div>
-
-      <!-- 广告：banner_1 -->
-      <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-        <div id="div-gpt-ad-moddetail-1" style="min-width: 300px; min-height: 250px;"></div>
-      </aside>
     </section>
 
     <section class="mod-detail-body-section" aria-label="Mod details">
@@ -172,7 +167,7 @@ import mods from '@/data/mods.js'
 import { pageBannerEntries } from '@/gpt/config'
 import { destroyGptPageAds, mountGptPageAds } from '@/gpt/ads'
 
-const MOD_DETAIL_ADS = pageBannerEntries('moddetail', 3)
+const MOD_DETAIL_ADS = pageBannerEntries('moddetail', 2, 2)
 
 /** 与 ModsView.vue MOD_CATEGORIES 展示名对齐 */
 const CATEGORY_LABELS = Object.freeze({

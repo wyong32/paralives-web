@@ -25,11 +25,6 @@
           </figure>
         </div>
       </div>
-
-      <!-- 广告：banner_1 -->
-    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-updates-1" style="min-width: 300px; min-height: 250px;"></div>
-    </aside>
     </section>
 
     <div class="updates-body">
@@ -189,7 +184,7 @@
 import { pageBannerEntries } from '@/gpt/config'
 import { useGptAds } from '@/gpt/ads'
 
-useGptAds(pageBannerEntries('updates', 5))
+useGptAds(pageBannerEntries('updates', 4, 2))
 
 /** Mode lists — English bullets aligned with Paralives Studio public Early Access roadmap copy */
 const modes = [

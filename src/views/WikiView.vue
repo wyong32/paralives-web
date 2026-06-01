@@ -30,11 +30,6 @@
           </figure>
         </div>
       </div>
-
-      <!-- 广告：banner_1 -->
-    <aside class="container" style="width: 100%; margin: 0 auto; padding: 1rem; text-align: center">
-      <div id="div-gpt-ad-wiki-1" style="min-width: 300px; min-height: 250px;"></div>
-    </aside>
     </section>
 
     <section class="wiki-main-section">
@@ -70,7 +65,7 @@
 import { pageBannerEntries } from '@/gpt/config'
 import { useGptAds } from '@/gpt/ads'
 
-useGptAds(pageBannerEntries('wiki', 3))
+useGptAds(pageBannerEntries('wiki', 2, 2))
 
 /** Wiki hub cards — content lives in src/views/wiki/*.vue */
 const wikiCategories = [
